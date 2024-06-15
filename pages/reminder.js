@@ -1,11 +1,11 @@
-import React from 'react'
 import Head from 'next/head'
-import Base from '../layouts/Base'
+import React from 'react'
 import { Box } from '../components/Box'
+import Base from '../layouts/Base'
 
 export async function getStaticProps() {
   const meta = {
-    title: 'Reminder // Zeno Rocha',
+    title: 'Reminder // Parth Desai',
     description:
       'Time is the most important asset. Time does not equal money. Time equals life. And you only have one chance to make it right.',
     tagline: 'Tick-tock. Tick-tock.',
@@ -27,8 +27,8 @@ function Reminder(props) {
         <meta content={title} property="og:title" />
         <meta content={description} name="description" />
         <meta content={description} property="og:description" />
-        <meta content="https://zenorocha.com/reminder" property="og:url" />
-        <meta content={`https://zenorocha.com${image}`} property="og:image" />
+        <meta content="https://parthdesai.site/reminder" property="og:url" />
+        <meta content={`https://parthdesai.site${image}`} property="og:image" />
       </Head>
 
       <Box css={{ textAlign: 'justify' }}>

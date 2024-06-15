@@ -1,16 +1,16 @@
-import React from 'react'
-import Head from 'next/head'
+import { format, parseISO } from 'date-fns'
 import { AnimateSharedLayout } from 'framer-motion'
-import { parseISO, format } from 'date-fns'
-import Base from '../layouts/Base'
+import Head from 'next/head'
+import React from 'react'
 import { Box } from '../components/Box'
 import FeaturedTalk from '../components/FeaturedTalk'
-import stripHtml from '../lib/strip-html'
 import items from '../data/talks'
+import Base from '../layouts/Base'
+import stripHtml from '../lib/strip-html'
 
 export async function getStaticProps() {
   const meta = {
-    title: 'Talks // Zeno Rocha',
+    title: 'Talks // Parth Desai',
     tagline: 'Confs. Meetups. Events.',
     image: '/static/images/talks-bw.jpg',
     primaryColor: 'purple',
@@ -72,8 +72,8 @@ function Talks(props) {
         <meta content={title} property="og:title" />
         <meta content={stripHtml(description)} name="description" />
         <meta content={stripHtml(description)} property="og:description" />
-        <meta content="https://zenorocha.com/talks" property="og:url" />
-        <meta content={`https://zenorocha.com${image}`} property="og:image" />
+        <meta content="https://parthdesai.site/talks" property="og:url" />
+        <meta content={`https://parthdesai.site${image}`} property="og:image" />
       </Head>
 
       <AnimateSharedLayout>

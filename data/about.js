@@ -1,22 +1,23 @@
 const items = [
   {
-    jobTitle: 'Founder & CEO',
-    company: 'Resend',
-    companyUrl: 'https://resend.com',
-    startDate: '2023-01-01',
+    jobTitle: 'Data Engineer Intern',
+    company: 'Glassdoor',
+    companyUrl: 'https://glassdoor.com',
+    startDate: '2024-05-28',
+    endDate: '2024-08-16',
     location: 'San Francisco, California',
   },
   {
-    jobTitle: 'VP of Developer Experience',
-    company: 'WorkOS',
-    companyUrl: 'https://workos.com',
-    startDate: '2021-07-01',
-    endDate: '2022-12-01',
-    location: 'Los Angeles, California',
+    jobTitle: 'Data Engineer Research Assistant',
+    company: 'San Francisco State University',
+    companyUrl: 'https://www.sfsu.edu/index.html',
+    startDate: '2023-09-06',
+    endDate: '2024-03-15',
+    location: 'San Francisco, California',
   },
   {
-    jobTitle: 'Chief Product Officer',
-    company: 'Liferay Cloud, Inc',
+    jobTitle: 'Data Engineer',
+    company: 'Accenture',
     companyUrl: 'https://liferay.com',
     startDate: '2018-06-01',
     endDate: '2021-07-01',
@@ -45,23 +46,7 @@ const items = [
     startDate: '2011-10-01',
     endDate: '2012-07-01',
     location: 'Rio de Janeiro, Brazil',
-  },
-  {
-    jobTitle: 'Software Engineer',
-    company: 'Petrobras',
-    companyUrl: 'https://petrobras.com.br',
-    startDate: '2011-02-01',
-    endDate: '2011-10-01',
-    location: 'Rio de Janeiro, Brazil',
-  },
-  {
-    jobTitle: 'Web Developer',
-    company: 'Caos! Design',
-    companyUrl: 'http://caosdesign.com.br',
-    startDate: '2009-09-01',
-    endDate: '2011-02-01',
-    location: 'Rio de Janeiro, Brazil',
-  },
+  }
 ]
 
 export default items

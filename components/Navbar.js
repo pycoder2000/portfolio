@@ -1,9 +1,9 @@
-import { styled } from '../stitches.config'
-import { useState } from 'react'
+import { AnimateSharedLayout, motion } from 'framer-motion'
+import { useKBar } from 'kbar'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { motion, AnimateSharedLayout } from 'framer-motion'
-import { useKBar } from 'kbar'
+import { useState } from 'react'
+import { styled } from '../stitches.config'
 
 export default function Navbar() {
   const router = useRouter()
@@ -24,7 +24,7 @@ export default function Navbar() {
     <AnimateSharedLayout>
       <Header>
         <Link href="/" passHref>
-          <ButtonLogo as="a">z</ButtonLogo>
+          <ButtonLogo as="a">P</ButtonLogo>
         </Link>
 
         <Nav>

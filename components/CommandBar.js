@@ -1,30 +1,30 @@
+import {
+    KBarAnimator,
+    KBarPortal,
+    KBarPositioner,
+    KBarProvider,
+    KBarResults,
+    KBarSearch,
+    useDeepMatches,
+} from 'kbar'
+import Lottie from 'lottie-react'
+import { useRouter } from 'next/router'
+import { forwardRef, useRef, useState } from 'react'
+import aboutIcon from '../public/static/icons/about.json'
+import articlesIcon from '../public/static/icons/articles.json'
+import copyLinkIcon from '../public/static/icons/copy-link.json'
+import emailIcon from '../public/static/icons/email.json'
+import homeIcon from '../public/static/icons/home.json'
+import investingIcon from '../public/static/icons/investing.json'
+import podcastsIcon from '../public/static/icons/podcasts.json'
+import projectsIcon from '../public/static/icons/projects.json'
+import reminderIcon from '../public/static/icons/reminder.json'
+import sourceIcon from '../public/static/icons/source.json'
+import talksIcon from '../public/static/icons/talks.json'
+import usesIcon from '../public/static/icons/uses.json'
 import { styled } from '../stitches.config'
 import { Box } from './Box'
 import Toast from './Toast'
-import { useRef, useState, forwardRef } from 'react'
-import { useRouter } from 'next/router'
-import {
-  KBarAnimator,
-  KBarProvider,
-  KBarPortal,
-  useDeepMatches,
-  KBarPositioner,
-  KBarSearch,
-  KBarResults,
-} from 'kbar'
-import Lottie from 'lottie-react'
-import copyLinkIcon from '../public/static/icons/copy-link.json'
-import emailIcon from '../public/static/icons/email.json'
-import sourceIcon from '../public/static/icons/source.json'
-import aboutIcon from '../public/static/icons/about.json'
-import homeIcon from '../public/static/icons/home.json'
-import articlesIcon from '../public/static/icons/articles.json'
-import projectsIcon from '../public/static/icons/projects.json'
-import talksIcon from '../public/static/icons/talks.json'
-import podcastsIcon from '../public/static/icons/podcasts.json'
-import investingIcon from '../public/static/icons/investing.json'
-import usesIcon from '../public/static/icons/uses.json'
-import reminderIcon from '../public/static/icons/reminder.json'
 
 export default function CommandBar(props) {
   const copyLinkRef = useRef()
@@ -75,7 +75,7 @@ export default function CommandBar(props) {
       keywords: 'view-source',
       section: 'General',
       perform: () =>
-        window.open('https://github.com/zenorocha/zenorocha.com', '_blank'),
+        window.open('https://github.com/parthdesai/parthdesai.site', '_blank'),
       icon: <Lottie lottieRef={sourceRef} style={iconSize} animationData={sourceIcon} loop={false} autoplay={false} />,
     },
     {

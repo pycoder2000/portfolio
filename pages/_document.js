@@ -1,7 +1,7 @@
+import Document, { Head, Html, Main, NextScript } from 'next/document'
 import React from 'react'
-import Document, { Html, Head, Main, NextScript } from 'next/document'
-import { getCssText } from '../stitches.config'
 import { GA_TRACKING_ID } from '../lib/gtag'
+import { getCssText } from '../stitches.config'
 
 export default class extends Document {
   static async getInitialProps(ctx) {
@@ -16,7 +16,7 @@ export default class extends Document {
       <Html lang={lang ? lang : 'en-US'}>
         <Head>
           <meta charSet="utf-8" />
-          <meta content="Zeno Rocha" name="author" />
+          <meta content="Parth Desai" name="author" />
           <meta property="og:type" content="website" />
           <meta content="summary_large_image" name="twitter:card" />
           <meta name="theme-color" content="#08070b" />

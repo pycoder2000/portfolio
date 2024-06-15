@@ -1,12 +1,12 @@
-import { styled } from '../stitches.config'
+import { AnimateSharedLayout } from 'framer-motion'
 import Head from 'next/head'
-import Base from '../layouts/Base'
-import stripHtml from '../lib/strip-html'
-import { getAllPosts, getPostBySlug } from '../lib/blog'
-import ListItem from '../components/ListItem'
 import FeaturedArticle from '../components/FeaturedArticle'
 import { ListGroup } from '../components/ListGroup'
-import { AnimateSharedLayout } from 'framer-motion'
+import ListItem from '../components/ListItem'
+import Base from '../layouts/Base'
+import { getAllPosts, getPostBySlug } from '../lib/blog'
+import stripHtml from '../lib/strip-html'
+import { styled } from '../stitches.config'
 
 export async function getStaticProps() {
   const allPosts = getAllPosts(['date', 'skip', 'slug', 'title'])
@@ -21,13 +21,13 @@ export async function getStaticProps() {
   ]
 
   const featuredPosts = [
-    getPostBySlug('the-two-types-of-quality', featuredParams),
-    getPostBySlug('how-is-life-post-yc', featuredParams),
+    getPostBySlug('spotify-refresh-token', featuredParams),
+    getPostBySlug('a-complete-guide-for-the-f1-visa-interview-part-ii', featuredParams),
   ]
 
   return {
     props: {
-      title: 'Articles // Zeno Rocha',
+      title: 'Articles // Parth Desai',
       tagline: 'Stories. Updates. Guides.',
       image: '/static/images/articles-bw.jpg',
       primaryColor: 'yellow',
@@ -82,8 +82,8 @@ function Articles(props) {
         <meta content={title} property="og:title" />
         <meta content={stripHtml(description)} name="description" />
         <meta content={stripHtml(description)} property="og:description" />
-        <meta content="https://zenorocha.com/articles" property="og:url" />
-        <meta content={`https://zenorocha.com${image}`} property="og:image" />
+        <meta content="https://parthdesai.site/articles" property="og:url" />
+        <meta content={`https://parthdesai.site${image}`} property="og:image" />
       </Head>
 
       <AnimateSharedLayout>

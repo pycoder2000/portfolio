@@ -173,12 +173,12 @@ const items = [
       },
       {
         title: 'Voice Elements',
-        url: 'https://github.com/zenorocha/voice-elements',
+        url: 'https://github.com/parthdesai/voice-elements',
         active: true,
       },
       {
         title: 'JavaScript & NodeJS Snippets for Atom',
-        url: 'https://github.com/zenorocha/atom-javascript-snippets',
+        url: 'https://github.com/parthdesai/atom-javascript-snippets',
         active: true,
       },
       {
@@ -248,7 +248,7 @@ const items = [
       },
       {
         title: 'Workflow Collection for Alfred App',
-        url: 'https://github.com/zenorocha/alfred-workflows',
+        url: 'https://github.com/parthdesai/alfred-workflows',
         active: true,
       },
       {
@@ -268,7 +268,7 @@ const items = [
       },
       {
         title: 'Yeoman Generator for FirefoxOS',
-        url: 'https://github.com/zenorocha/generator-firefox-os',
+        url: 'https://github.com/parthdesai/generator-firefox-os',
         active: true,
       },
       {
@@ -288,7 +288,7 @@ const items = [
       },
       {
         title: 'jQuery Github',
-        url: 'http://zenorocha.github.com/jquery-github/',
+        url: 'http://parthdesai.github.com/jquery-github/',
         active: false,
       },
     ],

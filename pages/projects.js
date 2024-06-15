@@ -1,15 +1,15 @@
-import React from 'react'
-import Head from 'next/head'
 import { AnimateSharedLayout } from 'framer-motion'
-import Base from '../layouts/Base'
+import Head from 'next/head'
+import React from 'react'
 import FeaturedProject from '../components/FeaturedProject'
 import { FeaturedProjects } from '../components/FeaturedProjects'
-import stripHtml from '../lib/strip-html'
 import items from '../data/projects'
+import Base from '../layouts/Base'
+import stripHtml from '../lib/strip-html'
 
 export async function getStaticProps() {
   const meta = {
-    title: 'Projects // Zeno Rocha',
+    title: 'Projects // Parth Desai',
     tagline: 'Work. Hobby. Open Source.',
     image: '/static/images/projects-bw.jpg',
     primaryColor: 'cyan',
@@ -73,8 +73,8 @@ function Projects(props) {
         <meta content={title} property="og:title" />
         <meta content={stripHtml(description)} name="description" />
         <meta content={stripHtml(description)} property="og:description" />
-        <meta content="https://zenorocha.com/projects" property="og:url" />
-        <meta content={`https://zenorocha.com${image}`} property="og:image" />
+        <meta content="https://parthdesai.site/projects" property="og:url" />
+        <meta content={`https://parthdesai.site${image}`} property="og:image" />
       </Head>
 
       <AnimateSharedLayout>

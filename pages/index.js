@@ -1,16 +1,16 @@
-import { styled } from '../stitches.config'
 import Head from 'next/head'
-import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import Navbar from '../components/Navbar'
+import { PostContainer, PostContent, PostMain } from '../components/Post'
 import ShortcutHome from '../components/ShortcutHome'
-import { PostMain, PostContent, PostContainer } from '../components/Post'
 import { Wrapper } from '../components/Wrapper'
 import { getPersonJsonLd } from '../lib/json-ld'
+import { styled } from '../stitches.config'
 
 export async function getStaticProps() {
   return {
     props: {
-      title: 'Zeno Rocha',
+      title: 'Parth Desai',
       description: 'Obsessed with developer experience',
       image: '/static/images/home-bw.jpg',
     },
@@ -27,8 +27,8 @@ export default function Index(props) {
         <meta content={title} property="og:title" />
         <meta content={description} name="description" />
         <meta content={description} property="og:description" />
-        <meta content="https://zenorocha.com" property="og:url" />
-        <meta content={`https://zenorocha.com${image}`} property="og:image" />
+        <meta content="https://parthdesai.site" property="og:url" />
+        <meta content={`https://parthdesai.site${image}`} property="og:image" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

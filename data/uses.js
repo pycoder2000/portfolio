@@ -117,7 +117,7 @@ const categories = [
       {
         title: 'Alfred',
         description:
-          'My favorite Spotlight replacement with <a href="https://github.com/zenorocha/alfred-workflows" target="_blank">tons of workflows</a>.',
+          'My favorite Spotlight replacement with <a href="https://github.com/parthdesai/alfred-workflows" target="_blank">tons of workflows</a>.',
         url: 'https://alfredapp.com',
       },
       {
@@ -333,7 +333,7 @@ const categories = [
         title: 'Betterment',
         description:
           'My favorite investing platform, which consistently returns ~16% earnings.',
-        url: 'http://betterment.com/invite/zenorochabuenonetto',
+        url: 'http://betterment.com/invite/parthdesaibuenonetto',
       },
       {
         title: 'Mint',

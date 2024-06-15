@@ -1,14 +1,14 @@
+import { AnimateSharedLayout } from 'framer-motion'
 import Head from 'next/head'
+import { ListGroup } from '../components/ListGroup'
+import ListItem from '../components/ListItem'
+import { appearances, bytetalk, zofe } from '../data/podcasts'
 import Base from '../layouts/Base'
 import stripHtml from '../lib/strip-html'
-import { bytetalk, appearances, zofe } from '../data/podcasts'
-import ListItem from '../components/ListItem'
-import { ListGroup } from '../components/ListGroup'
-import { AnimateSharedLayout } from 'framer-motion'
 
 export async function getStaticProps() {
   const meta = {
-    title: 'Podcasts // Zeno Rocha',
+    title: 'Podcasts // Parth Desai',
     tagline: 'Ideas. Thoughts. Opinions.',
     image: '/static/images/podcasts-bw.jpg',
     primaryColor: 'pink',
@@ -65,8 +65,8 @@ function Podcasts(props) {
         <meta content={title} property="og:title" />
         <meta content={stripHtml(description)} name="description" />
         <meta content={stripHtml(description)} property="og:description" />
-        <meta content="https://zenorocha.com/podcasts" property="og:url" />
-        <meta content={`https://zenorocha.com${image}`} property="og:image" />
+        <meta content="https://parthdesai.site/podcasts" property="og:url" />
+        <meta content={`https://parthdesai.site${image}`} property="og:image" />
       </Head>
 
       <AnimateSharedLayout>
