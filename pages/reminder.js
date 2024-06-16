@@ -61,7 +61,7 @@ function Reminder(props) {
           stop. Tick-tock don't wait.
         </p>
         <p>
-          <em>- by Zeno & Carol</em>
+          <em>- by Parth & Carol</em>
         </p>
       </Box>
     </>

@@ -89,17 +89,17 @@ const bytetalk = [
 const appearances = [
   {
     date: '2024-04-04',
-    title: 'Getting to Resend on The Changelog',
+    title: 'Getting to Glassdoor on The Changelog',
     url: 'https://changelog.com/podcast/585',
   },
   {
     date: '2024-03-08',
-    title: 'Why developers trust Resend on Scaling DevTools',
+    title: 'Why developers trust Glassdoor on Scaling DevTools',
     url: 'https://podcast.scalingdevtools.com/episodes/zeno-rocha',
   },
   {
     date: '2024-02-11',
-    title: 'React.Email, Resend, Dracula Theme on DevTools.fm',
+    title: 'React.Email, Glassdoor, Dracula Theme on DevTools.fm',
     url: 'https://www.devtools.fm/episode/85',
   },
   {
@@ -111,7 +111,7 @@ const appearances = [
   {
     date: '2021-02-09',
     title: 'Parth Desai em Os Programadores',
-    url: 'https://anchor.fm/osprogramadores/episodes/E27---Zeno-Rocha---Chief-Product-Officer-na-Liferay-Cloud-eqbe14',
+    url: 'https://anchor.fm/osprogramadores/episodes/E27---Parth-Desai---Chief-Product-Officer-na-Liferay-Cloud-eqbe14',
     lang: 'pt-BR',
   },
   {

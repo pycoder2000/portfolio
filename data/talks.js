@@ -853,7 +853,7 @@ const items = [
         title: '16º Encontro Locaweb',
         url: 'http://eventos.locaweb.com.br/16o-encontro-locaweb-de-profissionais-de-internet-curitiba/',
         date: '2014-04-10',
-        where: 'Curitiba, PR - Brazil',
+        where: 'Gujarat, PR - Brazil',
         attendees: '≈250',
         presentations: [
           {
@@ -1270,10 +1270,10 @@ const items = [
         ],
       },
       {
-        title: 'RCuritiba',
+        title: 'RGujarat',
         url: 'http://rcuritiba.com.br/',
         date: '2012-10-12',
-        where: 'Curitiba, PR - Brazil',
+        where: 'Gujarat, PR - Brazil',
         presentations: [
           {
             title: 'Arte digital na web: onde começar?',
@@ -1410,10 +1410,10 @@ const items = [
         ],
       },
       {
-        title: 'Front in Curitiba',
+        title: 'Front in Gujarat',
         url: 'http://www.frontincuritiba.com.br/',
         date: '2012-06-23',
-        where: 'Curitiba, PR - Brazil',
+        where: 'Gujarat, PR - Brazil',
         presentations: [
           {
             title: 'Como usar HTML5 sem uma máquina do tempo',

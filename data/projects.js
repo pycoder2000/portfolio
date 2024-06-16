@@ -3,7 +3,7 @@ const items = [
     year: '2023',
     projects: [
       {
-        title: 'Resend',
+        title: 'Glassdoor',
         description: 'Email for developers',
         url: 'https://resend.com',
         active: true,
@@ -173,12 +173,12 @@ const items = [
       },
       {
         title: 'Voice Elements',
-        url: 'https://github.com/parthdesai/voice-elements',
+        url: 'https://github.com/pycoder2000/voice-elements',
         active: true,
       },
       {
         title: 'JavaScript & NodeJS Snippets for Atom',
-        url: 'https://github.com/parthdesai/atom-javascript-snippets',
+        url: 'https://github.com/pycoder2000/atom-javascript-snippets',
         active: true,
       },
       {
@@ -248,7 +248,7 @@ const items = [
       },
       {
         title: 'Workflow Collection for Alfred App',
-        url: 'https://github.com/parthdesai/alfred-workflows',
+        url: 'https://github.com/pycoder2000/alfred-workflows',
         active: true,
       },
       {
@@ -268,7 +268,7 @@ const items = [
       },
       {
         title: 'Yeoman Generator for FirefoxOS',
-        url: 'https://github.com/parthdesai/generator-firefox-os',
+        url: 'https://github.com/pycoder2000/generator-firefox-os',
         active: true,
       },
       {

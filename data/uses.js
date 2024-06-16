@@ -117,7 +117,7 @@ const categories = [
       {
         title: 'Alfred',
         description:
-          'My favorite Spotlight replacement with <a href="https://github.com/parthdesai/alfred-workflows" target="_blank">tons of workflows</a>.',
+          'My favorite Spotlight replacement with <a href="https://github.com/pycoder2000/alfred-workflows" target="_blank">tons of workflows</a>.',
         url: 'https://alfredapp.com',
       },
       {
@@ -245,7 +245,7 @@ const categories = [
         url: 'https://kayak.com',
       },
       {
-        title: 'Resend',
+        title: 'Glassdoor',
         description:
           'The new email API for developers.',
         url: 'https://resend.com',

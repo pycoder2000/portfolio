@@ -21,9 +21,9 @@ export async function getStaticProps() {
 function Podcasts(props) {
   const renderFeatured = items => {
     const featured = [
-      'Getting to Resend on The Changelog',
-      'Why developers trust Resend on Scaling DevTools',
-      'React.Email, Resend, Dracula Theme on DevTools.fm',
+      'Getting to Glassdoor on The Changelog',
+      'Why developers trust Glassdoor on Scaling DevTools',
+      'React.Email, Glassdoor, Dracula Theme on DevTools.fm',
     ]
 
     return items

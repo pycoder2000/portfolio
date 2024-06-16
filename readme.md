@@ -1,8 +1,8 @@
-# parthdesai.site
+# portfolio
 
-> My personal website <3
+> My personal website
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fparthdesai%2Fparthdesai.site)
+> This website has been forked from [Zeno Rocha's website](https://github.com/zenorocha/zenorocha.com/tree/main)
 
 ## Technology stack
 
@@ -18,13 +18,13 @@
 1. Clone this repo:
 
 ```sh
-$ git clone https://github.com/parthdesai/parthdesai.site.git
+$ git clone https://github.com/pycoder2000/portfolio.git
 ```
 
 2. Then go to the project's folder:
 
 ```sh
-cd parthdesai.site
+cd portfolio
 ```
 
 3. Install all dependencies:
@@ -54,31 +54,31 @@ The basic file structure for the project is organized in the following way:
 `-- public
 ```
 
-### [articles](https://github.com/parthdesai/parthdesai.site/tree/master/articles)
+### [articles](https://github.com/pycoder2000/portfolio/tree/master/articles)
 
 Here you'll find a list of markdown files for each post.
 
-### [components](https://github.com/parthdesai/parthdesai.site/tree/master/components)
+### [components](https://github.com/pycoder2000/portfolio/tree/master/components)
 
 Here you'll find reusable blocks of React components.
 
-### [data](https://github.com/parthdesai/parthdesai.site/tree/master/data)
+### [data](https://github.com/pycoder2000/portfolio/tree/master/data)
 
 Here you'll find JSON files that populates each section.
 
-### [layouts](https://github.com/parthdesai/parthdesai.site/tree/master/layouts)
+### [layouts](https://github.com/pycoder2000/portfolio/tree/master/layouts)
 
 Here you'll find default templates for different pages.
 
-### [lib](https://github.com/parthdesai/parthdesai.site/tree/master/lib)
+### [lib](https://github.com/pycoder2000/portfolio/tree/master/lib)
 
 Here you'll find a set of utilities.
 
-### [pages](https://github.com/parthdesai/parthdesai.site/tree/master/pages)
+### [pages](https://github.com/pycoder2000/portfolio/tree/master/pages)
 
 Here you'll find all the main pages of the site.
 
-### [public](https://github.com/parthdesai/parthdesai.site/blob/master/public)
+### [public](https://github.com/pycoder2000/portfolio/blob/master/public)
 
 Here you'll find all the CSS, images, and font files.
 

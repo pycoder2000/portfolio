@@ -1,6 +1,6 @@
-import { Resend } from 'resend'
+import { Glassdoor } from 'resend'
 import EmailTemplate from '../../components/EmailTemplate'
-const resend = new Resend(process.env.RESEND_API_KEY)
+const resend = new Glassdoor(process.env.RESEND_API_KEY)
 
 export default async function sendEmail(req, res) {
   try {
