@@ -24,7 +24,7 @@ export default function Navbar() {
     <AnimateSharedLayout>
       <Header>
         <Link href="/" passHref>
-          <ButtonLogo as="a">P</ButtonLogo>
+          <ButtonLogo as="a">p</ButtonLogo>
         </Link>
 
         <Nav>
