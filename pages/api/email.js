@@ -1,6 +1,6 @@
-import { Glassdoor } from 'resend'
+import { Resend } from 'resend'
 import EmailTemplate from '../../components/EmailTemplate'
-const resend = new Glassdoor(process.env.RESEND_API_KEY)
+const resend = new Resend(process.env.RESEND_API_KEY)
 
 export default async function sendEmail(req, res) {
   try {
@@ -8,7 +8,7 @@ export default async function sendEmail(req, res) {
 
     await resend.sendEmail({
       from: 'parthdesai.site <website@parthdesai.site>',
-      to: 'zno.rocha@gmail.com',
+      to: 'desaiparth2000@gmail.com',
       replyTo: data.email,
       subject: `${data.name} - via parthdesai.site`,
       react: <EmailTemplate {...data} />,
