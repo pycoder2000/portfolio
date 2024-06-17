@@ -21,8 +21,14 @@ export async function getStaticProps() {
   ]
 
   const featuredPosts = [
-    getPostBySlug('spotify-refresh-token', featuredParams),
-    getPostBySlug('a-complete-guide-for-the-f1-visa-interview-part-ii', featuredParams),
+    getPostBySlug(
+      'a-complete-guide-for-the-f1-visa-interview-part-i',
+      featuredParams
+    ),
+    getPostBySlug(
+      'a-complete-guide-for-the-f1-visa-interview-part-ii',
+      featuredParams
+    ),
   ]
 
   return {
@@ -73,7 +79,7 @@ function Articles(props) {
   }
 
   const { title, image } = props
-  const description = `Here you can find all the <strong>${props.allPosts.length} articles</strong> I wrote. You can read about web development, software engineering, and tech career in both English and Portuguese.`
+  const description = `Here you can find all <strong>${props.allPosts.length} articles</strong> that I've written. My writing primarily covers topics related to technology, conferences, my personal experiences, and my thoughts.`
 
   return (
     <>
