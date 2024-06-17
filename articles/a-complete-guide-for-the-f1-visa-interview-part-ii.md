@@ -2,7 +2,7 @@
 title: A complete guide for the F1 visa interview — Part II (Interview)
 description: "The F-1 visa interview process can be daunting but with this guide, you'll feel confident & prepared. Read more!"
 image: /static/images/blog/a-complete-guide-for-the-f1-visa-interview-part-ii.jpg
-date: "2023-05-02"
+date: "2023-05-05"
 ---
 
 Embarking on a journey to pursue Masters in a foreign country can be both exciting and nerve-wracking. As an international student, securing an F-1 visa is the most crucial step towards fulfilling your dreams of studying in the US. But, the F-1 visa interview process can be intimidating, especially for first-timers. Don’t fret! This guide is designed to help you navigate through the interview process with ease, confidence, and a touch of fun!

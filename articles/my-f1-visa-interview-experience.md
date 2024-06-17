@@ -2,7 +2,7 @@
 title: My F-1 Visa Interview Experience
 description: "As an incoming grad student, I share my F-1 Visa Interview Experience for MS in Data Science. Read further to overcome your anxieties."
 image: /static/images/blog/my-f1-visa-interview-experience.jpg
-date: "2023-05-02"
+date: "2023-05-08"
 ---
 
 Hey Everyone, I’m an incoming graduate student joining MS in Data Science for Fall 2023 in the United States. In this article, I will share my experience with my visa interview. These blogs helped me a lot while preparing for my visa interviews and I hope my experience helps other anxious students as well.

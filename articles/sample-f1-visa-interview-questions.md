@@ -2,7 +2,7 @@
 title: Sample F-1 Visa Interview Questions
 description: "I've put together a comprehensive guide with sample F-1 visa interview questions and answers that has been prepared from various sources."
 image: /static/images/blog/sample-f1-visa-interview-questions.jpg
-date: "2023-05-02"
+date: "2023-05-12"
 ---
 
 I’ve put together a comprehensive guide with sample F-1 visa interview questions and answers that has been prepared from various Telegram groups, Whatsapp groups and other Visa Interview Q/A documents. From personal information to academic goals, I have tried to cover all the bases.
