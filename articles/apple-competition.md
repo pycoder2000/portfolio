@@ -11,6 +11,6 @@ Earlier today, the European Union [announced](https://www.theverge.com/2021/9/23
 
 Sound familiar? Maybe because it's the **exact same** argument Epic Games used against Apple regarding payment methods. If Apple truly was "concerned" about hurting competition, they wouldn't be doing exactly that on their own platform.
 
-And that's not even the strangest part about this. Apple is _competing with itself_ on charging ports. They just recently released the new iPad mini -- with a USB-C port -- advertising that it was “10x faster than \[Lightning\]”. Then, in the same keynote, released new iPhones… with Lightning ports. Apple praises the versatility & speed of USB-C, then goes on to use something worse.
+And that's not even the strangest part about this. Apple is _competing with itself_ on charging ports. They just recently released the new iPad mini - with a USB-C port - advertising that it was “10x faster than \[Lightning\]”. Then, in the same keynote, released new iPhones… with Lightning ports. Apple praises the versatility & speed of USB-C, then goes on to use something worse.
 
-The company is in a quite odd position -- they're concerned about competition, while engaging in anti-competitive behavior, and are praising a charging port, which they don't even use.
+The company is in a quite odd position - they're concerned about competition, while engaging in anti-competitive behavior, and are praising a charging port, which they don't even use.

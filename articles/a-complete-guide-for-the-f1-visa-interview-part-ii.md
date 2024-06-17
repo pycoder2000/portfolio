@@ -1,6 +1,6 @@
 ---
 title: A complete guide for the F1 visa interview — Part II (Interview)
-description: "Embarking on a journey to pursue Masters in a foreign country can be both exciting and nerve-wracking. As an international student, securing an F-1 visa is the most crucial step towards fulfilling…"
+description: "The F-1 visa interview process can be daunting but with this guide, you'll feel confident & prepared. Read more!"
 image: /static/images/blog/a-complete-guide-for-the-f1-visa-interview-part-ii.jpg
 date: "2023-05-02"
 ---
@@ -9,7 +9,7 @@ Embarking on a journey to pursue Masters in a foreign country can be both exciti
 
 > To learn about the Biometrics procedure (Part I), follow this [**link**](https://medium.com/@desaiparth2000/a-complete-guide-for-the-f1-visa-interview-part-i-biometrics-cb46c448e6ac). If you’re interested in reading about my Visa interview, you can access it [**here**](https://medium.com/@desaiparth2000/my-f-1-visa-interview-experience-a178648fa7d0). And if you’re simply searching for sample Visa questions, click [**here**](https://desaiparth2000.medium.com/sample-f-1-visa-interview-questions-9654ae41b01b).
 
-## 1\. Documents Required
+## 1. Documents Required
 
 I am going to provide you with the entire list of documents that you’ll ever require. This list has been used by lakhs of students, so it’s exhaustive.
 
@@ -28,7 +28,7 @@ Firstly, buy any [Harmonium Folder](https://www.amazon.in/s?k=harmonic+folder&i=
 
 Apart From the above documents you can carry Property Valuation documents, Gold Valuation, CA Certificate Etc. But it is not mandatory
 
-## 2\. Prepare for your interview
+## 2. Prepare for your interview
 
 -   Prepare for your interview by reading up on others’ F-1 visa experiences. (You can read mine [**_here_**](https://desaiparth2000.medium.com/my-f-1-visa-interview-experience-a178648fa7d0))
 -   Join visa interview groups on Whatsapp & Telegram.
@@ -39,12 +39,12 @@ Apart From the above documents you can carry Property Valuation documents, Gold 
 
 > Most importantly, **do not lie anywhere.** If caught, your visa will be immediately rejected.
 
-## 3\. Final Prep
+## 3. Final Prep
 
 -   Once you are done practising your answers, try to give at least 2–3 mocks. This will instil confidence in you.
 -   If you can’t give mock interviews, I recommend practising your answers in front of a mirror. This will allow you to observe your body language and delivery, and make any necessary adjustments to ensure that you are presenting yourself confidently and professionally during the F-1 visa interview.
 
-## 4\. One Day Before Your Interview
+## 4. One Day Before Your Interview
 
 -   Double-check all of your documents against the list mentioned above and make sure you’ve followed the organisational structure as mentioned. Trust me it’ll save you a lot of valuable time.
 -   Review and practice your answers one last time. Make sure you don’t overdo it.
@@ -52,11 +52,11 @@ Apart From the above documents you can carry Property Valuation documents, Gold 
 
 And with that! You’re ready for tomorrow. Get a good night’s sleep and don’t stress yourself out — you’ve got this.
 
-## 5\. When to reach
+## 5. When to reach
 
 Reach at least **an hour** before your slot. There’s a possibility that they’ll take you in early as there’ll be a lot of waiting during your actual slot time.
 
-## 6\. What to carry
+## 6. What to carry
 
 -   If you’re carrying any electronic devices like mobile, smart watch etc., leave them with your escort (friend, parent) as they won’t be allowed inside.
 -   In case you are travelling alone, they do provide locker services at the Mumbai Consulate to store your electronics and other valuables. However, this is not the same for all centres.
@@ -65,7 +65,7 @@ Reach at least **an hour** before your slot. There’s a possibility that they�
 
 **NOTE:** Don’t concern yourself with anything you hear in the queue while waiting outside. Trust your preparation.
 
-## 7\. The Final Interview
+## 7. The Final Interview
 
 -   Once you enter the consulate, you’ll go through the security check and metal detector. (Belts are allowed)
 -   Post that your passport or more precisely the sticker behind it (The one you got from your biometrics day) will be used to guide you to your line.
@@ -79,4 +79,8 @@ Reach at least **an hour** before your slot. There’s a possibility that they�
 -   Be truthful, clear & precise when you answer. Don’t drag the conversation.
 -   And remember, even if your visa is rejected, you can still apply again 2 more times.
 
-I hope that this guide has been a great resource for you while preparing for your F-1 visa interview. I’d love to hear from you! And, if you have any suggestions for additions or changes to the guide, feel free to [let me know](https://twitter.com/_ParthDesai_). Good luck with your visa application — I am rooting for you! 🚀
+I hope that this guide has been a great resource for you while preparing for your F-1 visa interview. I’d love to hear from you! And, if you have any suggestions for additions or changes to the guide, feel free to [let me know](https://x.com/_ParthDesai_). Good luck with your visa application — I am rooting for you! 🚀
+
+<p style="text-align: center;">
+  <a href="https://medium.com/@desaiparth2000/a-complete-guide-for-the-f1-visa-interview-part-ii-interview-9170349ba4e">Read this on Medium</a>
+</p>

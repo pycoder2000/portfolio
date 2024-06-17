@@ -27,7 +27,7 @@ const items = [
     jobTitle: 'Data Engineer',
     company: 'Accenture Strategy & Consulting',
     companyUrl: 'https://www.accenture.com/us-en/about/consulting-index',
-    startDate: '2022-08-01',
+    startDate: '2022-07-01',
     endDate: '2023-07-21',
     location: 'Gujarat, India',
   },
@@ -36,7 +36,7 @@ const items = [
     company: 'Accenture Strategy & Consulting',
     companyUrl: 'https://www.accenture.com/us-en/about/consulting-index',
     startDate: '2022-01-07',
-    endDate: '2022-05-21',
+    endDate: '2022-06-21',
     location: 'Gujarat, India',
   },
   {
