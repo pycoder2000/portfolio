@@ -26,31 +26,31 @@ export default function Footer() {
     {
       title: 'Medium',
       url: 'https://medium.com/@desaiparth2000',
-      icon: 'ri-instagram-line',
+      icon: 'ri-medium-line',
     },
   ]
 
   const renderAnchor = (link, index) => {
     if (link.url.startsWith('http')) {
-      return <Anchor key={index} href={link.url} target="_blank">
-        <Title>{link.title}</Title>
-        <Icon className={link.icon} />
-      </Anchor>
+      return (
+        <Anchor key={index} href={link.url} target="_blank">
+          <Title>{link.title}</Title>
+          <Icon className={link.icon} />
+        </Anchor>
+      )
     }
 
-    return <Link key={index} href={link.url} passHref>
-      <Anchor>
-        <Title>{link.title}</Title>
-        <Icon className={link.icon} />
-      </Anchor>
-    </Link>
+    return (
+      <Link key={index} href={link.url} passHref>
+        <Anchor>
+          <Title>{link.title}</Title>
+          <Icon className={link.icon} />
+        </Anchor>
+      </Link>
+    )
   }
 
-  return (
-    <Container>
-      {links.map(renderAnchor)}
-    </Container>
-  )
+  return <Container>{links.map(renderAnchor)}</Container>
 }
 
 const Container = styled('footer', {

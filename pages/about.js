@@ -17,8 +17,8 @@ export async function getStaticProps() {
   const meta = {
     title: 'About // Parth Desai',
     description:
-      "Parth Desai is a Brazilian creator and programmer. He currently lives in San Francisco, California, where he's the Founder & CEO at Glassdoor. His lifelong appreciation for building software and sharing knowledge led him to speak in over 110 conferences worldwide. His passion for open source put him on the top 20 most active users on GitHub at age 22. Before moving to the US, Parth developed multiple applications, mentored startups, and worked at major companies in Latin America, such as Globo and Petrobras.",
-    tagline: 'Create. Share. Repeat.',
+      'I am a passionate Data Engineer, having architected and executed integrative solutions across AWS, GCP, and other cloud platforms. I have successfully undertaken digital transformation projects, developed ETL pipelines and led multiple migrations from Dev to Prod. I am also on a journey to become a data steward by trying to understand the business aspect of data driven decision facilitated by my masters degree in Data Science and Artificial Intelligence. I deliver production-ready scalable code using Python, Spark, Scala, and SQL. With a proven track record of delivering impactful solutions, I am excited to contribute my skills and drive insightful solutions as part of your team.',
+    tagline: 'Build. Code. Deliver.',
     image: '/static/images/about-bw.jpg',
     primaryColor: 'pink',
     secondaryColor: 'purple',
@@ -57,20 +57,24 @@ function About(props) {
             }}
           >
             <strong>Hey, I'm Parth Desai</strong>
-            <Pronunciation />
-            I started as a software engineer back in 2009, working with Flash.
+            <Pronunciation />I started my journey as a Data Engineer back in
+            2022 at Accenture.
           </Paragraph>
           <Paragraph>
-            I'm the <strong>Founder & CEO</strong> at
-            Glassdoor. Before that, I was a VP of Developer Experience at WorkOS and CPO at Liferay Cloud. I'm originally
-            from Brazil and now living in{' '}
-            <strong>San Francisco, California</strong> with my amazing wife and
-            beautiful daughter.
+            I'm originally from India and currently living in{' '}
+            <strong>San Francisco, California</strong> pursuing my Masters in
+            Data Science & Artificial Intelligence.
           </Paragraph>
           <Paragraph>
-            <strong>I love dark mode</strong>, open source, and side projects.
-            When I'm not working, I like running, watching movies, and{' '}
-            <strong>eating cheese</strong>.
+            I love <strong>connecting</strong> with fellow nerds over the
+            weekend. When I'm not working, you'll find me{' '}
+            <strong>
+              <a href="https://x.com/_ParthDesai_" target="_blank">
+                tweeting
+              </a>
+            </strong>
+            , going down Reddit rabbit holes, solving crosswords, and
+            binge-watching fascinating video essays.
           </Paragraph>
         </Section>
       </Container>
@@ -78,14 +82,18 @@ function About(props) {
   }
 
   const renderBio = () => {
-    const btnStyle = { display: 'inline-flex', justifyContent: 'center', alignItems: 'center' }
+    const btnStyle = {
+      display: 'inline-flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+    }
     const iconStyle = { width: 24, height: 24, marginRight: 8 }
 
     return (
       <div>
         <p>
-          This is made for journalists, podcast hosts, and event organizers to
-          copy-and-paste.
+          This is my professional bio summarizing my strengths and fields of
+          interests.
         </p>
         <blockquote>
           <p>{description}</p>
@@ -98,7 +106,13 @@ function About(props) {
             onMouseEnter={() => copyBioRef.current?.play()}
             onMouseLeave={() => copyBioRef.current?.stop()}
           >
-            <Lottie lottieRef={copyBioRef} style={iconStyle} animationData={copyBioIcon} loop={false} autoplay={false} />
+            <Lottie
+              lottieRef={copyBioRef}
+              style={iconStyle}
+              animationData={copyBioIcon}
+              loop={false}
+              autoplay={false}
+            />
             Copy Bio
           </ButtonPrimary>
           <span style={{ margin: '0 20px 0 10px' }}>•</span>
@@ -106,14 +120,21 @@ function About(props) {
             as="a"
             download
             role="button"
-            href="/static/images/avatar-bw.jpg"
+            href="https://drive.google.com/file/d/19Qzw2mYTdmpXLNwF5wypKIwi2jZzDoMD/view?usp=sharing"
+            target="_blank"
             style={btnStyle}
-            onClick={downloadHeadshot}
+            onClick={downloadResume}
             onMouseEnter={() => downloadRef.current?.play()}
             onMouseLeave={() => downloadRef.current?.stop()}
           >
-            <Lottie lottieRef={downloadRef} style={iconStyle} animationData={downloadIcon} loop={false} autoplay={false} />
-            Download Headshot
+            <Lottie
+              lottieRef={downloadRef}
+              style={iconStyle}
+              animationData={downloadIcon}
+              loop={false}
+              autoplay={false}
+            />
+            Download Resume
           </ButtonPrimary>
         </ButtonsContainer>
       </div>
@@ -166,9 +187,9 @@ function About(props) {
     return durationStr
   }
 
-  const downloadHeadshot = () => {
+  const downloadResume = () => {
     setToastTitle('Downloading...')
-    setToastDescription('You can now add this photo to your fancy site.')
+    setToastDescription('You can now hire me :)')
     setShowToast(true)
   }
 

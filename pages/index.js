@@ -11,7 +11,7 @@ export async function getStaticProps() {
   return {
     props: {
       title: 'Parth Desai',
-      description: 'Obsessed with data',
+      description: 'Obsessed with big data',
       image: '/static/images/home-bw.jpg',
     },
   }
