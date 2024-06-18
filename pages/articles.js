@@ -34,7 +34,7 @@ export async function getStaticProps() {
   return {
     props: {
       title: 'Articles // Parth Desai',
-      tagline: 'Stories. Updates. Guides.',
+      tagline: 'Stories. Experiences. Musings.',
       image: '/static/images/articles-bw.jpg',
       primaryColor: 'yellow',
       secondaryColor: 'pink',

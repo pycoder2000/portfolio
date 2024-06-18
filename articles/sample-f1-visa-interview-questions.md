@@ -200,7 +200,7 @@ If you have any lingering doubts or questions about the questions, don’t hesit
 
 Best of luck to you in your visa application process!
 
-> To learn about the Biometrics procedure, follow this [**link**](https://medium.com/@desaiparth2000/a-complete-guide-for-the-f1-visa-interview-part-i-biometrics-cb46c448e6ac). If you are looking for visa interview prep, click [**here**](https://desaiparth2000.medium.com/a-complete-guide-for-the-f1-visa-interview-part-ii-interview-9170349ba4e). If you’re interested in reading about my Visa interview, you can access it [**here**](https://medium.com/@desaiparth2000/my-f-1-visa-interview-experience-a178648fa7d0).
+> To learn about the Biometrics procedure, follow this [**link**](https://www.parthdesai.site/a-complete-guide-for-the-f1-visa-interview-part-i). If you are looking for visa interview prep, click [**here**](https://www.parthdesai.site/a-complete-guide-for-the-f1-visa-interview-part-ii). If you’re interested in reading about my Visa interview, you can access it [**here**](https://www.parthdesai.site/my-f1-visa-interview-experience).
 
 <p style="text-align: center;">
   <a href="https://desaiparth2000.medium.com/sample-f-1-visa-interview-questions-9654ae41b01b">Read this on Medium</a>

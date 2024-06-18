@@ -7,7 +7,7 @@ date: "2023-05-02"
 
 Congratulations on getting the admit to your dream university! (Even if you didn’t, don’t worry, most students figure it out once they get there). At this point, you have arrived at the pinnacle of your journey. This is the ultimate obstacle that stands between you and your dreams. However, just like all the other challenges you have encountered thus far, this one will be a piece of cake as long as you are well-prepared.
 
-> If you’re interested in reading about my Visa interview, you can access it [**here**](https://medium.com/@desaiparth2000/my-f-1-visa-interview-experience-a178648fa7d0). If you want to read up on my visa experience, you can read it [**here**](https://desaiparth2000.medium.com/my-f-1-visa-interview-experience-a178648fa7d0). And if you’re simply searching for sample Visa questions, click [**here**](https://desaiparth2000.medium.com/sample-f-1-visa-interview-questions-9654ae41b01b).
+> You can find the part 2 of my guide [**here**](https://www.parthdesai.site/a-complete-guide-for-the-f1-visa-interview-part-ii). If you’re interested in reading about my Visa interview, you can access it [**here**](https://www.parthdesai.site/my-f1-visa-interview-experience). And if you’re simply searching for sample Visa questions, click [**here**](https://www.parthdesai.site/sample-f1-visa-interview-questions).
 
 **Biometrics is the easiest part**. Done right, you’ll be out of there in less than an hour. So let’s break it down:
 

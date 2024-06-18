@@ -7,7 +7,7 @@ date: "2023-05-05"
 
 Embarking on a journey to pursue Masters in a foreign country can be both exciting and nerve-wracking. As an international student, securing an F-1 visa is the most crucial step towards fulfilling your dreams of studying in the US. But, the F-1 visa interview process can be intimidating, especially for first-timers. Don’t fret! This guide is designed to help you navigate through the interview process with ease, confidence, and a touch of fun!
 
-> To learn about the Biometrics procedure (Part I), follow this [**link**](https://medium.com/@desaiparth2000/a-complete-guide-for-the-f1-visa-interview-part-i-biometrics-cb46c448e6ac). If you’re interested in reading about my Visa interview, you can access it [**here**](https://medium.com/@desaiparth2000/my-f-1-visa-interview-experience-a178648fa7d0). And if you’re simply searching for sample Visa questions, click [**here**](https://desaiparth2000.medium.com/sample-f-1-visa-interview-questions-9654ae41b01b).
+> To learn about the Biometrics procedure (Part I), follow this [**link**](https://www.parthdesai.site/a-complete-guide-for-the-f1-visa-interview-part-i). If you’re interested in reading about my Visa interview, you can access it [**here**](https://www.parthdesai.site/my-f1-visa-interview-experience). And if you’re simply searching for sample Visa questions, click [**here**](https://www.parthdesai.site/sample-f1-visa-interview-questions).
 
 ## 1. Documents Required
 
@@ -30,9 +30,9 @@ Apart From the above documents you can carry Property Valuation documents, Gold 
 
 ## 2. Prepare for your interview
 
--   Prepare for your interview by reading up on others’ F-1 visa experiences. (You can read mine [**_here_**](https://desaiparth2000.medium.com/my-f-1-visa-interview-experience-a178648fa7d0))
+-   Prepare for your interview by reading up on others’ F-1 visa experiences. (You can read mine [**_here_**](https://www.parthdesai.site/my-f1-visa-interview-experience))
 -   Join visa interview groups on Whatsapp & Telegram.
--   Compile a list of interview questions based on the experiences of others. You can refer to my question bank [**_here_**](https://desaiparth2000.medium.com/sample-f-1-visa-interview-questions-9654ae41b01b). I advise you to create your own question bank and keep adding new ones to it so that you are fully prepared for any curveballs that may come your way during the F-1 visa interview.
+-   Compile a list of interview questions based on the experiences of others. You can refer to my question bank [**_here_**](https://www.parthdesai.site/sample-f1-visa-interview-questions). I advise you to create your own question bank and keep adding new ones to it so that you are fully prepared for any curveballs that may come your way during the F-1 visa interview.
 -   Prepare your answers well and have them reviewed by others preparing for the interview. You can ask for help in the Telegram and Whatsapp groups.
 -   Once you’ve finalised your answers (at least 1 week before your interview), practice them in front of the mirror whenever you find the time. Don’t learn these answers verbatim as the interviewer will catch it if you’ve mugged up these answers. Rather, understand the gist so that you can even prepare your answers on the spot.
 -   **Keep the answers brief and precise.** Your interviewer won’t have time to listen to long paragraphs so keep your answers concise.

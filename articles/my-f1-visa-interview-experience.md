@@ -96,7 +96,7 @@ Hopefully, this article has addressed any fears you had about the visa interview
 
 All the best guys!❤️
 
-> To learn about the Biometrics procedure, follow this [**link**](https://medium.com/@desaiparth2000/a-complete-guide-for-the-f1-visa-interview-part-i-biometrics-cb46c448e6ac). If you are looking for the complete visa interview prep, click [**here**](https://desaiparth2000.medium.com/a-complete-guide-for-the-f1-visa-interview-part-ii-interview-9170349ba4e). And if you’re simply searching for sample Visa questions, click [**here**](https://desaiparth2000.medium.com/sample-f-1-visa-interview-questions-9654ae41b01b).
+> To learn about the Biometrics procedure, follow this [**link**](https://www.parthdesai.site/a-complete-guide-for-the-f1-visa-interview-part-i). If you are looking for the complete visa interview prep, click [**here**](https://www.parthdesai.site/a-complete-guide-for-the-f1-visa-interview-part-ii). And if you’re simply searching for sample Visa questions, click [**here**](https://www.parthdesai.site/sample-f1-visa-interview-questions).
 
 <p style="text-align: center;">
   <a href="https://desaiparth2000.medium.com/my-f-1-visa-interview-experience-a178648fa7d0">Read this on Medium</a>
