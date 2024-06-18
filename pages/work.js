@@ -11,7 +11,7 @@ import stripHtml from '../lib/strip-html'
 export async function getStaticProps() {
   const meta = {
     title: 'Work // Parth Desai',
-    tagline: 'Confs. Meetups. Events.',
+    tagline: 'Architect. Scale. Transform.',
     image: '/static/images/work-bw.jpg',
     primaryColor: 'purple',
     secondaryColor: 'cyan',
