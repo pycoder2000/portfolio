@@ -120,7 +120,7 @@ function About(props) {
             as="a"
             download
             role="button"
-            href="https://drive.google.com/file/d/19Qzw2mYTdmpXLNwF5wypKIwi2jZzDoMD/view?usp=sharing"
+            href="https://drive.google.com/file/d/1XU1FiKk0tJE5PHYPNApq8WSXpiNeVhH5/view?usp=sharing"
             target="_blank"
             style={btnStyle}
             onClick={downloadResume}
