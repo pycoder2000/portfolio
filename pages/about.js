@@ -218,7 +218,7 @@ function About(props) {
       <h2>Bio</h2>
       {renderBio()}
 
-      <h2>Career</h2>
+      <h2>Work</h2>
       {renderAll()}
 
       <Toast

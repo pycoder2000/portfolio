@@ -2,10 +2,10 @@ const items = [
   {
     year: '2024',
     summary: '',
-    talks: [
+    work: [
       {
         title: 'Epic Web Conf',
-        url: 'https://www.epicweb.dev/talks',
+        url: 'https://www.epicweb.dev/work',
         cover: '/static/images/talk-epicweb.jpg',
         date: '2024-04-10',
         where: 'Park City, Utah - USA',
@@ -13,16 +13,17 @@ const items = [
           {
             title: 'The Next Generation of Developer-First Products',
             url: 'https://speakerdeck.com/parthdesai/the-next-generation-of-developer-first-products',
-            video: 'https://www.epicweb.dev/talks/the-next-generation-of-developer-first-products'
+            video:
+              'https://www.epicweb.dev/work/the-next-generation-of-developer-first-products',
           },
         ],
       },
-    ]
+    ],
   },
   {
     year: '2022',
     summary: '',
-    talks: [
+    work: [
       {
         title: 'React Conf Brasil',
         url: 'https://reactconf.com.br',
@@ -31,7 +32,7 @@ const items = [
         presentations: [
           {
             title: 'Launching React Email',
-            video: 'https://youtu.be/rQFupuVA5XQ'
+            video: 'https://youtu.be/rQFupuVA5XQ',
           },
         ],
       },
@@ -55,8 +56,8 @@ const items = [
         where: 'San Francisco, CA - USA',
         presentations: [
           {
-            title: 'The Founder\'s Guide to Developer-led Growth',
-            video: 'https://youtu.be/f0akUJ4YQn4'
+            title: "The Founder's Guide to Developer-led Growth",
+            video: 'https://youtu.be/f0akUJ4YQn4',
           },
         ],
       },
@@ -69,7 +70,7 @@ const items = [
           {
             title: 'The Next Generation of Developer-First Products',
             url: 'https://speakerdeck.com/parthdesai/the-next-generation-of-developer-first-products',
-            video: 'https://youtu.be/ja-Pr58FCIQ'
+            video: 'https://youtu.be/ja-Pr58FCIQ',
           },
         ],
       },
@@ -85,12 +86,12 @@ const items = [
           },
         ],
       },
-    ]
+    ],
   },
   {
     year: '2021',
     summary: '',
-    talks: [
+    work: [
       {
         title: 'Semana SI - UNIFAFIBE',
         url: 'https://unifafibe.com.br/graduacao/sistema_informacao',
@@ -122,7 +123,7 @@ const items = [
   {
     year: '2020',
     summary: '',
-    talks: [
+    work: [
       {
         title: 'DevUmuarama',
         url: 'https://www.facebook.com/devumuarama/',
@@ -154,7 +155,7 @@ const items = [
   {
     year: '2019',
     summary: '',
-    talks: [
+    work: [
       {
         title: 'Liferay DevCon',
         url: 'https://www.liferay.com/web/events-devcon',
@@ -184,7 +185,7 @@ const items = [
   {
     year: '2018',
     summary: '',
-    talks: [
+    work: [
       {
         title: 'Liferay North America Symposium',
         url: 'https://www.liferay.com/web/events-symposium-north-america/',
@@ -201,8 +202,8 @@ const items = [
   },
   {
     year: '2017',
-    summary: '16 talks. 8 different cities in 4 different countries.',
-    talks: [
+    summary: '16 work. 8 different cities in 4 different countries.',
+    work: [
       {
         title: 'Liferay South America Symposium',
         url: 'https://www.liferay.com/web/events-symposium-brazil/',
@@ -372,8 +373,8 @@ const items = [
   },
   {
     year: '2016',
-    summary: '9 talks. 8 different cities in 4 different countries.',
-    talks: [
+    summary: '9 work. 8 different cities in 4 different countries.',
+    work: [
       {
         title: 'Liferay Symposium - South America',
         url: 'https://web.liferay.com/web/events2016/brazil/',
@@ -472,8 +473,8 @@ const items = [
   {
     year: '2015',
     summary:
-      '11 talks and 1 workshop. 7 different cities in 4 different countries.',
-    talks: [
+      '11 work and 1 workshop. 7 different cities in 4 different countries.',
+    work: [
       {
         title: 'Liferay Symposium - South America',
         url: 'https://www.liferay.com/web/events2015/brazil',
@@ -594,8 +595,8 @@ const items = [
   {
     year: '2014',
     summary:
-      '21 talks and 4 workshops. 18 different cities in 8 different countries.',
-    talks: [
+      '21 work and 4 workshops. 18 different cities in 8 different countries.',
+    work: [
       {
         title: "California State Polytechnic University's IWDSA",
         url: 'http://www.iwdsa.org/',
@@ -929,8 +930,8 @@ const items = [
   {
     year: '2013',
     summary:
-      '18 talks and 3 workshops. 12 different cities in 3 different countries.',
-    talks: [
+      '18 work and 3 workshops. 12 different cities in 3 different countries.',
+    work: [
       {
         title: 'HTML5 LA',
         url: 'http://lanyrd.com/2013/html5-los-angeles-2/',
@@ -985,7 +986,7 @@ const items = [
         presentations: [
           {
             title: 'O que eu aprendi em 4 anos como dev front-end',
-            url: 'http://talks.parthdesai.site/2013/frontinaracaju/',
+            url: 'http://work.parthdesai.site/2013/frontinaracaju/',
           },
         ],
       },
@@ -1045,7 +1046,7 @@ const items = [
         presentations: [
           {
             title: 'O que eu aprendi em 4 anos como dev front-end',
-            url: 'http://talks.parthdesai.site/2013/frontinbahia/',
+            url: 'http://work.parthdesai.site/2013/frontinbahia/',
           },
         ],
       },
@@ -1063,7 +1064,7 @@ const items = [
         presentations: [
           {
             title: 'O que eu aprendi em 4 anos como dev front-end',
-            url: 'http://talks.parthdesai.site/2013/secot/',
+            url: 'http://work.parthdesai.site/2013/secot/',
             video: 'https://www.youtube.com/watch?v=qo_k5xppvTI',
           },
         ],
@@ -1140,7 +1141,7 @@ const items = [
         presentations: [
           {
             title: 'Reintroducing AlloyUI',
-            url: 'http://talks.parthdesai.site/2013/alloy-webinar/',
+            url: 'http://work.parthdesai.site/2013/alloy-webinar/',
             video:
               'http://www.liferay.com/video?title=video-web-event-introducing-alloy-2-0',
           },
@@ -1163,8 +1164,8 @@ const items = [
   },
   {
     year: '2012',
-    summary: '24 talks. 13 different cities in 3 different countries.',
-    talks: [
+    summary: '24 work. 13 different cities in 3 different countries.',
+    work: [
       {
         title: 'Liferay Retreat',
         url: '',
@@ -1173,7 +1174,7 @@ const items = [
         presentations: [
           {
             title: 'Alloy UI: Past, Present & Future',
-            url: 'http://talks.parthdesai.site/2012/new-alloy-website/',
+            url: 'http://work.parthdesai.site/2012/new-alloy-website/',
           },
         ],
       },
@@ -1185,7 +1186,7 @@ const items = [
         presentations: [
           {
             title: 'Realidade aumentada com JavaScript',
-            url: 'http://talks.parthdesai.site/2012/devfest',
+            url: 'http://work.parthdesai.site/2012/devfest',
             video:
               'http://www.infoq.com/br/presentations/realidade-aumentada-html5',
           },
@@ -1214,7 +1215,7 @@ const items = [
         presentations: [
           {
             title: 'Como usar HTML5 sem uma máquina do tempo',
-            url: 'http://talks.parthdesai.site/2012/ideais',
+            url: 'http://work.parthdesai.site/2012/ideais',
           },
         ],
       },
@@ -1227,7 +1228,7 @@ const items = [
         presentations: [
           {
             title: 'Realidade aumentada com JavaScript',
-            url: 'http://talks.parthdesai.site/2012/simonsen/',
+            url: 'http://work.parthdesai.site/2012/simonsen/',
           },
         ],
       },
@@ -1253,7 +1254,7 @@ const items = [
         presentations: [
           {
             title: 'O que eu aprendi em 3 anos como dev front-end',
-            url: 'http://talks.parthdesai.site/2012/frontinmaceio/',
+            url: 'http://work.parthdesai.site/2012/frontinmaceio/',
           },
         ],
       },
@@ -1265,7 +1266,7 @@ const items = [
         presentations: [
           {
             title: 'Realidade aumentada com JavaScript',
-            url: 'http://talks.parthdesai.site/2012/w3c/',
+            url: 'http://work.parthdesai.site/2012/w3c/',
           },
         ],
       },
@@ -1277,7 +1278,7 @@ const items = [
         presentations: [
           {
             title: 'Arte digital na web: onde começar?',
-            url: 'http://talks.parthdesai.site/2012/rcuritiba/',
+            url: 'http://work.parthdesai.site/2012/rcuritiba/',
             video: 'http://www.youtube.com/watch?v=V8QZMO8rr8g',
           },
         ],
@@ -1290,7 +1291,7 @@ const items = [
         presentations: [
           {
             title: 'O que eu aprendi em 3 anos como dev front-end',
-            url: 'http://talks.parthdesai.site/2012/frontinmaringa/',
+            url: 'http://work.parthdesai.site/2012/frontinmaringa/',
           },
         ],
       },
@@ -1302,7 +1303,7 @@ const items = [
         presentations: [
           {
             title: 'Como fugir do feijão com arroz usando Canvas, SVG e WebGL',
-            url: 'http://talks.parthdesai.site/2012/souwebpel/',
+            url: 'http://work.parthdesai.site/2012/souwebpel/',
           },
         ],
       },
@@ -1315,7 +1316,7 @@ const items = [
         presentations: [
           {
             title: 'Como não virar um Zumbi: Kit de sobrevivência',
-            url: 'http://talks.parthdesai.site/2012/braziljs/',
+            url: 'http://work.parthdesai.site/2012/braziljs/',
           },
         ],
       },
@@ -1328,7 +1329,7 @@ const items = [
         presentations: [
           {
             title: 'Canvas, SVG e WebGL',
-            url: 'http://talks.parthdesai.site/2012/tablelessconf/',
+            url: 'http://work.parthdesai.site/2012/tablelessconf/',
           },
         ],
       },
@@ -1340,7 +1341,7 @@ const items = [
         presentations: [
           {
             title: 'Mitos do Front-end',
-            url: 'http://talks.parthdesai.site/2012/tdc-sc/',
+            url: 'http://work.parthdesai.site/2012/tdc-sc/',
           },
         ],
       },
@@ -1352,7 +1353,7 @@ const items = [
         presentations: [
           {
             title: 'CSS Sucks!',
-            url: 'http://talks.parthdesai.site/2012/frontinpoa/',
+            url: 'http://work.parthdesai.site/2012/frontinpoa/',
           },
         ],
       },
@@ -1364,7 +1365,7 @@ const items = [
         presentations: [
           {
             title: 'Mitos do Front-end',
-            url: 'http://talks.parthdesai.site/2012/qconsp/',
+            url: 'http://work.parthdesai.site/2012/qconsp/',
             video:
               'http://www.infoq.com/br/presentations/mitos-desenvolvimento-frontend',
           },
@@ -1378,7 +1379,7 @@ const items = [
         presentations: [
           {
             title: 'Como fugir do feijão com arroz usando Canvas, SVG e WebGL',
-            url: 'http://talks.parthdesai.site/2012/fisl/',
+            url: 'http://work.parthdesai.site/2012/fisl/',
             video: 'http://www.youtube.com/watch?v=ukjHPwg74ik',
           },
         ],
@@ -1392,7 +1393,7 @@ const items = [
         presentations: [
           {
             title: 'CSS Sucks!',
-            url: 'http://talks.parthdesai.site/2012/frontinbh/',
+            url: 'http://work.parthdesai.site/2012/frontinbh/',
             video: 'https://www.youtube.com/watch?v=E7FQCHBicO0',
           },
         ],
@@ -1405,7 +1406,7 @@ const items = [
         presentations: [
           {
             title: 'Como usar HTML5 sem uma máquina do tempo',
-            url: 'http://talks.parthdesai.site/2012/tdc-sp/',
+            url: 'http://work.parthdesai.site/2012/tdc-sp/',
           },
         ],
       },
@@ -1417,7 +1418,7 @@ const items = [
         presentations: [
           {
             title: 'Como usar HTML5 sem uma máquina do tempo',
-            url: 'http://talks.parthdesai.site/2012/frontincuritiba/',
+            url: 'http://work.parthdesai.site/2012/frontincuritiba/',
           },
         ],
       },
@@ -1430,7 +1431,7 @@ const items = [
         presentations: [
           {
             title: 'CSS Sucks!',
-            url: 'http://talks.parthdesai.site/2012/frontinrio/',
+            url: 'http://work.parthdesai.site/2012/frontinrio/',
           },
         ],
       },
@@ -1442,7 +1443,7 @@ const items = [
         presentations: [
           {
             title: 'How to use Canvas, SVG and WebGL without a time machine',
-            url: 'http://talks.parthdesai.site/2012/jsconf/',
+            url: 'http://work.parthdesai.site/2012/jsconf/',
             video: 'http://blip.tv/jsconfar/zeno_rocha-6279969',
           },
         ],
@@ -1456,7 +1457,7 @@ const items = [
         presentations: [
           {
             title: 'Como fugir do feijão com arroz usando Canvas, SVG e WebGL',
-            url: 'http://talks.parthdesai.site/2012/pernambucojs/',
+            url: 'http://work.parthdesai.site/2012/pernambucojs/',
           },
         ],
       },
@@ -1469,7 +1470,7 @@ const items = [
         presentations: [
           {
             title: 'Como usar HTML5 sem uma máquina do tempo',
-            url: 'http://talks.parthdesai.site/2012/beagajs/',
+            url: 'http://work.parthdesai.site/2012/beagajs/',
           },
         ],
       },
@@ -1477,8 +1478,8 @@ const items = [
   },
   {
     year: '2011',
-    summary: '4 talks. 1 country in 4 different cities.',
-    talks: [
+    summary: '4 work. 1 country in 4 different cities.',
+    work: [
       {
         title: 'Sampa.JS',
         url: 'http://lanyrd.com/2011/sampajs/',
@@ -1537,7 +1538,7 @@ const items = [
   {
     year: '2010',
     summary: 'And suddenly I started to give presentations...',
-    talks: [
+    work: [
       {
         title: 'V Convescote Caos!',
         date: '2010-08-10',

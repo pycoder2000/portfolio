@@ -1,7 +1,7 @@
-import { useState } from 'react'
-import Image from 'next/image'
-import { styled } from '../stitches.config'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
+import { useState } from 'react'
+import { styled } from '../stitches.config'
 
 export default function FeaturedTalk(props) {
   const { talk } = props
@@ -35,7 +35,7 @@ function Animation(props) {
     >
       {isHovered && (
         <AnimHovered
-          layoutId="featuredTalks"
+          layoutId="featuredwork"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}

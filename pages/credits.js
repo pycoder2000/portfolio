@@ -7,7 +7,7 @@ export async function getStaticProps() {
   const meta = {
     title: 'Credits // Parth Desai',
     description:
-      "It's important to recognize those who volunteer their time and resources to create amazing content and male it available for free.",
+      "It's important to recognize those who volunteer their time and resources to create amazing content and make it available for free.",
     tagline: 'Credits.',
     image: '/static/images/credits-bw.jpg',
     primaryColor: 'cyan',

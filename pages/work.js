@@ -4,15 +4,15 @@ import Head from 'next/head'
 import React from 'react'
 import { Box } from '../components/Box'
 import FeaturedTalk from '../components/FeaturedTalk'
-import items from '../data/talks'
+import items from '../data/work'
 import Base from '../layouts/Base'
 import stripHtml from '../lib/strip-html'
 
 export async function getStaticProps() {
   const meta = {
-    title: 'Talks // Parth Desai',
+    title: 'Work // Parth Desai',
     tagline: 'Confs. Meetups. Events.',
-    image: '/static/images/talks-bw.jpg',
+    image: '/static/images/work-bw.jpg',
     primaryColor: 'purple',
     secondaryColor: 'cyan',
   }
@@ -20,13 +20,13 @@ export async function getStaticProps() {
   return { props: meta }
 }
 
-function Talks(props) {
+function Work(props) {
   const renderFeatured = () => {
     const featured = ['Epic Web Conf', 'Nordic.JS', 'SFHTML5']
 
     return items
       .map(item => {
-        return item.talks.filter(talk => featured.includes(talk.title))
+        return item.work.filter(talk => featured.includes(talk.title))
       })
       .filter(item => {
         if (item.length > 0) {
@@ -44,7 +44,7 @@ function Talks(props) {
         <div key={index}>
           <h3>{item.year}</h3>
           <p>{item.summary}</p>
-          {item.talks.map((talk, tIndex) => {
+          {item.work.map((talk, tIndex) => {
             return <TalkItem key={tIndex} talk={talk} />
           })}
         </div>
@@ -52,18 +52,18 @@ function Talks(props) {
     })
   }
 
-  const getTotalTalks = () => {
+  const getTotalWork = () => {
     let total = 0
 
     for (let i = 0; i < items.length; i++) {
-      total += items[i].talks.length
+      total += items[i].work.length
     }
 
     return total
   }
 
   const { title, image } = props
-  const description = `I went my first conference in 2010 and felt in love with <strong>sharing knowledge</strong> publicly. Since then, I traveled to <strong>11 countries</strong> and gave more than <strong>${getTotalTalks()} talks</strong>. Want me to speak at your event? Hit me up!`
+  const description = `I went my first conference in 2010 and felt in love with <strong>sharing knowledge</strong> publicly. Since then, I traveled to <strong>11 countries</strong> and gave more than <strong>${getTotalWork()} work</strong>. Want me to speak at your event? Hit me up!`
 
   return (
     <>
@@ -72,17 +72,17 @@ function Talks(props) {
         <meta content={title} property="og:title" />
         <meta content={stripHtml(description)} name="description" />
         <meta content={stripHtml(description)} property="og:description" />
-        <meta content="https://parthdesai.site/talks" property="og:url" />
+        <meta content="https://parthdesai.site/work" property="og:url" />
         <meta content={`https://parthdesai.site${image}`} property="og:image" />
       </Head>
 
       <AnimateSharedLayout>
         <p dangerouslySetInnerHTML={{ __html: description }} />
 
-        <h2>Featured Talks</h2>
+        <h2>Featured Work</h2>
         <Box css={{ margin: '10px 0 0 -20px' }}>{renderFeatured()}</Box>
 
-        <h2>All Talks</h2>
+        <h2>All Work</h2>
         {renderAll()}
       </AnimateSharedLayout>
     </>
@@ -132,6 +132,6 @@ function TalkItem(props) {
   )
 }
 
-Talks.Layout = Base
+Work.Layout = Base
 
-export default Talks
+export default Work

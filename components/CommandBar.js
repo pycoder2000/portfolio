@@ -16,12 +16,10 @@ import copyLinkIcon from '../public/static/icons/copy-link.json'
 import creditsIcon from '../public/static/icons/credits.json'
 import emailIcon from '../public/static/icons/email.json'
 import homeIcon from '../public/static/icons/home.json'
-import investingIcon from '../public/static/icons/investing.json'
-import podcastsIcon from '../public/static/icons/podcasts.json'
 import projectsIcon from '../public/static/icons/projects.json'
 import sourceIcon from '../public/static/icons/source.json'
-import talksIcon from '../public/static/icons/talks.json'
 import usesIcon from '../public/static/icons/uses.json'
+import workIcon from '../public/static/icons/work.json'
 import { styled } from '../stitches.config'
 import { Box } from './Box'
 import Toast from './Toast'
@@ -34,7 +32,7 @@ export default function CommandBar(props) {
   const aboutRef = useRef()
   const articlesRef = useRef()
   const projectsRef = useRef()
-  const talksRef = useRef()
+  const workRef = useRef()
   const podcastsRef = useRef()
   const investingRef = useRef()
   const usesRef = useRef()
@@ -171,17 +169,17 @@ export default function CommandBar(props) {
       ),
     },
     {
-      id: 'talks',
-      name: 'Talks',
+      id: 'work',
+      name: 'Work',
       shortcut: ['g', 't'],
-      keywords: 'go-talks',
+      keywords: 'go-work',
       section: 'Go To',
-      perform: () => router.push('/talks'),
+      perform: () => router.push('/work'),
       icon: (
         <Lottie
-          lottieRef={talksRef}
+          lottieRef={workRef}
           style={iconSize}
-          animationData={talksIcon}
+          animationData={workIcon}
           loop={false}
           autoplay={false}
         />
