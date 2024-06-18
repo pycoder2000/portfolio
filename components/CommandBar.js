@@ -187,40 +187,40 @@ export default function CommandBar(props) {
         />
       ),
     },
-    {
-      id: 'podcasts',
-      name: 'Podcasts',
-      shortcut: ['g', 'c'],
-      keywords: 'go-podcasts',
-      section: 'Go To',
-      perform: () => router.push('/podcasts'),
-      icon: (
-        <Lottie
-          lottieRef={podcastsRef}
-          style={iconSize}
-          animationData={podcastsIcon}
-          loop={false}
-          autoplay={false}
-        />
-      ),
-    },
-    {
-      id: 'investing',
-      name: 'Investing',
-      shortcut: ['g', 'i'],
-      keywords: 'go-investing',
-      section: 'Go To',
-      perform: () => router.push('/investing'),
-      icon: (
-        <Lottie
-          lottieRef={investingRef}
-          style={iconSize}
-          animationData={investingIcon}
-          loop={false}
-          autoplay={false}
-        />
-      ),
-    },
+    // {
+    //   id: 'podcasts',
+    //   name: 'Podcasts',
+    //   shortcut: ['g', 'c'],
+    //   keywords: 'go-podcasts',
+    //   section: 'Go To',
+    //   perform: () => router.push('/podcasts'),
+    //   icon: (
+    //     <Lottie
+    //       lottieRef={podcastsRef}
+    //       style={iconSize}
+    //       animationData={podcastsIcon}
+    //       loop={false}
+    //       autoplay={false}
+    //     />
+    //   ),
+    // },
+    // {
+    //   id: 'investing',
+    //   name: 'Investing',
+    //   shortcut: ['g', 'i'],
+    //   keywords: 'go-investing',
+    //   section: 'Go To',
+    //   perform: () => router.push('/investing'),
+    //   icon: (
+    //     <Lottie
+    //       lottieRef={investingRef}
+    //       style={iconSize}
+    //       animationData={investingIcon}
+    //       loop={false}
+    //       autoplay={false}
+    //     />
+    //   ),
+    // },
     {
       id: 'uses',
       name: 'Uses',

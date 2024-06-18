@@ -74,11 +74,6 @@ const items = [
         url: 'https://github.com/pycoder2000/Car-Price-Prediction',
         active: false,
       },
-      {
-        title: 'Dracula UI',
-        url: 'https://draculatheme.com/ui',
-        active: false,
-      },
     ],
   },
   {
