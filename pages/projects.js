@@ -21,7 +21,7 @@ export async function getStaticProps() {
 
 function Projects(props) {
   const renderFeatured = () => {
-    const featured = ['Dracula', 'Clipboard.js', 'Glassdoor', 'React Email']
+    const featured = ['GRE Prep Tool', 'Stocker', 'Musing', 'Instant MD']
 
     return items
       .map(item => {
@@ -64,7 +64,7 @@ function Projects(props) {
   }
 
   const { title, image } = props
-  const description = `I'm obsessed with side projects and <strong>building in public</strong>. Here you can navigate to <strong>${getTotalProjects()} different</strong> websites, apps, and libraries I built. Some projects are still active, others have been discontinued.`
+  const description = `I love building <strong>side projects</strong>. Here you can navigate to all <strong>${getTotalProjects()} projects</strong> that I have built.`
 
   return (
     <>
