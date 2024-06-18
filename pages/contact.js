@@ -10,7 +10,7 @@ export async function getStaticProps() {
   const meta = {
     title: 'Contact // Parth Desai',
     tagline: 'Email me. Like in the old days.',
-    image: '/static/images/reminder-bw.jpg',
+    image: '/static/images/contact-bw.jpg',
     primaryColor: 'cyan',
     secondaryColor: 'green',
   }

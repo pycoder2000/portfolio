@@ -41,7 +41,7 @@ function About(props) {
         <Section>
           <Image
             alt="Parth"
-            src="/static/images/avatar-bw.jpg"
+            src="/static/images/avatar.jpg"
             width="336"
             height="336"
             placeholder="blur"

@@ -13,12 +13,12 @@ import { forwardRef, useRef, useState } from 'react'
 import aboutIcon from '../public/static/icons/about.json'
 import articlesIcon from '../public/static/icons/articles.json'
 import copyLinkIcon from '../public/static/icons/copy-link.json'
+import creditsIcon from '../public/static/icons/credits.json'
 import emailIcon from '../public/static/icons/email.json'
 import homeIcon from '../public/static/icons/home.json'
 import investingIcon from '../public/static/icons/investing.json'
 import podcastsIcon from '../public/static/icons/podcasts.json'
 import projectsIcon from '../public/static/icons/projects.json'
-import reminderIcon from '../public/static/icons/reminder.json'
 import sourceIcon from '../public/static/icons/source.json'
 import talksIcon from '../public/static/icons/talks.json'
 import usesIcon from '../public/static/icons/uses.json'
@@ -38,7 +38,7 @@ export default function CommandBar(props) {
   const podcastsRef = useRef()
   const investingRef = useRef()
   const usesRef = useRef()
-  const reminderRef = useRef()
+  const creditsRef = useRef()
   const router = useRouter()
   const [showToast, setShowToast] = useState(false)
 
@@ -239,17 +239,17 @@ export default function CommandBar(props) {
       ),
     },
     {
-      id: 'reminder',
-      name: 'Reminder',
+      id: 'credits',
+      name: 'Credits',
       shortcut: ['g', 'r'],
-      keywords: 'go-reminder',
+      keywords: 'go-credits',
       section: 'Go To',
-      perform: () => router.push('/reminder'),
+      perform: () => router.push('/credits'),
       icon: (
         <Lottie
-          lottieRef={reminderRef}
+          lottieRef={creditsRef}
           style={iconSize}
-          animationData={reminderIcon}
+          animationData={creditsIcon}
           loop={false}
           autoplay={false}
         />
