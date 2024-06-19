@@ -41,10 +41,8 @@ function Credits(props) {
         <meta content="https://parthdesai.site/credits" property="og:url" />
         <meta content={`https://parthdesai.site${image}`} property="og:image" />
       </Head>
-      <strong>
-        It's important to recognize those who volunteer their time and resources
-        to create amazing content and male it available for free.
-      </strong>
+      <p dangerouslySetInnerHTML={{ __html: description }} />
+      <hr style={{ border: '0.5px solid white', margin: '20px 0' }} />
       {renderCredits()}
     </>
   )
