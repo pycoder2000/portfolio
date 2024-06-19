@@ -24,7 +24,7 @@ const awards = [
           'Winner of the HealthCare Track at Mined Hackathon. Mined is a Nationwide Hackathon organized by Nirma University in collaboration with Binghamton University where 629 students participated from over 20 colleges.',
       },
       {
-        title: 'Second Place In Inter-University Aptitude Quiz',
+        title: 'Second Place in Inter-University Aptitude Quiz',
         url: 'https://drive.google.com/file/d/18ZgJZQMJMA3SsfJ24qcwlVItcPzAPo6o/view?usp=sharing',
         date: '2021-04-16',
         by: 'Nirma University',

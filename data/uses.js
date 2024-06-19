@@ -48,17 +48,6 @@ const categories = [
     ],
   },
   {
-    name: 'Coding',
-    items: [
-      {
-        title: 'VSCode',
-        description:
-          'After using Sublime for many years, I moved to VSCode like everybody else.',
-        url: 'https://code.visualstudio.com',
-      },
-    ],
-  },
-  {
     name: 'Note-Taking',
     items: [
       {
@@ -80,7 +69,7 @@ const categories = [
       {
         title: 'iTerm2',
         description:
-          'Much better than the default terminal. Plus you can supercharge it with the <a href="https://gist.github.com/pycoder2000" target="_blank">dotfiles</a> I have provided',
+          'Much better than the default terminal. Plus you can supercharge it with the <a href="https://gist.github.com/pycoder2000" target="_blank">dotfiles</a> I have provided.',
         url: 'https://iterm2.com/',
       },
       {
@@ -113,17 +102,17 @@ const categories = [
       },
       {
         title: 'Kap',
-        description: 'I use it for screensharing',
+        description: 'I use it for screensharing.',
         url: 'https://getkap.co/',
       },
       {
         title: 'Rectangle',
-        description: 'My choice of window management app',
+        description: 'My choice of window management app.',
         url: 'https://rectangleapp.com/',
       },
       {
         title: 'Plume',
-        description: 'Quick way to jot down notes directly from Mac menubar',
+        description: 'Quick way to jot down notes directly from Mac menubar.',
         url: 'https://apps.apple.com/us/app/plume-light-menubar-note/id1513115773?mt=12',
       },
     ],
