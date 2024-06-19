@@ -2,7 +2,7 @@ import { AnimateSharedLayout } from 'framer-motion'
 import Head from 'next/head'
 import { ListGroup } from '../components/ListGroup'
 import ListItem from '../components/ListItem'
-import { appearances, bytetalk, zofe } from '../data/podcasts'
+import { appearances, bytework, zofe } from '../data/podcasts'
 import Base from '../layouts/Base'
 import stripHtml from '../lib/strip-html'
 
@@ -56,7 +56,7 @@ function Podcasts(props) {
   }
 
   const { title, image } = props
-  const description = `Audio is a powerful medium and a great way to <strong>debate ideas</strong>. Whenever possible I try to share my story as a guest or <strong>meet new people</strong> by hosting my own podcast called ByteTalk.`
+  const description = `Audio is a powerful medium and a great way to <strong>debate ideas</strong>. Whenever possible I try to share my story as a guest or <strong>meet new people</strong> by hosting my own podcast called ByteWork.`
 
   return (
     <>
@@ -75,12 +75,12 @@ function Podcasts(props) {
         <h2>Featured Podcasts</h2>
         <ListGroup>{renderFeatured(appearances)}</ListGroup>
 
-        <h2>ByteTalk</h2>
+        <h2>ByteWork</h2>
         <p>
           A podcast where Jonni and I interview the most productive people in
           tech.
         </p>
-        <ListGroup>{renderEpisode(bytetalk)}</ListGroup>
+        <ListGroup>{renderEpisode(bytework)}</ListGroup>
 
         <h2>Appearances</h2>
         <p>
@@ -90,7 +90,7 @@ function Podcasts(props) {
 
         <h2>Zone Of Front-Enders</h2>
         <p>
-          My first podcast, ZOFE, where Daniel and I talked about web
+          My first podcast, ZOFE, where Daniel and I worked about web
           technologies.
         </p>
         <ListGroup>{renderEpisode(zofe)}</ListGroup>

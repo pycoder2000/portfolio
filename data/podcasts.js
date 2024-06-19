@@ -1,4 +1,4 @@
-const bytetalk = [
+const bytework = [
   {
     date: '2021-08-25',
     title: 'The Intersection Between Tech and Social Impact with Gary Carrier',
@@ -11,7 +11,8 @@ const bytetalk = [
   },
   {
     date: '2021-08-11',
-    title: 'A/B Testing, Engineering Culture, and Developer Experience with Bruno Passos',
+    title:
+      'A/B Testing, Engineering Culture, and Developer Experience with Bruno Passos',
     url: 'https://youtu.be/YiW-OukfQWU',
   },
   {
@@ -234,5 +235,4 @@ const zofe = [
   },
 ]
 
-export { appearances, bytetalk, zofe }
-
+export { appearances, bytework, zofe }

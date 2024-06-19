@@ -1,26 +1,21 @@
 import { motion } from 'framer-motion'
-import Image from 'next/image'
 import { useState } from 'react'
 import { styled } from '../stitches.config'
 
-export default function FeaturedTalk(props) {
-  const { talk } = props
+export default function FeaturedWork(props) {
+  const { work } = props
 
   return (
-    <Talk href={talk.presentations[0].video} target="_blank">
+    <Work>
       <Animation index={props.index}>
         <Content>
-          <ImageContainer>
-            <Image src={talk.cover} alt={talk.title} width="250" height="138" />
-          </ImageContainer>
           <div>
-            <Title css={{ margin: 0 }}>{talk.presentations[0].title}</Title>
-            <Paragraph>{talk.where}</Paragraph>
-            <Paragraph>{talk.title}</Paragraph>
+            <Title css={{ margin: 0 }}>{work.jobTitle}</Title>
+            <Paragraph>{work.company}</Paragraph>
           </div>
         </Content>
       </Animation>
-    </Talk>
+    </Work>
   )
 }
 
@@ -47,7 +42,7 @@ function Animation(props) {
   )
 }
 
-const Talk = styled('a', {
+const Work = styled('a', {
   marginTop: 20,
   border: 0,
   textDecoration: 'none',
@@ -58,13 +53,6 @@ const Content = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   height: 'auto',
-  '@bp2': { flexDirection: 'row', height: 140 },
-})
-
-const ImageContainer = styled('div', {
-  marginRight: '20px',
-  width: '250px',
-  '& img': { filter: 'grayscale(1)' },
 })
 
 const Title = styled('h3', {

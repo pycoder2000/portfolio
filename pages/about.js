@@ -1,4 +1,3 @@
-import { format, intervalToDuration, parseISO } from 'date-fns'
 import Lottie from 'lottie-react'
 import Head from 'next/head'
 import Image from 'next/image'
@@ -6,7 +5,6 @@ import React from 'react'
 import { ButtonPrimary } from '../components/ButtonPrimary'
 import Pronunciation from '../components/Pronunciation'
 import Toast from '../components/Toast'
-import items from '../data/about'
 import Base from '../layouts/Base'
 import stripHtml from '../lib/strip-html'
 import copyBioIcon from '../public/static/icons/copy-bio.json'
@@ -141,52 +139,6 @@ function About(props) {
     )
   }
 
-  const renderAll = () => {
-    return items.map((item, index) => {
-      return (
-        <div style={{ marginBottom: 40 }} key={index}>
-          <h3>{item.jobTitle}</h3>
-          <p style={{ margin: 0 }}>
-            <a href={item.companyUrl} target="_blank">
-              {item.company}
-            </a>
-            <span> • {item.location}</span>
-          </p>
-          <p style={{ margin: 0 }}>
-            <span>{format(parseISO(item.startDate), 'LLL yyyy')}</span>
-            <span> – </span>
-            <span>
-              {item.endDate
-                ? format(parseISO(item.endDate), 'LLL yyyy')
-                : 'Present'}
-            </span>
-            <span> • </span>
-            <span>{getDuration(item.startDate, item.endDate)}</span>
-          </p>
-        </div>
-      )
-    })
-  }
-
-  const getDuration = (startDate, endDate) => {
-    const durationObj = intervalToDuration({
-      start: parseISO(startDate),
-      end: endDate ? parseISO(endDate) : new Date(),
-    })
-
-    let durationStr = ''
-
-    if (durationObj.years > 1) {
-      durationStr = `${durationObj.years} yrs `
-    } else if (durationObj.years === 1) {
-      durationStr = `${durationObj.years} yr `
-    }
-
-    durationStr += `${durationObj.months} mos`
-
-    return durationStr
-  }
-
   const downloadResume = () => {
     setToastTitle('Downloading...')
     setToastDescription('You can now hire me :)')
@@ -217,9 +169,6 @@ function About(props) {
 
       <h2>Bio</h2>
       {renderBio()}
-
-      <h2>Work</h2>
-      {renderAll()}
 
       <Toast
         title={toastTitle}

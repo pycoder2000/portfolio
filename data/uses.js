@@ -156,7 +156,7 @@ const categories = [
       {
         title: 'Kindle Paperwhite 11th Gen',
         description:
-          "It' the perfect kindle for light reading. Portable enough to fit in your pocket.",
+          "It's the perfect kindle for light reading. Portable enough to fit in your pocket.",
         url: 'https://a.co/d/4ISrXxM',
       },
     ],
