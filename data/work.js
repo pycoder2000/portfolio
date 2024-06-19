@@ -4,12 +4,12 @@ const items = [
     company: 'Glassdoor',
     companyUrl: 'https://glassdoor.com',
     startDate: '2024-05-28',
-    endDate: '2024-08-16',
     location: 'San Francisco, California',
     description: [
       'Developed ETL pipelines to process large volumes of data.',
       'Collaborated with data scientists to optimize data workflows.',
       'Implemented data quality checks to ensure data accuracy.',
+      'Skills: Apache Kafka · Confluent Kafka',
     ],
   },
   {
@@ -20,9 +20,10 @@ const items = [
     endDate: '2024-03-15',
     location: 'San Francisco, California',
     description: [
-      'Assisted in the development of data processing algorithms.',
-      'Performed data analysis to support research projects.',
-      'Managed large datasets and ensured their integrity.',
+      'Migrated Python scripts to Spark, cutting app processing times by 40%, and boosting performance and operational efficiency.',
+      'Automated Algolia search index creation for drug data, achieving sub-100ms search result delivery, enhancing user experience.',
+      'Implemented an OpenAI-powered chatbot trained on FDA drug data for the app, offering safe drug suggestions to users, thereby improving customer engagement.',
+      'Skills: Amazon DynamoDB · Algolia · Amazon S3 · Apache Spark · Data Preparation',
     ],
   },
   {
@@ -33,9 +34,9 @@ const items = [
     endDate: '2024-05-30',
     location: 'San Francisco, California',
     description: [
-      'Provided support for graduate-level courses.',
-      'Conducted research and assisted in academic projects.',
-      'Organized and led study groups for students.',
+      'Streamlined Qualtrics survey data processing, employing advanced cleaning and transformation techniques, enhancing data quality by 30%, and accelerating analysis readiness.',
+      'Generated actionable insights from survey data through efficient analytics and reporting, increasing data-driven decisions.',
+      'Skills: Qualtrics · Microsoft Excel',
     ],
   },
   {
@@ -46,9 +47,12 @@ const items = [
     endDate: '2023-07-21',
     location: 'Gujarat, India',
     description: [
-      'Designed and implemented data architectures.',
-      'Developed data integration solutions for clients.',
-      'Mentored junior engineers and interns.',
+      'Spearheaded the migration of 39 AWS-backed Tableau Dashboards to GCP, requiring complex SQL query replication, enhancing dashboard performance by 30% and cutting operational costs by 25%.',
+      'Developed Python scripts for RDS and Redshift migrations, cutting DB update time by 98.33% through efficient SQL generation.',
+      'Designed and implemented distributed computing solutions using Apache Spark and EKS, optimizing data processing workflows.',
+      'Led a 3-person team to develop a user-friendly web application that automates the generation of Python Airflow DAGs, enhancing workflow automation.',
+      'Engineered and deployed a robust solution on EKS using Helm for executing CRUD operations on DAGs across diverse environments such as on-premise, Amazon MWAA, and Google Cloud Composer, streamlining deployment processes.',
+      'Skills: AWS Identity and Access Management (AWS IAM) · Amazon Elastic MapReduce (EMR) · Amazon S3 · Azure Data Factory · Java · Apache Kafka · Python · Apache Spark · SQL · Google Cloud Platform (GCP) · Amazon Web Services (AWS) · Scala · Apache Airflow · Data Engineering · Data Analytics',
     ],
   },
   {
@@ -59,9 +63,10 @@ const items = [
     endDate: '2022-06-21',
     location: 'Gujarat, India',
     description: [
-      'Supported the development of data pipelines.',
-      'Assisted in the migration of data systems.',
-      'Conducted data quality assessments.',
+      'Developed AWS Lambda functions and integrated with SNS Queue, reducing manual tasks, and cutting migration time, enhancing overall efficiency by 40%.',
+      'Crafted an Encryption & Hashing module utilizing Scala and Spark for our ETL platform which bolstered data security in transit.',
+      'Automated ETL pipelines for clients, aligning with key KPIs, which enhanced data accuracy and workflow efficiency, leading to a 20% increase in client satisfaction.',
+      'Skills: Python · Scala · Apache Spark',
     ],
   },
   {
@@ -72,9 +77,11 @@ const items = [
     endDate: '2021-06-30',
     location: 'Gujarat, India',
     description: [
-      'Analyzed healthcare data to identify trends.',
-      'Developed predictive models for patient outcomes.',
-      'Collaborated with healthcare professionals to implement data-driven solutions.',
+      'Developed a pipeline for extracting critical healthcare information from informal patient-doctor conversations.',
+      'Led the launch of a Django-based web application, for secure analysis and storage of patient reports, improving data security and access efficiency by 40%.',
+      'Played a pivotal role in the MongoDB database design & architecture during the initial phase, establishing foundational models.',
+      'Engineered a Bio-BERT and Regex-powered parsing bot, to automate key data extraction from reports.',
+      'Skills: Leadership · Python · Regex · Django · SQL · NLP · BERT Language Model',
     ],
   },
 ]
