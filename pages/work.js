@@ -67,7 +67,7 @@ function Work(props) {
   }
 
   const { title, image } = props
-  const description = `My journey with Big Data began in 2022, and I instantly fell in love with <strong>Data Engineering</strong>. Since then, I've dedicated myself to working with data at every opportunity, accumulating <strong>${getTotalWork()} stints</strong> of hands-on experience. Want me to work with you? Let's connect!`
+  const description = `My journey with Big Data began in 2022, and I instantly fell in love with <strong>Data Engineering</strong>. Since then, I've dedicated myself to working with data at every opportunity, accumulating <strong>${getTotalWork()} stints</strong> of hands-on experience. Want me to work with you? <a href="https://www.parthdesai.site/contact" target="_blank">Let's connect!</a>`
 
   return (
     <>

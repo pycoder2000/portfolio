@@ -64,8 +64,14 @@ function About(props) {
             Data Science & Artificial Intelligence.
           </Paragraph>
           <Paragraph>
-            I love <strong>connecting</strong> with fellow nerds over the
-            weekend. When I'm not working, you'll find me{' '}
+            I love{' '}
+            <strong>
+              <a href="https://www.parthdesai.site/contact" target="_blank">
+                connecting
+              </a>
+            </strong>{' '}
+            with fellow nerds over the weekend. When I'm not working, you'll
+            find me{' '}
             <strong>
               <a href="https://x.com/_ParthDesai_" target="_blank">
                 tweeting

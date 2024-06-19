@@ -20,16 +20,18 @@ export async function getStaticProps() {
 
 function Contact(props) {
   const { title, image } = props
-  const description = `<strong>I love chatting</strong> with software engineers, tech founders, students, and creators. <strong>I'm a busy person</strong>, so I can't promise that I'll reply to your email right away, but I'll try my best to respond in a timely manner.`
+  const description = `<strong>I love chatting</strong> with software engineers, tech founders, students, and geeks. I promise that I'll try to reply to your email in a timely manner.`
   const [isEmailSent, setIsEmailSent] = React.useState(undefined)
   const [showToast, setShowToast] = React.useState(false)
 
-  const onSendEmail = async (e) => {
+  const onSendEmail = async e => {
     e.preventDefault()
 
     try {
       const isProd = process.env.NODE_ENV === 'production'
-      const base = isProd ? 'https://www.parthdesai.site' : 'http://localhost:3000'
+      const base = isProd
+        ? 'https://www.parthdesai.site'
+        : 'http://localhost:3000'
 
       await fetch(`${base}/api/email`, {
         method: 'POST',
@@ -43,8 +45,7 @@ function Contact(props) {
 
       setIsEmailSent(true)
       setShowToast(true)
-    }
-    catch(e) {
+    } catch (e) {
       console.error(e)
       setIsEmailSent(false)
       setShowToast(true)
@@ -72,11 +73,21 @@ function Contact(props) {
           </FormGroup>
           <FormGroup>
             <Label htmlFor="email">Email</Label>
-            <Input id="email" type="email" placeholder="james@bond.com" required />
+            <Input
+              id="email"
+              type="email"
+              placeholder="james@bond.com"
+              required
+            />
           </FormGroup>
           <FormGroup>
             <Label htmlFor="message">Message</Label>
-            <Textarea id="message" placeholder="How can I help you?" rows="4" required />
+            <Textarea
+              id="message"
+              placeholder="How can I help you?"
+              rows="4"
+              required
+            />
           </FormGroup>
           <FormGroup>
             <Button type="submit">Send</Button>
@@ -85,7 +96,11 @@ function Contact(props) {
 
         <Toast
           title={isEmailSent ? 'Email sent :D' : 'Error :('}
-          description={isEmailSent ? 'Thanks for taking the time to write it.' : 'Something wrong happened. Try again later.'}
+          description={
+            isEmailSent
+              ? 'Thanks for taking the time to write it.'
+              : 'Something wrong happened. Try again later.'
+          }
           isSuccess={isEmailSent}
           showToast={showToast}
           setShowToast={setShowToast}
@@ -98,7 +113,7 @@ function Contact(props) {
 const Form = styled('form', {
   display: 'flex',
   flexDirection: 'column',
-  maxWidth: '400px'
+  maxWidth: '400px',
 })
 
 const FormGroup = styled('div', {
@@ -111,7 +126,7 @@ const Label = styled('label', {
   color: '$secondary',
   textTransform: 'uppercase',
   fontSize: '12px',
-  fontWeight: '500'
+  fontWeight: '500',
 })
 
 const Input = styled('input', {
@@ -141,8 +156,17 @@ const Button = styled('button', {
   padding: '10px',
   marginTop: '5px',
   transition: 'all 0.2s ease-in-out',
-  '&:hover': { background: 'transparent', borderColor: '$cyan', color: '$cyan' },
-  '&:focus': { background: 'transparent', borderColor: '$cyan', color: '$cyan', outline: 'none' },
+  '&:hover': {
+    background: 'transparent',
+    borderColor: '$cyan',
+    color: '$cyan',
+  },
+  '&:focus': {
+    background: 'transparent',
+    borderColor: '$cyan',
+    color: '$cyan',
+    outline: 'none',
+  },
 })
 
 Contact.Layout = Base
