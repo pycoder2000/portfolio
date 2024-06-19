@@ -6,9 +6,7 @@ const items = [
     startDate: '2024-05-28',
     location: 'San Francisco, California',
     description: [
-      'Developed ETL pipelines to process large volumes of data.',
-      'Collaborated with data scientists to optimize data workflows.',
-      'Implemented data quality checks to ensure data accuracy.',
+      'Developed Kafka connectors to faciliate data transfer from S3 to Kafka to Snowflake.',
       'Skills: Apache Kafka · Confluent Kafka',
     ],
   },
