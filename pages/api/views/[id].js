@@ -4,8 +4,9 @@ let jwt
 
 try {
   const scopes = 'https://www.googleapis.com/auth/analytics.readonly'
-  const auth = require('../../../auth.json')
-  jwt = new google.auth.JWT(auth.client_email, null, auth.private_key, scopes)
+  const clientEmail = process.env.CLIENT_EMAIL
+  const privateKey = process.env.PRIVATE_KEY.replace(/\\n/g, '\n') // Replace escaped newlines with actual newlines
+  const jwt = new google.auth.JWT(clientEmail, null, privateKey, scopes)
 } catch (e) {
   console.error(
     'Google Analytics API disabled due to missing Service Account Credentials'
