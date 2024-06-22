@@ -19,6 +19,7 @@ import homeIcon from '../public/static/icons/home.json'
 import projectsIcon from '../public/static/icons/projects.json'
 import sourceIcon from '../public/static/icons/source.json'
 import usesIcon from '../public/static/icons/uses.json'
+import tweetsIcon from '../public/static/icons/tweets.json'
 import workIcon from '../public/static/icons/work.json'
 import { styled } from '../stitches.config'
 import { Box } from './Box'
@@ -35,6 +36,7 @@ export default function CommandBar(props) {
   const workRef = useRef()
   const podcastsRef = useRef()
   const investingRef = useRef()
+  const tweetsRef = useRef()
   const usesRef = useRef()
   const creditsRef = useRef()
   const router = useRouter()
@@ -171,7 +173,7 @@ export default function CommandBar(props) {
     {
       id: 'work',
       name: 'Work',
-      shortcut: ['g', 't'],
+      shortcut: ['g', 'w'],
       keywords: 'go-work',
       section: 'Go To',
       perform: () => router.push('/work'),
@@ -219,6 +221,23 @@ export default function CommandBar(props) {
     //     />
     //   ),
     // },
+    {
+      id: 'tweets',
+      name: 'Tweets',
+      shortcut: ['g', 't'],
+      keywords: 'go-tweets',
+      section: 'Go To',
+      perform: () => router.push('/tweets'),
+      icon: (
+        <Lottie
+          lottieRef={tweetsRef}
+          style={iconSize}
+          animationData={tweetsIcon}
+          loop={false}
+          autoplay={false}
+        />
+      ),
+    },
     {
       id: 'uses',
       name: 'Uses',

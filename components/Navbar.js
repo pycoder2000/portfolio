@@ -15,6 +15,7 @@ export default function Navbar() {
     // 'Podcasts',
     // 'Investing',
     'Uses',
+    'Tweets',
     'Credits',
   ]
   const [hovered, setHovered] = useState('')
