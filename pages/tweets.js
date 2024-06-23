@@ -46,7 +46,7 @@ function TweetsPage(props) {
       <p>
         <a href="https://www.parthdesai.site/contact" target="_blank">
           Hit me up
-        </a>
+        </a>{' '}
         if what you read here resonates with you.
       </p>
     </>
