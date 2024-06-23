@@ -43,7 +43,12 @@ function TweetsPage(props) {
       <div>{renderTweets()}</div>
 
       <h2>Let's chat</h2>
-      <p>Hit me up if what you read here resonates with you.</p>
+      <p>
+        <a href="https://www.parthdesai.site/contact" target="_blank">
+          Hit me up
+        </a>
+        if what you read here resonates with you.
+      </p>
     </>
   )
 }
