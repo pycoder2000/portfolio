@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { TailSpin } from 'react-loader-spinner'
 import TweetEmbed from 'react-tweet-embed'
 import tweets from '../data/tweets'
@@ -48,7 +48,7 @@ function TweetsPage(props) {
         <meta content={`https://parthdesai.site${image}`} property="og:image" />
       </Head>
 
-      {loading && (
+      {/* {loading && (
         <div
           style={{
             position: 'fixed',
@@ -66,13 +66,34 @@ function TweetsPage(props) {
             radius="1"
           />
         </div>
-      )}
+      )} */}
 
       <p>{description}</p>
 
       <h2>My Tweets</h2>
-      <div>{renderTweets()}</div>
+      <div style={{ position: 'relative' }}>
+        {loading && (
+          <div
+            style={{
+              position: 'absolute',
+              top: '100px',
+              left: '50%',
+              transform: 'translateX(-50%)',
+            }}
+          >
+            <TailSpin
+              visible={true}
+              height="80"
+              width="80"
+              color="#5D3FD3"
+              ariaLabel="tail-spin-loading"
+              radius="1"
+            />
+          </div>
+        )}
 
+        <div>{renderTweets()}</div>
+      </div>
       <h2>Let's chat</h2>
       <p>
         <a href="https://www.parthdesai.site/contact" target="_blank">
