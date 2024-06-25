@@ -1,5 +1,6 @@
 import Head from 'next/head'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { TailSpin } from 'react-loader-spinner'
 import TweetEmbed from 'react-tweet-embed'
 import tweets from '../data/tweets'
 import Base from '../layouts/Base'
@@ -19,6 +20,12 @@ export async function getStaticProps() {
 
 function TweetsPage(props) {
   const { title, description, image } = props
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 3000) // adjust time as needed
+    return () => clearTimeout(timer)
+  }, [])
 
   const renderTweets = () => {
     return tweets.map((tweetId, index) => (
@@ -36,6 +43,26 @@ function TweetsPage(props) {
         <meta content="https://parthdesai.site/tweets" property="og:url" />
         <meta content={`https://parthdesai.site${image}`} property="og:image" />
       </Head>
+
+      {loading && (
+        <div
+          style={{
+            position: 'fixed',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+          }}
+        >
+          <TailSpin
+            visible={true}
+            height="80"
+            width="80"
+            color="#5D3FD3"
+            ariaLabel="tail-spin-loading"
+            radius="1"
+          />
+        </div>
+      )}
 
       <p>{description}</p>
 
