@@ -22,14 +22,18 @@ function TweetsPage(props) {
   const { title, description, image } = props
   const [loading, setLoading] = useState(true)
 
-  useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 3000) // adjust time as needed
-    return () => clearTimeout(timer)
-  }, [])
+  const handleTweetLoad = () => {
+    setLoading(false)
+  }
 
   const renderTweets = () => {
     return tweets.map((tweetId, index) => (
-      <TweetEmbed key={index} tweetId={tweetId} options={{ theme: 'dark' }} />
+      <TweetEmbed
+        key={index}
+        tweetId={tweetId}
+        options={{ theme: 'dark' }}
+        onTweetLoadSuccess={handleTweetLoad}
+      />
     ))
   }
 
