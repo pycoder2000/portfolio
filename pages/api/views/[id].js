@@ -1,4 +1,7 @@
+
 const { BetaAnalyticsDataClient } = require('@google-analytics/data')
+
+let analyticsDataClient
 
 try {
   analyticsDataClient = new BetaAnalyticsDataClient({
@@ -6,7 +9,6 @@ try {
       client_email: process.env.client_email,
       private_key: process.env.private_key.replace(/\\n/g, '\n'),
     },
-    projectId: process.env.project_id,
   })
 } catch (e) {
   console.error(
@@ -21,7 +23,7 @@ async function getData(id) {
 
   const propertyId = process.env.GA4_PROPERTY_ID
 
-  const report = await analyticsDataClient.runReport({
+  const [response] = await analyticsDataClient.runReport({
     property: `properties/${propertyId}`,
     dateRanges: [
       {
@@ -62,17 +64,12 @@ async function getData(id) {
     JSON.stringify(response, null, 2)
   )
 
-  //   const totalWithoutTrailingSlash =
-  //     parseInt(response.rows[0]?.metricValues[0]?.value, 10) || 0
-  //   const totalWithTrailingSlash =
-  //     parseInt(response.rows[1]?.metricValues[0]?.value, 10) || 0
+  const totalWithoutTrailingSlash =
+    parseInt(response.rows[0]?.metricValues[0]?.value, 10) || 0
+  const totalWithTrailingSlash =
+    parseInt(response.rows[1]?.metricValues[0]?.value, 10) || 0
 
-  const pageViewsData = report.rows.map(row => ({
-    pagePath: row.dimensions[0],
-    screenPageViews: parseInt(row.metricValues[0].value, 10) || 0,
-  }))
-
-  return pageViewsData[0].screenPageViews
+  return totalWithoutTrailingSlash + totalWithTrailingSlash
 }
 
 export default async function getViews(req, res) {
