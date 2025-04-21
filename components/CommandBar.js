@@ -7,7 +7,7 @@ import {
   KBarSearch,
   useDeepMatches,
 } from 'kbar'
-import Lottie from 'lottie-react'
+import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
 import { forwardRef, useRef, useState } from 'react'
 import aboutIcon from '../public/static/icons/about.json'
@@ -24,6 +24,8 @@ import workIcon from '../public/static/icons/work.json'
 import { styled } from '../stitches.config'
 import { Box } from './Box'
 import Toast from './Toast'
+
+const Lottie = dynamic(() => import('lottie-react'), { ssr: false })
 
 export default function CommandBar(props) {
   const copyLinkRef = useRef()
