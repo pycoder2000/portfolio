@@ -1,9 +1,9 @@
-import '../public/static/css/prism.css'
-import 'remixicon/fonts/remixicon.css'
-
 import Router from 'next/router'
-import * as gtag from '../lib/gtag'
+import AnimatedCursor from 'react-animated-cursor'
+import 'remixicon/fonts/remixicon.css'
 import CommandBar from '../components/CommandBar'
+import * as gtag from '../lib/gtag'
+import '../public/static/css/prism.css'
 
 Router.events.on('routeChangeComplete', url => gtag.pageview(url))
 
@@ -14,6 +14,24 @@ export default function MyApp({ Component, pageProps }) {
 
   return (
     <CommandBar>
+        <AnimatedCursor
+            innerSize={13}
+            outerSize={25}
+            color="255, 255, 255"
+            outerAlpha={0.2}
+            innerScale={1.2}
+            outerScale={1.8}
+            trailingSpeed={4}
+            clickables={[
+            'a',
+            'button',
+            '.link',
+            '.link-button',
+            '.cursor-pointer',
+            '.cursor-text',
+            '[tabindex]',
+            ]}
+            />
       <Layout>
         <Component {...pageProps} />
       </Layout>

@@ -1,4 +1,4 @@
-import Lottie from 'lottie-react'
+import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import Image from 'next/image'
 import React from 'react'
@@ -10,6 +10,8 @@ import stripHtml from '../lib/strip-html'
 import copyBioIcon from '../public/static/icons/copy-bio.json'
 import downloadIcon from '../public/static/icons/download.json'
 import { styled } from '../stitches.config'
+
+const Lottie = dynamic(() => import('lottie-react'), { ssr: false })
 
 export async function getStaticProps() {
   const meta = {

@@ -3,7 +3,9 @@ const items = [
     jobTitle: 'Data Engineer Intern',
     company: 'Glassdoor',
     companyUrl: 'https://glassdoor.com',
+    companyLogo: '/static/images/Glassdoor.png',
     startDate: '2024-05-28',
+    endDate: '2024-12-30',
     location: 'San Francisco, California',
     description: [
       'Developed Kafka connectors to faciliate data transfer from S3 to Kafka to Snowflake.',
@@ -13,6 +15,7 @@ const items = [
   {
     jobTitle: 'Data Engineer Research Assistant',
     company: 'San Francisco State University',
+    companyLogo: '/static/images/SFSU.png',
     companyUrl: 'https://www.sfsu.edu/index.html',
     startDate: '2023-09-06',
     endDate: '2024-03-15',
@@ -27,6 +30,7 @@ const items = [
   {
     jobTitle: 'Graduate Assistant',
     company: 'San Francisco State University',
+    companyLogo: '/static/images/SFSU.png',
     companyUrl: 'https://www.sfsu.edu/index.html',
     startDate: '2023-09-25',
     endDate: '2024-05-30',
@@ -41,6 +45,7 @@ const items = [
     jobTitle: 'Data Engineer',
     company: 'Accenture Strategy & Consulting',
     companyUrl: 'https://www.accenture.com/us-en/about/consulting-index',
+    companyLogo: '/static/images/Accenture.png',
     startDate: '2022-07-01',
     endDate: '2023-07-21',
     location: 'Gujarat, India',
@@ -56,6 +61,7 @@ const items = [
   {
     jobTitle: 'Data Engineer Intern',
     company: 'Accenture Strategy & Consulting',
+    companyLogo: '/static/images/Accenture.png',
     companyUrl: 'https://www.accenture.com/us-en/about/consulting-index',
     startDate: '2022-01-07',
     endDate: '2022-06-21',
