@@ -1,53 +1,82 @@
 import React from 'react'
 import { styled } from '../../stitches.config'
+import { motion, AnimatePresence } from 'framer-motion'
 
 export function Modal({ isOpen, onClose, children }) {
-  if (!isOpen) return null
-
   return (
-    <ModalOverlay onClick={onClose}>
-      <ModalContent onClick={e => e.stopPropagation()}>
-        <CloseButton onClick={onClose}>×</CloseButton>
-        {children}
-      </ModalContent>
-    </ModalOverlay>
+    <AnimatePresence>
+      {isOpen && (
+        <ModalOverlay
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={onClose}
+        >
+          <ModalContentWrapper
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: 50, opacity: 0 }}
+            transition={{ type: 'spring', damping: 20, stiffness: 200 }}
+            onClick={e => e.stopPropagation()}
+          >
+            <CloseButton onClick={onClose}>&times;</CloseButton>
+            {/* Add an inner scrollable container */}
+            <ScrollableContentArea>{children}</ScrollableContentArea>
+          </ModalContentWrapper>
+        </ModalOverlay>
+      )}
+    </AnimatePresence>
   )
 }
 
-export const ModalOverlay = styled('div', {
+const ModalOverlay = styled(motion.div, {
   position: 'fixed',
-  top: 0,
-  left: 0,
-  right: 0,
-  bottom: 0,
-  backgroundColor: 'rgba(0, 0, 0, 0.85)',
-  zIndex: 100,
+  inset: 0,
+  backgroundColor: 'rgba(0, 0, 0, 0.8)',
   display: 'flex',
-  justifyContent: 'center',
   alignItems: 'center',
+  justifyContent: 'center',
+  zIndex: 1000,
+  padding: '20px',
 })
 
-export const ModalContent = styled('div', {
-  backgroundColor: 'black',
-  padding: '30px',
+const ModalContentWrapper = styled(motion.div, {
+  position: 'relative', // Keep relative for absolute positioning of button
+  background: '$background',
   borderRadius: '$borderRadius',
-  maxWidth: '600px',
-  width: '90%',
-  maxHeight: '85vh',
-  overflowY: 'auto',
-  position: 'relative',
-  color: 'white',
+  width: '100%',
+  maxWidth: '700px',
+  maxHeight: '90vh',
+  overflow: 'hidden', // Keep hidden on wrapper
+  display: 'flex',
+  flexDirection: 'column',
+  boxShadow: '0 10px 30px rgba(0, 0, 0, 0.3)',
 })
 
-export const CloseButton = styled('button', {
+// New inner container for scrolling content
+const ScrollableContentArea = styled('div', {
+  // Adjust padding: Increase top padding significantly
+  padding: '60px 40px 40px 40px', // Top: 60px, Right/Bottom/Left: 40px
+  overflowY: 'auto',
+  overflowX: 'hidden',
+  flex: 1,
+  minHeight: 0,
+})
+
+const CloseButton = styled('button', {
   position: 'absolute',
-  top: '15px',
-  right: '15px',
+  // Adjust position slightly if needed relative to the wrapper's edge
+  top: '20px', // Slightly more space from the very top edge
+  right: '20px', // Slightly more space from the right edge
   background: 'none',
   border: 'none',
-  color: 'white',
-  fontSize: '24px',
+  fontSize: '28px',
+  lineHeight: 1,
+  color: '$secondary',
   cursor: 'pointer',
+  padding: '5px',
+  transition: 'color 0.2s ease',
+  zIndex: 10, // Keep button above scrollable content
   '&:hover': {
     color: '$primary',
   },

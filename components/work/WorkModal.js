@@ -1,130 +1,142 @@
 import React from 'react'
 import { format, parseISO } from 'date-fns'
 import { styled } from '../../stitches.config'
-import Modal from '../modal/Modal'
+import { Modal } from '../modal/Modal' // Use NAMED import
 
 export default function WorkModal({ work, isOpen, onClose, getDuration }) {
   if (!work) return null
 
   return (
+    // Use the new Modal component
     <Modal isOpen={isOpen} onClose={onClose}>
-      <Container>
-        <ModalHeader>
-          <ModalLogo src={work.companyLogo} alt={`${work.company} logo`} />
-          <HeaderContent>
-            <ModalTitle>{work.jobTitle}</ModalTitle>
-            <ModalCompany>{work.company}</ModalCompany>
-          </HeaderContent>
-        </ModalHeader>
+      {/* Header with Logo and Text */}
+      <Header>
+        <Logo src={work.companyLogo} alt={`${work.company} logo`} />
+      </Header>
 
-        <InfoSection>
-          <ModalDates>
-            {format(parseISO(work.startDate), 'MMM yyyy')} -{' '}
-            {work.endDate
-              ? format(parseISO(work.endDate), 'MMM yyyy')
-              : 'Present'}{' '}
-            · {getDuration(work.startDate, work.endDate)}
-          </ModalDates>
+      <HeaderText>
+        <Title>{work.jobTitle}</Title>
+        <Company>{work.company}</Company>
+      </HeaderText>
 
-          <ModalLocation>{work.location}</ModalLocation>
-        </InfoSection>
+      {/* Meta Info: Dates & Location */}
+      <MetaInfo>
+        <span>
+          {format(parseISO(work.startDate), 'MMM yyyy')} -{' '}
+          {work.endDate
+            ? format(parseISO(work.endDate), 'MMM yyyy')
+            : 'Present'}
+          {' · '}
+          {getDuration(work.startDate, work.endDate)}
+        </span>
+        <span>{work.location}</span>
+      </MetaInfo>
 
-        <DescriptionList>
-          {work.description &&
-            work.description.map((item, index) => (
-              <DescriptionItem key={index}>• {item}</DescriptionItem>
-            ))}
-        </DescriptionList>
+      {/* Description List */}
+      <Description>
+        {work.description?.map((item, index) => (
+          <DescriptionItem key={index}>{item}</DescriptionItem>
+        ))}
+      </Description>
 
-        {work.companyUrl && (
-          <CompanyLink
-            href={work.companyUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Visit company website →
-          </CompanyLink>
-        )}
-      </Container>
+      {work.companyUrl && (
+        <Link href={work.companyUrl} target="_blank" rel="noopener noreferrer">
+          Visit Company Website →
+        </Link>
+      )}
     </Modal>
   )
 }
 
-const Container = styled('div', {
-  padding: '20px',
-  color: '$primary',
-  maxWidth: '800px',
-  width: '100%',
-})
+// --- Styled Components for the New Design ---
 
-const ModalHeader = styled('div', {
+const Header = styled('div', {
   display: 'flex',
-  alignItems: 'center',
-  marginBottom: '20px',
-  textAlign: 'left',
+  alignItems: 'flex-start',
+  marginBottom: '30px', // Increased space below the header section
+  gap: '25px', // Increased space between logo and text
+  // border: '1px solid red', // Keep for debugging if needed
 })
 
-const ModalLogo = styled('img', {
-  width: '60px',
-  height: '60px',
+const Logo = styled('img', {
+  width: '50px',
+  height: '50px',
   objectFit: 'contain',
-  marginRight: '20px',
+  flexShrink: 0,
+  marginTop: '5px',
 })
 
-const HeaderContent = styled('div', {
-  textAlign: 'left',
+const HeaderText = styled('div', {
+  flex: 1,
+  minWidth: 0,
+  textAlign: 'center', // Center align the text (Title and Company)
+  // border: '1px solid blue', // Keep for debugging if needed
 })
 
-const ModalTitle = styled('h1', {
-  fontSize: '28px',
-  margin: '0 0 5px 0',
-  color: 'white',
-  fontWeight: 'bold',
+const Title = styled('h1', {
+  fontSize: '24px',
+  fontWeight: '600',
+  color: '$primary',
+  margin: '0 0 4px 0',
+  lineHeight: 1.3,
+  wordBreak: 'break-word',
+  // border: '1px solid green', // Keep for debugging if needed
 })
 
-const ModalCompany = styled('h2', {
-  fontSize: '20px',
-  margin: 0,
+const Company = styled('h2', {
+  fontSize: '18px',
+  fontWeight: '400',
   color: '$secondary',
-  fontWeight: 'normal',
+  margin: 0,
+  lineHeight: 1.4,
+  wordBreak: 'break-word',
 })
 
-const InfoSection = styled('div', {
-  marginBottom: '20px',
-  textAlign: 'left',
-})
-
-const ModalDates = styled('div', {
-  color: 'white',
+const MetaInfo = styled('div', {
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'space-between',
+  gap: '8px',
+  padding: '10px', // Increased padding top/bottom
+  borderTop: '1px solid $hover',
+  borderBottom: '1px solid $hover',
+  marginTop: '20px',
+  marginBottom: '20px', // Increased space below MetaInfo
   fontSize: '14px',
-  marginBottom: '5px',
+  color: '$secondary',
+  lineHeight: 1.5,
+
+  '@bp1': {
+    flexDirection: 'row',
+  },
 })
 
-const ModalLocation = styled('div', {
-  color: 'white',
-  fontSize: '14px',
-})
 
-const DescriptionList = styled('div', {
-  marginTop: '30px',
-  marginBottom: '30px',
-  textAlign: 'left',
-  paddingLeft: '10px',
+const Description = styled('div', {
+  color: 'white', // Default text color for description
+  fontSize: '16px',
+  lineHeight: 1.7,
 })
 
 const DescriptionItem = styled('p', {
-  color: 'white',
-  fontSize: '16px',
-  lineHeight: '1.6',
   margin: '0 0 12px 0',
-  paddingLeft: '10px',
+  paddingLeft: '20px', // Indent list items
   position: 'relative',
+  '&::before': {
+    content: '"•"', // Bullet point
+    position: 'absolute',
+    left: '0',
+    color: '$primary', // Use primary color for bullet
+    fontWeight: 'bold',
+  },
 })
 
-const CompanyLink = styled('a', {
+const Link = styled('a', {
+  display: 'inline-block',
+  fontSize: '14px',
   color: '$primary',
   textDecoration: 'none',
-  display: 'inline-block',
+  fontWeight: '500',
   marginTop: '10px',
   '&:hover': {
     textDecoration: 'underline',

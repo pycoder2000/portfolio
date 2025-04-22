@@ -130,14 +130,14 @@ export default function Index(props) {
         <PostContent>
           <PostContainer>
             <div>
-              <h1>{title}</h1>
-              <p>
-                <strong>
+              <LargeHeading>{title}</LargeHeading>
+              <LargeText>
+                <LargeStrong>
                   Data Engineer at <RollingText companies={companies} />
-                </strong>
+                </LargeStrong>
                 <br />
                 {description}
-              </p>
+              </LargeText>
               <ShortcutHome />
             </div>
           </PostContainer>
@@ -147,6 +147,26 @@ export default function Index(props) {
     </Wrapper>
   )
 }
+
+const LargeHeading = styled('h1', {
+  fontFamily: '$heading',
+  fontSize: '60px',
+  lineHeight: '62px',
+  margin: '0 0 24px',
+  color: '$primary',
+})
+
+const LargeText = styled('p', {
+  margin: '24px 0',
+  color: '$secondary',
+  fontSize: '18px',
+})
+
+const LargeStrong = styled('strong', {
+  color: '$primary',
+  fontWeight: 500,
+  fontSize: '20px',
+})
 
 const Home = styled(PostMain, {
   alignItems: 'center',
