@@ -10,12 +10,14 @@ export default function WorkItem({ work, onClick }) {
     const startDate = parseISO(start)
     const endDate = end ? parseISO(end) : new Date()
     const months = differenceInMonths(endDate, startDate)
-    const years = months / 12
-    if (years >= 1) {
-      return `${years.toFixed(1)} yr${years >= 2 ? 's' : ''}`
+    const decimalYears = Math.ceil((months / 12) * 10) / 10
+
+    if (decimalYears >= 1) {
+      return `${decimalYears.toFixed(1)} yr${decimalYears !== 1 ? 's' : ''}`
     }
-    return `${months} mos`
+    return `${months + 1} mos`
   }
+
 
 
   return (

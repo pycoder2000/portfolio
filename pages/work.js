@@ -1,4 +1,4 @@
-import { format, intervalToDuration, parseISO } from 'date-fns'
+import { differenceInMonths, format, parseISO } from 'date-fns'
 import { AnimateSharedLayout } from 'framer-motion'
 import Head from 'next/head'
 import React, { useState } from 'react'
@@ -36,20 +36,16 @@ function Work(props) {
     })
   }
 
-  const getDuration = (startDate, endDate) => {
-    const durationObj = intervalToDuration({
-      start: parseISO(startDate),
-      end: endDate ? parseISO(endDate) : new Date(),
-    })
+  const getDuration = (start, end) => {
+    const startDate = parseISO(start)
+    const endDate = end ? parseISO(end) : new Date()
+    const months = differenceInMonths(endDate, startDate)
+    const decimalYears = Math.ceil((months / 12) * 10) / 10
 
-    let durationStr = ''
-    if (durationObj.years > 0) {
-      durationStr += `${durationObj.years} yr${
-        durationObj.years > 1 ? 's' : ''
-      } `
+    if (decimalYears >= 1) {
+      return `${decimalYears.toFixed(1)} yr${decimalYears !== 1 ? 's' : ''}`
     }
-    durationStr += `${durationObj.months} mos`
-    return durationStr
+    return `${months + 1} mos`
   }
 
   const { title, image } = props
