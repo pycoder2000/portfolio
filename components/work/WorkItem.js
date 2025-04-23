@@ -1,9 +1,22 @@
+import { motion } from 'framer-motion'
 import React, { useState } from 'react'
 import { styled } from '../../stitches.config'
-import { motion } from 'framer-motion'
+import { parseISO, differenceInMonths } from 'date-fns'
 
 export default function WorkItem({ work, onClick }) {
   const [isHovered, setIsHovered] = useState(false)
+
+  const getDuration = (start, end) => {
+    const startDate = parseISO(start)
+    const endDate = end ? parseISO(end) : new Date()
+    const months = differenceInMonths(endDate, startDate)
+    const years = months / 12
+    if (years >= 1) {
+      return `${years.toFixed(1)} yr${years >= 2 ? 's' : ''}`
+    }
+    return `${months} mos`
+  }
+
 
   return (
     <WorkContainer
@@ -17,14 +30,31 @@ export default function WorkItem({ work, onClick }) {
             layoutId="sharedHover"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.2 }}
+            transition={{ duration: 0.3 }}
+            exit={{ opacity: 0 }}
           />
         )}
 
         <Logo src={work.companyLogo} alt={`${work.company} logo`} />
         <Body>
           <Title>{work.jobTitle}</Title>
-          <Company>{work.company}</Company>
+          <Company>
+            {work.company}
+            {work.startDate && (
+              <>
+                {' • '}
+                {getDuration(work.startDate, work.endDate)}
+              </>
+            )}
+          </Company>
+          <TechList>
+            {work.technologies?.slice(0, 4).map((tech, index) => (
+              <TechItem key={index}>{tech}</TechItem>
+            ))}
+            {work.technologies?.length > 4 && (
+              <MoreTech>+{work.technologies.length - 4}</MoreTech>
+            )}
+          </TechList>
         </Body>
       </AnimContainer>
     </WorkContainer>
@@ -46,6 +76,7 @@ export const Logo = styled('img', {
   width: '60px',
   height: '60px',
   marginBottom: '10px',
+  marginTop: '10px',
   objectFit: 'contain',
   position: 'relative',
   zIndex: 1,
@@ -71,10 +102,38 @@ export const Company = styled('p', {
   margin: '5px 0 0',
 })
 
+export const RoleType = styled('p', {
+  color: '$highlight',
+  fontSize: '13px',
+  margin: '2px 0 0',
+  fontStyle: 'italic',
+})
+
+export const TechList = styled('div', {
+  display: 'flex',
+  flexWrap: 'wrap',
+  justifyContent: 'center',
+  gap: '6px',
+  marginTop: '10px',
+})
+
+export const TechItem = styled('span', {
+  backgroundColor: '$hover',
+  color: '$primary',
+  fontSize: '12px',
+  padding: '4px 8px',
+  borderRadius: '999px',
+})
+
+export const MoreTech = styled('span', {
+  color: '$secondary',
+  fontSize: '12px',
+  alignSelf: 'center',
+})
+
 const AnimContainer = styled(motion.div, {
   position: 'relative',
   width: '100%',
-  padding: '20px',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
