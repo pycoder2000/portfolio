@@ -4,6 +4,7 @@ import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import { PostContainer, PostContent, PostMain } from '../components/Post'
 import ShortcutHome from '../components/ShortcutHome'
+import { motion } from 'framer-motion'
 import { Wrapper } from '../components/Wrapper'
 import { getPersonJsonLd } from '../lib/json-ld'
 import { keyframes, styled } from '../stitches.config'
@@ -18,17 +19,21 @@ export async function getStaticProps() {
   }
 }
 
-function RollingText({ companies }) {
+function RollingText({ companies, isPaused }) {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [prevIndex, setPrevIndex] = useState(null)
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setPrevIndex(currentIndex)
-      setCurrentIndex((currentIndex + 1) % companies.length)
-    }, 2000)
-    return () => clearTimeout(timer)
-  }, [currentIndex, companies.length])
+    let timer
+    if (!isPaused) {
+      // Only set timer if not paused
+      timer = setTimeout(() => {
+        setPrevIndex(currentIndex)
+        setCurrentIndex((currentIndex + 1) % companies.length)
+      }, 1000)
+    }
+    return () => clearTimeout(timer) // Clear timer on unmount or if isPaused changes
+  }, [currentIndex, companies.length, isPaused]) // Add isPaused to dependency array
 
   useEffect(() => {
     if (prevIndex !== null) {
@@ -101,6 +106,7 @@ const AnimatedSpan = styled('span', {
 
 export default function Index(props) {
   const { title, description, image } = props
+  const [isHovering, setIsHovering] = useState(false)
   const companies = [
     { name: 'Netflix', color: '#E50914' },
     { name: 'Accenture', color: '#A100FF' },
@@ -124,22 +130,41 @@ export default function Index(props) {
           key="person-jsonld"
         />
       </Head>
-
       <Navbar />
       <Home>
         <PostContent>
           <PostContainer>
-            <div>
-              <LargeHeading>{title}</LargeHeading>
-              <LargeText>
-                <LargeStrong>
-                  Data Engineer at <RollingText companies={companies} />
+              <GradientHeading
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.1 }}
+              >
+                {title}
+              </GradientHeading>
+              <LargeText
+                as={motion.p}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.3 }}
+              >
+                <LargeStrong
+                  onMouseEnter={() => setIsHovering(true)}
+                  onMouseLeave={() => setIsHovering(false)}
+                  style={{ position: 'relative', zIndex: 2 }}
+                >
+                  Data Engineer at{' '}
+                  <AnimatedCompany
+                    companies={companies}
+                    isPaused={isHovering}
+                    animationType="enter"
+                  >
+                    <RollingText companies={companies} isPaused={isHovering} />
+                  </AnimatedCompany>
                 </LargeStrong>
                 <br />
                 {description}
               </LargeText>
               <ShortcutHome />
-            </div>
           </PostContainer>
         </PostContent>
       </Home>
@@ -147,14 +172,6 @@ export default function Index(props) {
     </Wrapper>
   )
 }
-
-const LargeHeading = styled('h1', {
-  fontFamily: '$heading',
-  fontSize: '60px',
-  lineHeight: '62px',
-  margin: '0 0 24px',
-  color: '$primary',
-})
 
 const LargeText = styled('p', {
   margin: '24px 0',
@@ -173,4 +190,29 @@ const Home = styled(PostMain, {
   display: 'flex',
   margin: '0 auto',
   '@bp2': { width: 800 },
+})
+
+const GradientHeading = styled(motion.h1, {
+  fontFamily: '$heading',
+  fontSize: '64px',
+  lineHeight: '1.1',
+  margin: '0 0 24px',
+  background: 'linear-gradient(90deg, #80ffea, #9580ff, #ff80bf)',
+  backgroundClip: 'text',
+  WebkitBackgroundClip: 'text',
+  color: 'transparent',
+  WebkitTextFillColor: 'transparent',
+  MozBackgroundClip: 'text',
+  MozTextFillColor: 'transparent',
+  fontWeight: 800,
+  letterSpacing: '-2px',
+  textShadow: '0 2px 24px #0008',
+})
+
+const AnimatedCompany = styled(AnimatedSpan, {
+  animation: 'float 2.5s ease-in-out infinite alternate',
+  '@keyframes float': {
+    '0%': { transform: 'translateY(0)' },
+    '100%': { transform: 'translateY(-10px)' },
+  },
 })
