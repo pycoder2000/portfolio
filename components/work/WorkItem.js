@@ -120,7 +120,7 @@ export const TechList = styled('div', {
 })
 
 export const TechItem = styled('span', {
-  backgroundColor: '$hover',
+  background: '#18181b',
   color: '$primary',
   fontSize: '12px',
   padding: '4px 8px',
@@ -139,6 +139,15 @@ const AnimContainer = styled(motion.div, {
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
+  marginTop: '12px',
+  marginBottom: '12px',
+  padding: '5px',
+  transition: 'transform 0.25s cubic-bezier(.4,2,.6,1), box-shadow 0.2s',
+  '&:hover': {
+    opacity: 1,
+    transform: 'translateY(-12px) scale(1.07)',
+    boxShadow: '0 20px 48px 0 rgba(31,38,135,0.28)',
+  },
 })
 
 const AnimHovered = styled(motion.span, {

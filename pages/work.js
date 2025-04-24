@@ -1,5 +1,5 @@
 import { differenceInMonths, format, parseISO } from 'date-fns'
-import { AnimateSharedLayout } from 'framer-motion'
+import { motion, AnimateSharedLayout } from 'framer-motion'
 import Head from 'next/head'
 import React, { useState } from 'react'
 import WorkItem from '../components/work/WorkItem'
@@ -70,11 +70,19 @@ function Work(props) {
         <h2>Work Experience</h2>
         <Grid>
           {items.map((work, index) => (
-            <WorkItem
+            <motion.div
               key={index}
-              work={work}
-              onClick={() => setSelectedWork(work)}
-            />
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                delay: index * 0.08,
+                duration: 0.5,
+                type: 'spring',
+                stiffness: 60,
+              }}
+            >
+              <WorkItem work={work} onClick={() => setSelectedWork(work)} />
+            </motion.div>
           ))}
         </Grid>
 
