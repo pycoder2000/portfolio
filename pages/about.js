@@ -2,6 +2,7 @@ import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import Image from 'next/image'
 import React from 'react'
+import { RoughNotation } from 'react-rough-notation'
 import { ButtonPrimary } from '../components/ButtonPrimary'
 import Pronunciation from '../components/Pronunciation'
 import Toast from '../components/Toast'
@@ -17,7 +18,7 @@ export async function getStaticProps() {
   const meta = {
     title: 'About // Parth Desai',
     description:
-      'I am a passionate Data Engineer, having architected and executed integrative solutions across AWS, GCP, and other cloud platforms. I have successfully undertaken digital transformation projects, developed ETL pipelines and led multiple migrations from Dev to Prod. I am also on a journey to become a data steward by trying to understand the business aspect of data driven decision facilitated by my masters degree in Data Science and Artificial Intelligence. I deliver production-ready scalable code using Python, Spark, Scala, and SQL. With a proven track record of delivering impactful solutions, I am excited to contribute my skills and drive insightful solutions as part of your team.',
+      "Parth Desai is a results-driven Data Engineer passionate about architecting scalable big data solutions across AWS, GCP, and Kubernetes. With expertise in SQL, Python, and distributed frameworks like Spark and Kafka, he specializes in high-performance ETL pipelines and real-time data processing. Parth led the migration of the AppsFlyer data pipeline to a DataLocker-based architecture, reducing latency by 95% and saving $1.1M in operational costs. He has successfully undertaken digital transformation projects, developed ETL pipelines, and led multiple migrations from Dev to Prod. Currently pursuing a master's in Data Science & Artificial Intelligence, Parth is committed to delivering production-ready, impactful solutions that drive business value.",
     tagline: 'Build. Code. Deliver.',
     image: '/static/images/about-bw.jpg',
     primaryColor: 'pink',
@@ -57,31 +58,58 @@ function About(props) {
             }}
           >
             <strong>Hey, I'm Parth Desai</strong>
-            <Pronunciation />I started my journey as a Data Engineer back in
-            2022 at Accenture.
+            <Pronunciation />I once tried jailbreaking an iPod at 13—ended up
+            bricking it, but ignited a lifelong obsession with tech. Now I'm a
+            super passionate Data Engineer in{' '}
+            <strong>San Francisco, California</strong> with 2+ of experience
+            crafting scalable pipelines.
           </Paragraph>
           <Paragraph>
-            I'm originally from India and currently living in{' '}
-            <strong>San Francisco, California</strong> pursuing my Masters in
-            Data Science & Artificial Intelligence.
-          </Paragraph>
-          <Paragraph>
-            I love{' '}
+            I'm currently leveling up my skills with a Master's in Data Science
+            & Artificial Intelligence at SFSU.{' '}
             <strong>
-              <a href="https://www.parthdesai.site/contact" target="_blank">
-                connecting
-              </a>
-            </strong>{' '}
-            with fellow nerds over the weekend. When I'm not working, you'll
-            find me{' '}
-            <strong>
-              <a href="https://x.com/_ParthDesai_" target="_blank">
-                tweeting
-              </a>
+              <RoughNotation
+                animationDelay="1000"
+                animationDuration="3000"
+                type="highlight"
+                iterations={2}
+                strokeWidth={3}
+                multiline={true}
+                color="#E50914"
+                show={true}
+              >
+                This summer, you'll find me at Netflix
+              </RoughNotation>
             </strong>
-            , going down Reddit rabbit holes, solving crosswords, and
-            binge-watching fascinating video essays.
+            {', '}
+            crafting data-driven solutions.
           </Paragraph>
+          <RoughNotation
+            type="bracket"
+            brackets={['left', 'right']}
+            show={true}
+            color="#FF0000"
+            animationDelay={300}
+            animationDuration={3000}
+          >
+            <Paragraph>
+              I love{' '}
+              <strong>
+                <a href="https://www.parthdesai.site/contact" target="_blank">
+                  connecting
+                </a>
+              </strong>{' '}
+              with fellow nerds over the weekend. When I'm not working, you'll
+              find me{' '}
+              <strong>
+                <a href="https://x.com/_ParthDesai_" target="_blank">
+                  tweeting
+                </a>
+              </strong>
+              , losing chess games, solving crosswords, and binge-watching
+              fascinating video essays.
+            </Paragraph>
+          </RoughNotation>
         </Section>
       </Container>
     )
@@ -126,7 +154,7 @@ function About(props) {
             as="a"
             download
             role="button"
-            href="https://drive.google.com/file/d/1XU1FiKk0tJE5PHYPNApq8WSXpiNeVhH5/view?usp=sharing"
+            href="https://docs.google.com/document/d/19lnmad43-oLgP8UrADQt_p3l0cQz7gpDQGiIQjxGg38/edit?usp=sharing"
             target="_blank"
             style={btnStyle}
             onClick={downloadResume}
