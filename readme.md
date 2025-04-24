@@ -36,9 +36,9 @@
 
 > _Add screenshots of your homepage, blog, and projects here for extra awesomeness!_
 
-| Home                                      | Blog                                                         | Projects                                       |
+| Home                                      | Blog                                                         | Work Experience                                       |
 | ----------------------------------------- | ------------------------------------------------------------ | ---------------------------------------------- |
-| ![Home](public/static/images/home-bw.jpg) | ![Blog](public/static/images/blog/spotify-refresh-token.jpg) | ![Projects](public/static/images/about-bw.jpg) |
+| ![Home](public/static/images/Screenshots/home.png) | ![Blog](public/static/images/Screenshots/Articles.png) | ![Work Experience](public/static/images/Screenshots/Work.png) |
 
 ---
 
