@@ -1,7 +1,5 @@
 # Parth Desai's Portfolio
 
-![Portfolio Banner](public/static/images/avatar.jpg)
-
 [![Website](https://img.shields.io/website?url=https%3A%2F%2Fparthdesai.site)](https://parthdesai.site)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](http://parthdesai.mit-license.org/)
 [![Next.js](https://img.shields.io/badge/built%20with-Next.js-000?logo=next.js)](https://nextjs.org/)
