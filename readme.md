@@ -34,8 +34,6 @@
 
 ## 📸 Screenshots
 
-> _Add screenshots of your homepage, blog, and projects here for extra awesomeness!_
-
 | Home                                      | Blog                                                         | Work Experience                                       |
 | ----------------------------------------- | ------------------------------------------------------------ | ---------------------------------------------- |
 | ![Home](public/static/images/Screenshots/Home.png) | ![Blog](public/static/images/Screenshots/Articles.png) | ![Work Experience](public/static/images/Screenshots/Work.png) |
@@ -90,13 +88,6 @@
 |-- pages         # Next.js pages
 |-- public        # Static assets (images, icons, etc.)
 ```
-
----
-
-## ✍️ Author
-
-**Parth Desai**
-[Website](https://parthdesai.site) • [Twitter](https://x.com/_ParthDesai_) • [LinkedIn](https://www.linkedin.com/in/parthdesai2000/)
 
 ---
 
