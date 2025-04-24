@@ -38,7 +38,7 @@
 
 | Home                                      | Blog                                                         | Work Experience                                       |
 | ----------------------------------------- | ------------------------------------------------------------ | ---------------------------------------------- |
-| ![Home](public/static/images/Screenshots/home.png) | ![Blog](public/static/images/Screenshots/Articles.png) | ![Work Experience](public/static/images/Screenshots/Work.png) |
+| ![Home](public/static/images/Screenshots/Home.png) | ![Blog](public/static/images/Screenshots/Articles.png) | ![Work Experience](public/static/images/Screenshots/Work.png) |
 
 ---
 
