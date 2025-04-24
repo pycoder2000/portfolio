@@ -1,87 +1,111 @@
-# Portfolio
+# Parth Desai's Portfolio
 
-> My personal website
+![Portfolio Banner](public/static/images/avatar.jpg)
 
-> This website has been forked from [Zeno Rocha's website](https://github.com/zenorocha/zenorocha.com/tree/main)
+[![Website](https://img.shields.io/website?url=https%3A%2F%2Fparthdesai.site)](https://parthdesai.site)
+[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](http://parthdesai.mit-license.org/)
+[![Next.js](https://img.shields.io/badge/built%20with-Next.js-000?logo=next.js)](https://nextjs.org/)
+[![Stitches](https://img.shields.io/badge/styling-Stitches-8e44ad)](https://stitches.dev/)
+[![Framer Motion](https://img.shields.io/badge/animation-Framer%20Motion-e17055)](https://www.framer.com/motion/)
 
-## Technology stack
+> My personal website and blog, built to showcase my work, writing, and journey as a Data Engineer.
+
+> Forked from [Zeno Rocha's website](https://github.com/zenorocha/zenorocha.com/tree/main)
+
+---
+
+## 🌐 Live Demo
+
+👉 [https://parthdesai.site](https://parthdesai.site)
+
+---
+
+## ✨ Features
+
+- **Modern Design:** Clean, minimal, and responsive UI with beautiful gradients and glassmorphism.
+- **Animated Interactions:** Smooth transitions and micro-interactions using Framer Motion.
+- **Blog Engine:** Markdown-powered articles with syntax highlighting.
+- **Project Showcase:** Dynamic project and work experience sections.
+- **About Me:** Interactive bio, Lottie animations, and fun facts.
+- **Uses Page:** My favorite tools, apps, and hardware.
+- **SEO Optimized:** Open Graph, Twitter Cards, and structured data.
+- **Dark Mode:** Eye-friendly color palette.
+- **Deployed on Vercel:** Fast, global, and reliable.
+
+---
+
+## 📸 Screenshots
+
+> _Add screenshots of your homepage, blog, and projects here for extra awesomeness!_
+
+| Home                                      | Blog                                                         | Projects                                       |
+| ----------------------------------------- | ------------------------------------------------------------ | ---------------------------------------------- |
+| ![Home](public/static/images/home-bw.jpg) | ![Blog](public/static/images/blog/spotify-refresh-token.jpg) | ![Projects](public/static/images/about-bw.jpg) |
+
+---
+
+## 🛠️ Technology Stack
 
 - **Styling:** [Stitches](https://stitches.dev/)
 - **Content:** [Markdown](https://daringfireball.net/projects/markdown/)
 - **Back-end:** [Next.js](https://nextjs.org/)
 - **Front-end:** [React](https://reactjs.org/)
-- **Animation:** [Framer](https://www.framer.com/docs/animation/)
+- **Animation:** [Framer Motion](https://www.framer.com/motion/)
 - **Deployment:** [Vercel](https://vercel.com/)
 
-## Running locally
+---
 
-1. Clone this repo:
+## 🚀 Getting Started
 
-```sh
-$ git clone https://github.com/pycoder2000/portfolio.git
-```
+1. **Clone this repo:**
+    ```sh
+    git clone https://github.com/pycoder2000/portfolio.git
+    cd portfolio
+    ```
 
-2. Then go to the project's folder:
+2. **Install dependencies:**
+    ```sh
+    npm install
+    ```
 
-```sh
-cd portfolio
-```
+3. **Run locally:**
+    ```sh
+    npm run dev
+    ```
 
-3. Install all dependencies:
+4. **Open in your browser:**
+    ```
+    http://localhost:3000
+    ```
 
-```sh
-npm install
-```
+---
 
-4. Run locally:
-
-```sh
-npm run dev
-```
-
-## File structure
-
-The basic file structure for the project is organized in the following way:
+## 📁 File Structure
 
 ```
 .
-|-- articles
-|-- components
-|-- data
-|-- layouts
-|-- lib
-|-- pages
-`-- public
+|-- articles      # Markdown blog posts
+|-- components    # Reusable React components
+|-- data          # Data for projects, uses, work, etc.
+|-- layouts       # Page and post layouts
+|-- lib           # Utilities and helpers
+|-- pages         # Next.js pages
+|-- public        # Static assets (images, icons, etc.)
 ```
 
-### [articles](https://github.com/pycoder2000/portfolio/tree/master/articles)
+---
 
-Here you'll find a list of markdown files for each post.
+## ✍️ Author
 
-### [components](https://github.com/pycoder2000/portfolio/tree/master/components)
+**Parth Desai**
+[Website](https://parthdesai.site) • [Twitter](https://x.com/_ParthDesai_) • [LinkedIn](https://www.linkedin.com/in/parthdesai2000/)
 
-Here you'll find reusable blocks of React components.
+---
 
-### [data](https://github.com/pycoder2000/portfolio/tree/master/data)
-
-Here you'll find JSON files that populates each section.
-
-### [layouts](https://github.com/pycoder2000/portfolio/tree/master/layouts)
-
-Here you'll find default templates for different pages.
-
-### [lib](https://github.com/pycoder2000/portfolio/tree/master/lib)
-
-Here you'll find a set of utilities.
-
-### [pages](https://github.com/pycoder2000/portfolio/tree/master/pages)
-
-Here you'll find all the main pages of the site.
-
-### [public](https://github.com/pycoder2000/portfolio/blob/master/public)
-
-Here you'll find all the CSS, images, and font files.
-
-## License
+## 📄 License
 
 [MIT License](http://parthdesai.mit-license.org/) © Parth Desai
+
+---
+
+> _Inspired by Zeno Rocha and other amazing developers. If you like this project, feel free to star or fork!_
