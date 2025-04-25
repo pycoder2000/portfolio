@@ -1,0 +1,84 @@
+[
+  {
+    "name": "Jane Doe",
+    "company": "OpenAI",
+    "title": "Research Scientist",
+    "metOn": "2023-04-15",
+    "status": "met",
+    "avatar": "/static/images/connections/jane.jpg",
+    "tags": ["AI", "Mentor"],
+    "links": {
+      "linkedin": "https://linkedin.com/in/janedoe",
+      "twitter": "https://twitter.com/janedoe"
+    },
+    "notes": "Discussed LLMs and data privacy."
+  },
+  {
+    "name": "Samir Patel",
+    "company": "Google",
+    "title": "Cloud Architect",
+    "metOn": "2022-11-02",
+    "status": "want-to-meet",
+    "avatar": "/static/images/connections/samir.jpg",
+    "tags": ["Cloud", "Inspiration"],
+    "links": {
+      "linkedin": "https://linkedin.com/in/samirpatel"
+    },
+    "notes": "Inspired by his talks on scalable infrastructure."
+  },
+  {
+    "name": "Ava Lee",
+    "company": "Netflix",
+    "title": "Data Engineer",
+    "metOn": "2024-01-20",
+    "status": "met",
+    "avatar": "/static/images/connections/ava.jpg",
+    "tags": ["Data", "Networking"],
+    "links": {
+      "linkedin": "https://linkedin.com/in/avalee",
+      "twitter": "https://twitter.com/avalee"
+    },
+    "notes": "Met at a data engineering meetup in SF."
+  },
+  {
+    "name": "Jane Doe",
+    "company": "OpenAI",
+    "title": "Research Scientist",
+    "metOn": "2023-04-15",
+    "status": "met",
+    "avatar": "/static/images/connections/jane.jpg",
+    "tags": ["AI", "Mentor"],
+    "links": {
+      "linkedin": "https://linkedin.com/in/janedoe",
+      "twitter": "https://twitter.com/janedoe"
+    },
+    "notes": "Discussed LLMs and data privacy."
+  },
+  {
+    "name": "Samir Patel",
+    "company": "Google",
+    "title": "Cloud Architect",
+    "metOn": "2022-11-02",
+    "status": "want-to-meet",
+    "avatar": "/static/images/connections/samir.jpg",
+    "tags": ["Cloud", "Inspiration"],
+    "links": {
+      "linkedin": "https://linkedin.com/in/samirpatel"
+    },
+    "notes": "Inspired by his talks on scalable infrastructure."
+  },
+  {
+    "name": "Ava Lee",
+    "company": "Netflix",
+    "title": "Data Engineer",
+    "metOn": "2024-01-20",
+    "status": "met",
+    "avatar": "/static/images/connections/ava.jpg",
+    "tags": ["Data", "Networking"],
+    "links": {
+      "linkedin": "https://linkedin.com/in/avalee",
+      "twitter": "https://twitter.com/avalee"
+    },
+    "notes": "Met at a data engineering meetup in SF."
+  }
+]

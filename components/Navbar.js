@@ -18,6 +18,7 @@ export default function Navbar() {
     'Tweets',
     'Contact',
     'Credits',
+    'Connections',
   ]
   const [hovered, setHovered] = useState('')
   const { query } = useKBar()
