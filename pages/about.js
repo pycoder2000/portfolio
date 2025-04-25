@@ -6,6 +6,7 @@ import { RoughNotation } from 'react-rough-notation'
 import { ButtonPrimary } from '../components/ButtonPrimary'
 import Pronunciation from '../components/Pronunciation'
 import Toast from '../components/Toast'
+import Toolbox from '../components/Toolbox'
 import Base from '../layouts/Base'
 import stripHtml from '../lib/strip-html'
 import copyBioIcon from '../public/static/icons/copy-bio.json'
@@ -18,7 +19,7 @@ export async function getStaticProps() {
   const meta = {
     title: 'About // Parth Desai',
     description:
-      "Parth Desai is a results-driven Data Engineer passionate about architecting scalable big data solutions across AWS, GCP, and Kubernetes. With expertise in SQL, Python, and distributed frameworks like Spark and Kafka, he specializes in high-performance ETL pipelines and real-time data processing. Parth led the migration of the AppsFlyer data pipeline to a DataLocker-based architecture, reducing latency by 95% and saving $1.1M in operational costs. He has successfully undertaken digital transformation projects, developed ETL pipelines, and led multiple migrations from Dev to Prod. Currently pursuing a master's in Data Science & Artificial Intelligence, Parth is committed to delivering production-ready, impactful solutions that drive business value.",
+      "Parth Desai is a results-driven Data Engineer with 2+ YoE passionate about architecting scalable big data solutions across AWS, GCP, and Kubernetes. With expertise in SQL, Python, and distributed frameworks like Spark and Kafka, he specializes in high-performance ETL pipelines and real-time data processing. Parth led the migration of the AppsFlyer data pipeline to a DataLocker-based architecture, reducing latency by 95% and saving $1.1M in operational costs. He has successfully undertaken digital transformation projects and led multiple migrations from Dev to Prod. Parth is committed to delivering production-ready, impactful code that drives business value.",
     tagline: 'Build. Code. Deliver.',
     image: '/static/images/about-bw.jpg',
     primaryColor: 'pink',
@@ -58,15 +59,28 @@ function About(props) {
             }}
           >
             <strong>Hey, I'm Parth Desai</strong>
-            <Pronunciation />I once tried jailbreaking an iPod at 13—ended up
-            bricking it, but ignited a lifelong obsession with tech. Now I'm a
-            super passionate Data Engineer in{' '}
-            <strong>San Francisco, California</strong> with 2+ of experience
-            crafting scalable pipelines.
+            <Pronunciation />I once bricked an iPod at 13 while jailbreaking
+            it—igniting my lifelong obsession with tech. Now, I transform raw
+            data into meaningful impact.
           </Paragraph>
           <Paragraph>
-            I'm currently leveling up my skills with a Master's in Data Science
-            & Artificial Intelligence at SFSU.{' '}
+            I love{' '}
+            <strong>
+              <a href="https://www.parthdesai.site/contact" target="_blank">
+                connecting
+              </a>
+            </strong>{' '}
+            with fellow nerds over the weekend in {' '}<strong>San Francisco</strong>. When I'm not working, you'll
+            find me{' '}
+            <strong>
+              <a href="https://x.com/_ParthDesai_" target="_blank">
+                tweeting
+              </a>
+            </strong>
+            , losing chess games, solving crosswords, and binge-watching
+            fascinating video essays.
+          </Paragraph>
+          <Paragraph>
             <strong>
               <RoughNotation
                 animationDelay="1000"
@@ -78,38 +92,10 @@ function About(props) {
                 color="#E50914"
                 show={true}
               >
-                This summer, you'll find me at Netflix
+                This summer, you'll find me at Netflix.
               </RoughNotation>
             </strong>
-            {', '}
-            crafting data-driven solutions.
           </Paragraph>
-          <RoughNotation
-            type="bracket"
-            brackets={['left', 'right']}
-            show={true}
-            color="#FF0000"
-            animationDelay={300}
-            animationDuration={3000}
-          >
-            <Paragraph>
-              I love{' '}
-              <strong>
-                <a href="https://www.parthdesai.site/contact" target="_blank">
-                  connecting
-                </a>
-              </strong>{' '}
-              with fellow nerds over the weekend. When I'm not working, you'll
-              find me{' '}
-              <strong>
-                <a href="https://x.com/_ParthDesai_" target="_blank">
-                  tweeting
-                </a>
-              </strong>
-              , losing chess games, solving crosswords, and binge-watching
-              fascinating video essays.
-            </Paragraph>
-          </RoughNotation>
         </Section>
       </Container>
     )
@@ -213,6 +199,8 @@ function About(props) {
         showToast={showToast}
         setShowToast={setShowToast}
       />
+
+      <Toolbox />
     </>
   )
 }

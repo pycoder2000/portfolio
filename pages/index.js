@@ -26,14 +26,13 @@ function RollingText({ companies, isPaused }) {
   useEffect(() => {
     let timer
     if (!isPaused) {
-      // Only set timer if not paused
       timer = setTimeout(() => {
         setPrevIndex(currentIndex)
         setCurrentIndex((currentIndex + 1) % companies.length)
       }, 1000)
     }
-    return () => clearTimeout(timer) // Clear timer on unmount or if isPaused changes
-  }, [currentIndex, companies.length, isPaused]) // Add isPaused to dependency array
+    return () => clearTimeout(timer)
+  }, [currentIndex, companies.length, isPaused])
 
   useEffect(() => {
     if (prevIndex !== null) {
