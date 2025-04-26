@@ -178,6 +178,18 @@ const List = styled('ul', {
   '@bp1': { justifyContent: 'space-around' },
 })
 
+const CloseButton = styled('button', {
+  position: 'absolute',
+  top: '16px',
+  right: '16px',
+  appearance: 'none',
+  background: 'transparent',
+  border: 'none',
+  color: 'white',
+  cursor: 'pointer',
+  fontSize: '24px',
+})
+
 const ButtonHeader = styled('div', {
   appearance: 'none',
   background: 'transparent',
