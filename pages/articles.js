@@ -21,14 +21,8 @@ export async function getStaticProps() {
   ]
 
   const featuredPosts = [
-    getPostBySlug(
-      'a-complete-guide-for-the-f1-visa-interview-part-i',
-      featuredParams
-    ),
-    getPostBySlug(
-      'a-complete-guide-for-the-f1-visa-interview-part-ii',
-      featuredParams
-    ),
+    getPostBySlug('end-to-end-streaming-pipeline.md', featuredParams),
+    getPostBySlug('curiosity-cost-to-company.md', featuredParams),
   ]
 
   return {

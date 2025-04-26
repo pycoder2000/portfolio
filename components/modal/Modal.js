@@ -1,6 +1,6 @@
+import { AnimatePresence, motion } from 'framer-motion'
 import React from 'react'
 import { styled } from '../../stitches.config'
-import { motion, AnimatePresence } from 'framer-motion'
 
 export function Modal({ isOpen, onClose, children }) {
   return (
@@ -41,22 +41,20 @@ const ModalOverlay = styled(motion.div, {
 })
 
 const ModalContentWrapper = styled(motion.div, {
-  position: 'relative', // Keep relative for absolute positioning of button
+  position: 'relative',
   background: '$background',
   borderRadius: '$borderRadius',
   width: '100%',
   maxWidth: '700px',
   maxHeight: '90vh',
-  overflow: 'hidden', // Keep hidden on wrapper
+  overflow: 'hidden',
   display: 'flex',
   flexDirection: 'column',
   boxShadow: '0 10px 30px rgba(0, 0, 0, 0.3)',
 })
 
-// New inner container for scrolling content
 const ScrollableContentArea = styled('div', {
-  // Adjust padding: Increase top padding significantly
-  padding: '60px 40px 40px 40px', // Top: 60px, Right/Bottom/Left: 40px
+  padding: '60px 40px 40px 40px',
   overflowY: 'auto',
   overflowX: 'hidden',
   flex: 1,
@@ -65,9 +63,8 @@ const ScrollableContentArea = styled('div', {
 
 const CloseButton = styled('button', {
   position: 'absolute',
-  // Adjust position slightly if needed relative to the wrapper's edge
-  top: '20px', // Slightly more space from the very top edge
-  right: '20px', // Slightly more space from the right edge
+  top: '20px',
+  right: '20px',
   background: 'none',
   border: 'none',
   fontSize: '28px',
@@ -76,7 +73,7 @@ const CloseButton = styled('button', {
   cursor: 'pointer',
   padding: '5px',
   transition: 'color 0.2s ease',
-  zIndex: 10, // Keep button above scrollable content
+  zIndex: 10,
   '&:hover': {
     color: '$primary',
   },
