@@ -28,7 +28,7 @@ export default function Navbar() {
     <AnimateSharedLayout>
       <Header>
         <Link href="/" passHref>
-          <ButtonLogo as="a">p</ButtonLogo>
+          <ButtonLogo as="a">P</ButtonLogo>
         </Link>
 
         {!isMobile && (
@@ -105,6 +105,13 @@ export default function Navbar() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.1 }}
           >
+            <CloseButton
+              type="button"
+              aria-label="Close menu"
+              onClick={() => setMenuOpen(false)}
+            >
+              <Icon className="ri-close-line" />
+            </CloseButton>
             <MobileList
               as={motion.ul}
               initial="hidden"
