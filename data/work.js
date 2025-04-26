@@ -19,10 +19,7 @@ const items = [
       'Trino',
       'AWS',
     ],
-    highlights: [
-      'Reduced data processing time by 50%',
-      'Improved data pipeline efficiency by 40%',
-    ],
+    highlights: [],
     description: [
       'Incoming <b>Data Engineering Intern at Netflix</b>, working on scalable data pipelines and product analytics within the Studio Data Science & Engineering team.',
       'Focus areas: <i>building robust batch/streaming pipelines</i>, optimizing data transformations, and supporting experimentation platforms at scale.',
