@@ -31,45 +31,6 @@ export default function Navbar() {
           <ButtonLogo as="a">p</ButtonLogo>
         </Link>
 
-        {/* <Nav>
-          <List>
-            {pages.map(page => {
-              const path = `/${page.toLowerCase()}`
-              const isHovered = hovered === page
-
-              return (
-                <li key={page}>
-                  <Link href={path} passHref>
-                    <DesktopAnchor>
-                      <NavContainer
-                        onHoverStart={() => setHovered(page)}
-                        onHoverEnd={() => setHovered('')}
-                        css={
-                          router.pathname == path
-                            ? {
-                                color: '$primary',
-                                '&::after': { opacity: 1 },
-                              }
-                            : ''
-                        }
-                      >
-                        {isHovered && (
-                          <NavHovered
-                            layoutId="nav"
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                          />
-                        )}
-                        {page}
-                      </NavContainer>
-                    </DesktopAnchor>
-                  </Link>
-                </li>
-              )
-            })}
-          </List>
-        </Nav> */}
         {!isMobile && (
           <Nav>
             <List>
@@ -112,15 +73,6 @@ export default function Navbar() {
         )}
 
         <Aside>
-          {/* <ButtonHeader
-            as="button"
-            type="button"
-            aria-label="Command"
-            onClick={query.toggle}
-            css={{ padding: '0 8px' }}
-          >
-            <Icon className="ri-command-line" />
-          </ButtonHeader> */}
           {isMobile ? (
             <ButtonHeader
               as="button"
@@ -128,7 +80,6 @@ export default function Navbar() {
               aria-label="Menu"
               onClick={() => setMenuOpen(o => !o)}
             >
-              {/* toggle between menu and close icons */}
               <Icon className={menuOpen ? 'ri-close-line' : 'ri-menu-line'} />
             </ButtonHeader>
           ) : (
@@ -145,7 +96,6 @@ export default function Navbar() {
         </Aside>
       </Header>
 
-      {/* MOBILE OVERLAY MENU */}
       <AnimatePresence>
         {isMobile && menuOpen && (
           <MobileMenu
@@ -153,6 +103,7 @@ export default function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            transition={{ duration: 0.1 }}
           >
             <MobileList
               as={motion.ul}
@@ -169,8 +120,16 @@ export default function Navbar() {
                   key={page}
                   as={motion.li}
                   variants={{
-                    hidden: { opacity: 0, y: -20 },
-                    visible: { opacity: 1, y: 0 },
+                    hidden: {
+                      opacity: 0,
+                      y: -20,
+                      transition: { duration: 0.1 },
+                    },
+                    visible: {
+                      opacity: 1,
+                      y: 0,
+                      transition: { duration: 0.1 },
+                    },
                   }}
                   onClick={() => setMenuOpen(false)}
                 >
@@ -310,8 +269,11 @@ const NavHovered = styled(motion.span, {
 })
 
 const MobileMenu = styled('div', {
-  position: 'fixed', top: 0, left: 0,
-  width: '100%', height: '100vh',
+  position: 'fixed',
+  top: 0,
+  left: 0,
+  width: '100%',
+  height: '100vh',
   backdropFilter: 'blur(8px)',
   backgroundColor: 'rgba(0, 0, 0, 0.6)',
   display: 'flex',
