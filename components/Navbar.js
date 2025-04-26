@@ -1,8 +1,9 @@
-import { AnimateSharedLayout, motion } from 'framer-motion'
+import { AnimatePresence, AnimateSharedLayout, motion } from 'framer-motion'
 import { useKBar } from 'kbar'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
+import { isMobile } from 'react-device-detect'
 import { styled } from '../stitches.config'
 
 export default function Navbar() {
@@ -21,6 +22,7 @@ export default function Navbar() {
   ]
   const [hovered, setHovered] = useState('')
   const { query } = useKBar()
+  const [menuOpen, setMenuOpen] = useState(false)
 
   return (
     <AnimateSharedLayout>
@@ -29,7 +31,7 @@ export default function Navbar() {
           <ButtonLogo as="a">p</ButtonLogo>
         </Link>
 
-        <Nav>
+        {/* <Nav>
           <List>
             {pages.map(page => {
               const path = `/${page.toLowerCase()}`
@@ -38,7 +40,7 @@ export default function Navbar() {
               return (
                 <li key={page}>
                   <Link href={path} passHref>
-                    <Anchor>
+                    <DesktopAnchor>
                       <NavContainer
                         onHoverStart={() => setHovered(page)}
                         onHoverEnd={() => setHovered('')}
@@ -61,16 +63,56 @@ export default function Navbar() {
                         )}
                         {page}
                       </NavContainer>
-                    </Anchor>
+                    </DesktopAnchor>
                   </Link>
                 </li>
               )
             })}
           </List>
-        </Nav>
+        </Nav> */}
+        {!isMobile && (
+          <Nav>
+            <List>
+              {pages.map(page => {
+                const path = `/${page.toLowerCase()}`
+                const isHovered = hovered === page
+                return (
+                  <li key={page}>
+                    <Link href={path} passHref>
+                      <DesktopAnchor>
+                        <NavContainer
+                          onHoverStart={() => setHovered(page)}
+                          onHoverEnd={() => setHovered('')}
+                          css={
+                            router.pathname === path
+                              ? {
+                                  color: '$primary',
+                                  '&::after': { opacity: 1 },
+                                }
+                              : ''
+                          }
+                        >
+                          {isHovered && (
+                            <NavHovered
+                              layoutId="nav"
+                              initial={{ opacity: 0 }}
+                              animate={{ opacity: 1 }}
+                              exit={{ opacity: 0 }}
+                            />
+                          )}
+                          {page}
+                        </NavContainer>
+                      </DesktopAnchor>
+                    </Link>
+                  </li>
+                )
+              })}
+            </List>
+          </Nav>
+        )}
 
         <Aside>
-          <ButtonHeader
+          {/* <ButtonHeader
             as="button"
             type="button"
             aria-label="Command"
@@ -78,9 +120,69 @@ export default function Navbar() {
             css={{ padding: '0 8px' }}
           >
             <Icon className="ri-command-line" />
-          </ButtonHeader>
+          </ButtonHeader> */}
+          {isMobile ? (
+            <ButtonHeader
+              as="button"
+              type="button"
+              aria-label="Menu"
+              onClick={() => setMenuOpen(o => !o)}
+            >
+              {/* toggle between menu and close icons */}
+              <Icon className={menuOpen ? 'ri-close-line' : 'ri-menu-line'} />
+            </ButtonHeader>
+          ) : (
+            <ButtonHeader
+              as="button"
+              type="button"
+              aria-label="Command"
+              onClick={query.toggle}
+              css={{ padding: '0 8px' }}
+            >
+              <Icon className="ri-command-line" />
+            </ButtonHeader>
+          )}
         </Aside>
       </Header>
+
+      {/* MOBILE OVERLAY MENU */}
+      <AnimatePresence>
+        {isMobile && menuOpen && (
+          <MobileMenu
+            as={motion.div}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <MobileList
+              as={motion.ul}
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
+              variants={{
+                hidden: {},
+                visible: { transition: { staggerChildren: 0.1 } },
+              }}
+            >
+              {pages.map(page => (
+                <MobileItem
+                  key={page}
+                  as={motion.li}
+                  variants={{
+                    hidden: { opacity: 0, y: -20 },
+                    visible: { opacity: 1, y: 0 },
+                  }}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  <Link href={`/${page.toLowerCase()}`} passHref>
+                    <MobileAnchor>{page}</MobileAnchor>
+                  </Link>
+                </MobileItem>
+              ))}
+            </MobileList>
+          </MobileMenu>
+        )}
+      </AnimatePresence>
     </AnimateSharedLayout>
   )
 }
@@ -153,10 +255,18 @@ const Aside = styled('div', {
   marginLeft: 'auto',
 })
 
-const Anchor = styled('a', {
+const DesktopAnchor = styled('a', {
   border: 0,
   position: 'relative',
   '&:hover, &:focus': { opacity: 1 },
+})
+
+const MobileAnchor = styled('a', {
+  color: '$primary',
+  fontSize: '24px',
+  textDecoration: 'none',
+  textTransform: 'uppercase',
+  letterSpacing: '2px',
 })
 
 const NavContainer = styled(motion.span, {
@@ -197,4 +307,26 @@ const NavHovered = styled(motion.span, {
   padding: 20,
   borderRadius: '$borderRadius',
   zIndex: -1,
+})
+
+const MobileMenu = styled('div', {
+  position: 'fixed', top: 0, left: 0,
+  width: '100%', height: '100vh',
+  backdropFilter: 'blur(8px)',
+  backgroundColor: 'rgba(0, 0, 0, 0.6)',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  zIndex: 20,
+})
+
+const MobileList = styled('ul', {
+  listStyle: 'none',
+  padding: 0,
+  margin: 0,
+  textAlign: 'center',
+})
+
+const MobileItem = styled('li', {
+  marginBottom: '24px',
 })
