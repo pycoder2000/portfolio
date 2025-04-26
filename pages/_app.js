@@ -1,3 +1,4 @@
+import { isMobile } from 'react-device-detect'
 import Router from 'next/router'
 import AnimatedCursor from 'react-animated-cursor'
 import 'remixicon/fonts/remixicon.css'
@@ -14,15 +15,16 @@ export default function MyApp({ Component, pageProps }) {
 
   return (
     <CommandBar>
+      {!isMobile && (
         <AnimatedCursor
-            innerSize={13}
-            outerSize={25}
-            color="255, 255, 255"
-            outerAlpha={0.2}
-            innerScale={1.2}
-            outerScale={1.8}
-            trailingSpeed={4}
-            clickables={[
+          innerSize={13}
+          outerSize={25}
+          color="255, 255, 255"
+          outerAlpha={0.2}
+          innerScale={1.2}
+          outerScale={1.8}
+          trailingSpeed={4}
+          clickables={[
             'a',
             'button',
             '.link',
@@ -30,8 +32,9 @@ export default function MyApp({ Component, pageProps }) {
             '.cursor-pointer',
             '.cursor-text',
             '[tabindex]',
-            ]}
-            />
+          ]}
+        />
+      )}
       <Layout>
         <Component {...pageProps} />
       </Layout>
