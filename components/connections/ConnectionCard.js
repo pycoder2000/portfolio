@@ -25,7 +25,7 @@ export default function ConnectionCard({ person, onClick }) {
           <Title>{person.title}</Title>
           <Company>{person.company}</Company>
           <Status status={person.status}>
-            {person.status === 'met' ? 'Met' : 'Want to Meet'}
+            {person.status === 'Met' ? 'Met' : 'Want to Meet'}
           </Status>
         </Body>
       </Card>
