@@ -5,21 +5,22 @@ import {
   KBarProvider,
   KBarResults,
   KBarSearch,
-  useDeepMatches,
+  useMatches,
 } from 'kbar'
 import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
 import { forwardRef, useRef, useState } from 'react'
 import aboutIcon from '../public/static/icons/about.json'
 import articlesIcon from '../public/static/icons/articles.json'
+import connectionsIcon from '../public/static/icons/connections.json'
 import copyLinkIcon from '../public/static/icons/copy-link.json'
 import creditsIcon from '../public/static/icons/credits.json'
 import emailIcon from '../public/static/icons/email.json'
 import homeIcon from '../public/static/icons/home.json'
 import projectsIcon from '../public/static/icons/projects.json'
 import sourceIcon from '../public/static/icons/source.json'
-import usesIcon from '../public/static/icons/uses.json'
 import tweetsIcon from '../public/static/icons/tweets.json'
+import usesIcon from '../public/static/icons/uses.json'
 import workIcon from '../public/static/icons/work.json'
 import { styled } from '../stitches.config'
 import { Box } from './Box'
@@ -40,6 +41,7 @@ export default function CommandBar(props) {
   const investingRef = useRef()
   const tweetsRef = useRef()
   const usesRef = useRef()
+  const connectionsRef = useRef()
   const creditsRef = useRef()
   const router = useRouter()
   const [showToast, setShowToast] = useState(false)
@@ -258,6 +260,23 @@ export default function CommandBar(props) {
       ),
     },
     {
+      id: 'connections',
+      name: 'Connections',
+      shortcut: ['g', 'c'],
+      keywords: 'go-connections',
+      section: 'Go To',
+      perform: () => router.push('/connections'),
+      icon: (
+        <Lottie
+          lottieRef={connectionsRef}
+          style={iconSize}
+          animationData={connectionsIcon}
+          loop={false}
+          autoplay={false}
+        />
+      ),
+    },
+    {
       id: 'credits',
       name: 'Credits',
       shortcut: ['g', 'r'],
@@ -303,7 +322,7 @@ export default function CommandBar(props) {
 }
 
 function RenderResults() {
-  const { results } = useDeepMatches()
+  const { results } = useMatches()
 
   return (
     <KBarResults
