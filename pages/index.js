@@ -1,10 +1,10 @@
+import { motion } from 'framer-motion'
 import Head from 'next/head'
 import React, { useEffect, useState } from 'react'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import { PostContainer, PostContent, PostMain } from '../components/Post'
 import ShortcutHome from '../components/ShortcutHome'
-import { motion } from 'framer-motion'
 import { Wrapper } from '../components/Wrapper'
 import { getPersonJsonLd } from '../lib/json-ld'
 import { keyframes, styled } from '../stitches.config'
@@ -133,37 +133,37 @@ export default function Index(props) {
       <Home>
         <PostContent>
           <PostContainer>
-              <GradientHeading
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.1 }}
+            <h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+            >
+              {title}
+            </h1>
+            <p
+              as={motion.p}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.3 }}
+            >
+              <strong
+                onMouseEnter={() => setIsHovering(true)}
+                onMouseLeave={() => setIsHovering(false)}
+                style={{ position: 'relative', zIndex: 2 }}
               >
-                {title}
-              </GradientHeading>
-              <LargeText
-                as={motion.p}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.3 }}
-              >
-                <LargeStrong
-                  onMouseEnter={() => setIsHovering(true)}
-                  onMouseLeave={() => setIsHovering(false)}
-                  style={{ position: 'relative', zIndex: 2 }}
+                Data Engineer at{' '}
+                <AnimatedCompany
+                  companies={companies}
+                  isPaused={isHovering}
+                  animationType="enter"
                 >
-                  Data Engineer at{' '}
-                  <AnimatedCompany
-                    companies={companies}
-                    isPaused={isHovering}
-                    animationType="enter"
-                  >
-                    <RollingText companies={companies} isPaused={isHovering} />
-                  </AnimatedCompany>
-                </LargeStrong>
-                <br />
-                {description}
-              </LargeText>
-              <ShortcutHome />
+                  <RollingText companies={companies} isPaused={isHovering} />
+                </AnimatedCompany>
+              </strong>
+              <br />
+              {description}
+            </p>
+            <ShortcutHome />
           </PostContainer>
         </PostContent>
       </Home>
@@ -172,40 +172,11 @@ export default function Index(props) {
   )
 }
 
-const LargeText = styled('p', {
-  margin: '24px 0',
-  color: '$secondary',
-  fontSize: '18px',
-})
-
-const LargeStrong = styled('strong', {
-  color: '$primary',
-  fontWeight: 500,
-  fontSize: '20px',
-})
-
 const Home = styled(PostMain, {
   alignItems: 'center',
   display: 'flex',
   margin: '0 auto',
   '@bp2': { width: 800 },
-})
-
-const GradientHeading = styled(motion.h1, {
-  fontFamily: '$heading',
-  fontSize: '64px',
-  lineHeight: '1.1',
-  margin: '0 0 24px',
-  background: 'linear-gradient(90deg, #80ffea, #9580ff, #ff80bf)',
-  backgroundClip: 'text',
-  WebkitBackgroundClip: 'text',
-  color: 'transparent',
-  WebkitTextFillColor: 'transparent',
-  MozBackgroundClip: 'text',
-  MozTextFillColor: 'transparent',
-  fontWeight: 800,
-  letterSpacing: '-2px',
-  textShadow: '0 2px 24px #0008',
 })
 
 const AnimatedCompany = styled(AnimatedSpan, {

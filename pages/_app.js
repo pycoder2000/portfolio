@@ -1,6 +1,6 @@
-import { isMobile } from 'react-device-detect'
 import Router from 'next/router'
 import AnimatedCursor from 'react-animated-cursor'
+import { isMobile } from 'react-device-detect'
 import 'remixicon/fonts/remixicon.css'
 import CommandBar from '../components/CommandBar'
 import * as gtag from '../lib/gtag'

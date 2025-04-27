@@ -53,10 +53,18 @@ export async function getStaticProps() {
       secondaryColor: meta.secondaryColor,
       connections,
     },
+    revalidate: 60 * 60 * 24,
   }
 }
 
-function Connections({ title, tagline, image, primaryColor, secondaryColor, connections }) {
+function Connections({
+  title,
+  tagline,
+  image,
+  primaryColor,
+  secondaryColor,
+  connections,
+}) {
   const [selectedPerson, setSelectedPerson] = useState(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
 
