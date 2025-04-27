@@ -19,20 +19,20 @@ export async function getStaticProps() {
   }
 }
 
-function RollingText({ companies, isPaused }) {
+function RollingText({ companies, ispaused }) {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [prevIndex, setPrevIndex] = useState(null)
 
   useEffect(() => {
     let timer
-    if (!isPaused) {
+    if (!ispaused) {
       timer = setTimeout(() => {
         setPrevIndex(currentIndex)
         setCurrentIndex((currentIndex + 1) % companies.length)
       }, 1000)
     }
     return () => clearTimeout(timer)
-  }, [currentIndex, companies.length, isPaused])
+  }, [currentIndex, companies.length, ispaused])
 
   useEffect(() => {
     if (prevIndex !== null) {
@@ -154,10 +154,10 @@ export default function Index(props) {
                 Data Engineer at{' '}
                 <AnimatedCompany
                   companies={companies}
-                  isPaused={isHovering}
+                  data-ispaused={isHovering}
                   animationType="enter"
                 >
-                  <RollingText companies={companies} isPaused={isHovering} />
+                  <RollingText companies={companies} ispaused={isHovering} />
                 </AnimatedCompany>
               </strong>
               <br />
