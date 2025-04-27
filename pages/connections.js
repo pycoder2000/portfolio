@@ -1,26 +1,62 @@
+import { Client } from '@notionhq/client'
 import { AnimateSharedLayout } from 'framer-motion'
 import Head from 'next/head'
 import React, { useState } from 'react'
 import ConnectionCard from '../components/connections/ConnectionCard'
 import ConnectionModal from '../components/connections/ConnectionModal'
-import connections from '../data/connections.json'
 import Base from '../layouts/Base'
 import stripHtml from '../lib/strip-html'
 import { styled } from '../stitches.config'
 
-export async function getStaticProps() {
-  const meta = {
+export async function getConnections() {
+  const notion = new Client({ auth: process.env.NOTION_API_KEY })
+  const databaseId = process.env.NOTION_DATABASE_ID
+
+  const response = await notion.databases.query({
+    database_id: databaseId,
+  })
+
+  return response.results.map(page => ({
+    name: page.properties.Name?.title[0]?.plain_text || 'Unknown',
+    company: page.properties.Company?.rich_text[0]?.plain_text || 'Unknown',
+    title: page.properties.Title?.rich_text[0]?.plain_text || 'Unknown',
+    location: page.properties.Location?.rich_text[0]?.plain_text || 'Unknown',
+    status: page.properties.Status?.select?.name || 'Unknown',
+    tags: page.properties.Tags?.multi_select.map(tag => tag.name) || [],
+    metOn: page.properties['Met On']?.date?.start || null,
+    linkedin: page.properties.Linkedin?.url || null,
+    twitter: page.properties.Twitter?.url || null,
+    notes: page.properties.Notes?.rich_text[0]?.plain_text || null,
+  }))
+}
+
+export function getMeta() {
+  return {
     title: 'Connections // Parth Desai',
     tagline: 'People. Inspiration. Networking.',
     image: '/static/images/connections-bw.jpg',
     primaryColor: 'purple',
     secondaryColor: 'cyan',
   }
-
-  return { props: meta }
 }
 
-function Connections(props) {
+export async function getStaticProps() {
+  const connections = await getConnections()
+  const meta = getMeta()
+
+  return {
+    props: {
+      title: meta.title,
+      tagline: meta.tagline,
+      image: meta.image,
+      primaryColor: meta.primaryColor,
+      secondaryColor: meta.secondaryColor,
+      connections,
+    },
+  }
+}
+
+function Connections({ title, tagline, image, primaryColor, secondaryColor, connections }) {
   const [selectedPerson, setSelectedPerson] = useState(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
 
@@ -33,8 +69,7 @@ function Connections(props) {
     setIsModalOpen(false)
     setSelectedPerson(null)
   }
-
-  const { title, image } = props
+  
   const description = `A curated list of <strong>interesting people</strong> I’ve met or hope to meet.`
 
   return (
