@@ -69,8 +69,8 @@ function Connections({ title, tagline, image, primaryColor, secondaryColor, conn
     setIsModalOpen(false)
     setSelectedPerson(null)
   }
-  
-  const description = `A curated list of <strong>interesting people</strong> I’ve met or hope to meet.`
+
+  const description = `A curated list of <strong>interesting people</strong> I’ve met or hope to meet. If you’d like to connect or collaborate, feel free to <a href="/contact">reach out to me</a>.`
 
   return (
     <>
