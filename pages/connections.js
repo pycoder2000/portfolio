@@ -1,5 +1,5 @@
 import { Client } from '@notionhq/client'
-import { AnimateSharedLayout } from 'framer-motion'
+import { AnimateSharedLayout, motion } from 'framer-motion'
 import Head from 'next/head'
 import React, { useState } from 'react'
 import ConnectionCard from '../components/connections/ConnectionCard'
@@ -97,11 +97,22 @@ function Connections({
         <h2>Connections</h2>
         <ConnectionsGrid>
           {connections.map((person, idx) => (
-            <ConnectionCard
+            <motion.div
               key={person.name + idx}
-              person={person}
-              onClick={() => handleCardClick(person)}
-            />
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                delay: idx * 0.08,
+                duration: 0.5,
+                type: 'spring',
+                stiffness: 60,
+              }}
+            >
+              <ConnectionCard
+                person={person}
+                onClick={() => handleCardClick(person)}
+              />
+            </motion.div>
           ))}
         </ConnectionsGrid>
       </AnimateSharedLayout>

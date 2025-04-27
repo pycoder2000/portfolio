@@ -5,6 +5,7 @@ import Toast from '../components/Toast'
 import Base from '../layouts/Base'
 import stripHtml from '../lib/strip-html'
 import { styled } from '../stitches.config'
+import { motion } from 'framer-motion'
 
 export async function getStaticProps() {
   const meta = {
@@ -67,31 +68,70 @@ function Contact(props) {
         <p dangerouslySetInnerHTML={{ __html: description }} />
         <h2>Send an email</h2>
         <Form onSubmit={onSendEmail}>
-          <FormGroup>
-            <Label htmlFor="name">Name</Label>
-            <Input id="name" type="text" placeholder="James Bond" required />
-          </FormGroup>
-          <FormGroup>
-            <Label htmlFor="email">Email</Label>
-            <Input
-              id="email"
-              type="email"
-              placeholder="james@bond.com"
-              required
-            />
-          </FormGroup>
-          <FormGroup>
-            <Label htmlFor="message">Message</Label>
-            <Textarea
-              id="message"
-              placeholder="How can I help you?"
-              rows="4"
-              required
-            />
-          </FormGroup>
-          <FormGroup>
-            <Button type="submit">Send</Button>
-          </FormGroup>
+          {[
+            // Array of form fields for easier mapping
+            {
+              label: 'Name',
+              id: 'name',
+              type: 'text',
+              placeholder: 'James Bond',
+              component: Input,
+              required: true,
+            },
+            {
+              label: 'Email',
+              id: 'email',
+              type: 'email',
+              placeholder: 'james@bond.com',
+              component: Input,
+              required: true,
+            },
+            {
+              label: 'Message',
+              id: 'message',
+              placeholder: 'How can I help you?',
+              component: Textarea,
+              rows: 4,
+              required: true,
+            },
+          ].map((field, idx) => (
+            <motion.div
+              key={field.id}
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                delay: idx * 0.08,
+                duration: 0.5,
+                type: 'spring',
+                stiffness: 60,
+              }}
+            >
+              <FormGroup>
+                <Label htmlFor={field.id}>{field.label}</Label>
+                <field.component
+                  id={field.id}
+                  type={field.type}
+                  placeholder={field.placeholder}
+                  rows={field.rows}
+                  required={field.required}
+                />
+              </FormGroup>
+            </motion.div>
+          ))}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              delay: 3 * 0.08,
+              duration: 0.5,
+              type: 'spring',
+              stiffness: 60,
+            }}
+          >
+            <FormGroup>
+              <Button type="submit">Send</Button>
+            </FormGroup>
+          </motion.div>
         </Form>
 
         <Toast

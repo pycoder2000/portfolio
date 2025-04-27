@@ -1,11 +1,10 @@
-import { styled } from '../stitches.config'
-import { useState } from 'react'
-import Link from 'next/link'
 import { motion } from 'framer-motion'
+import Link from 'next/link'
+import { useState } from 'react'
+import { styled } from '../stitches.config'
 import BlogDate from './BlogDate'
 
 export default function ListItem(props) {
-  // Articles
   if (props.href.charAt(0) === '/') {
     return (
       <ArticleItem>
@@ -23,18 +22,29 @@ export default function ListItem(props) {
     )
   }
 
-  // Podcasts
   return (
-    <Item>
-      <Anchor href={props.href} target="_blank">
-        <Animation index={props.index}>
-          <Title>{props.title}</Title>
-          <IconContainer>
-            <i className="ri-arrow-right-up-line"></i>
-          </IconContainer>
-        </Animation>
-      </Anchor>
-    </Item>
+    <motion.li
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{
+        delay: (animationIndex ?? index) * 0.05,
+        duration: 0.4,
+        type: 'spring',
+        stiffness: 60,
+      }}
+      style={{ listStyle: 'none' }}
+    >
+      <Item>
+        <Anchor href={props.href} target="_blank">
+          <Animation index={props.index}>
+            <Title>{props.title}</Title>
+            <IconContainer>
+              <i className="ri-arrow-right-up-line"></i>
+            </IconContainer>
+          </Animation>
+        </Anchor>
+      </Item>
+    </motion.li>
   )
 }
 

@@ -1,4 +1,4 @@
-import { AnimateSharedLayout } from 'framer-motion'
+import { AnimateSharedLayout, motion } from 'framer-motion'
 import Head from 'next/head'
 import FeaturedArticle from '../components/FeaturedArticle'
 import { ListGroup } from '../components/ListGroup'
@@ -40,10 +40,19 @@ export async function getStaticProps() {
 
 function Articles(props) {
   const renderFeatured = () => {
-    return props.featuredPosts.map((post, index) => {
-      return (
+    return props.featuredPosts.map((post, index) => (
+      <motion.div
+        key={index}
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          delay: index * 0.08,
+          duration: 0.5,
+          type: 'spring',
+          stiffness: 60,
+        }}
+      >
         <FeaturedArticle
-          key={index}
           index={index}
           href={`/${post.slug}/`}
           title={post.title}
@@ -52,8 +61,8 @@ function Articles(props) {
           stats={post.stats}
           content={post.content}
         />
-      )
-    })
+      </motion.div>
+    ))
   }
 
   const renderAll = () => {
@@ -61,14 +70,16 @@ function Articles(props) {
       if (!post.skip) {
         return (
           <ListItem
-            key={index}
             index={index}
             href={`/${post.slug}/`}
             title={post.title}
             date={post.date}
+            key={index}
+            animationIndex={index} // pass index for animation
           />
         )
       }
+      return null
     })
   }
 

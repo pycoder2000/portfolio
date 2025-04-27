@@ -1,4 +1,4 @@
-import { AnimateSharedLayout } from 'framer-motion'
+import { AnimateSharedLayout, motion } from 'framer-motion'
 import Head from 'next/head'
 import React from 'react'
 import FeaturedProject from '../components/FeaturedProject'
@@ -19,6 +19,25 @@ export async function getStaticProps() {
   return { props: meta }
 }
 
+function ProjectItem({ project, pIndex }) {
+  return (
+    <motion.li
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{
+        delay: pIndex * 0.05,
+        duration: 0.4,
+        type: 'spring',
+        stiffness: 60,
+      }}
+    >
+      <a href={project.url} target="_blank" rel="noopener noreferrer">
+        {project.title}
+      </a>
+    </motion.li>
+  )
+}
+
 function Projects(props) {
   const renderFeatured = () => {
     const featured = ['GRE Prep Tool', 'Stocker', 'Musing', 'Instant MD']
@@ -27,30 +46,36 @@ function Projects(props) {
       .map(item => {
         return item.projects.filter(project => featured.includes(project.title))
       })
-      .filter(item => {
-        if (item.length > 0) {
-          return item
-        }
-      })
+      .filter(item => item.length > 0)
       .flat()
-      .map((item, index) => {
-        return <FeaturedProject key={index} project={item} />
-      })
+      .map((item, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            delay: index * 0.08,
+            duration: 0.5,
+            type: 'spring',
+            stiffness: 60,
+          }}
+        >
+          <FeaturedProject project={item} />
+        </motion.div>
+      ))
   }
 
   const renderAll = () => {
-    return items.map((item, index) => {
-      return (
-        <div key={index}>
-          <h3>{item.year}</h3>
-          <ul>
-            {item.projects.map((project, pIndex) => {
-              return <ProjectItem key={pIndex} project={project} />
-            })}
-          </ul>
-        </div>
-      )
-    })
+    return items.map((item, index) => (
+      <div key={index}>
+        <h3>{item.year}</h3>
+        <ul>
+          {item.projects.map((project, pIndex) => (
+            <ProjectItem project={project} pIndex={pIndex} key={pIndex} />
+          ))}
+        </ul>
+      </div>
+    ))
   }
 
   const getTotalProjects = () => {
@@ -81,24 +106,13 @@ function Projects(props) {
         <p dangerouslySetInnerHTML={{ __html: description }} />
 
         <h2>Featured Projects</h2>
+
         <FeaturedProjects>{renderFeatured()}</FeaturedProjects>
 
         <h2>All Projects</h2>
         {renderAll()}
       </AnimateSharedLayout>
     </>
-  )
-}
-
-function ProjectItem(props) {
-  const { project } = props
-
-  return (
-    <li>
-      <a href={project.url} target="_blank">
-        {project.title}
-      </a>
-    </li>
   )
 }
 

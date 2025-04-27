@@ -30,7 +30,7 @@ export default function Footer() {
     },
     {
       title: 'Credits',
-      url: 'https://parthdesai.site/credits',
+      url: '/credits',
       icon: 'ri-award-line',
     },
   ]
