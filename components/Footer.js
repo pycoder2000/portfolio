@@ -28,6 +28,11 @@ export default function Footer() {
       url: 'https://medium.com/@desaiparth2000',
       icon: 'ri-medium-line',
     },
+    {
+      title: 'Credits',
+      url: 'https://parthdesai.site/credits',
+      icon: 'ri-award-line',
+    },
   ]
 
   const renderAnchor = (link, index) => {

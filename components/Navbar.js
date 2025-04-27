@@ -17,9 +17,8 @@ export default function Navbar() {
     // 'Investing',
     'Uses',
     'Tweets',
-    'Contact',
     'Connections',
-    'Credits',
+    'Contact',
   ]
   const [hovered, setHovered] = useState('')
   const { query } = useKBar()
@@ -214,6 +213,7 @@ const ButtonLogo = styled(ButtonHeader, {
   fontWeight: 700,
   fontSize: '32px',
   textDecoration: 'none',
+  marginTop: '5px',
   marginLeft: '12px',
   fontFamily: '$heading',
 })
