@@ -27,7 +27,7 @@ export default function ListItem(props) {
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{
-        delay: (animationIndex ?? index) * 0.05,
+        delay: (props.animationIndex ?? props.index) * 0.05,
         duration: 0.4,
         type: 'spring',
         stiffness: 60,
