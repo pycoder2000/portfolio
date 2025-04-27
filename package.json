@@ -12,6 +12,7 @@
   "dependencies": {
     "@google-analytics/admin": "^7.4.0",
     "@google-analytics/data": "^4.7.0",
+    "@notionhq/client": "^2.3.0",
     "@radix-ui/react-toast": "^1.0.0",
     "@react-email/html": "^0.0.1",
     "@stitches/react": "^1.2.6",
