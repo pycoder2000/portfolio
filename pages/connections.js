@@ -85,7 +85,7 @@ function Connections({
     setSelectedPerson(null)
   }
 
-  const description = `A curated list of <strong>interesting people</strong> I’ve met or hope to meet. If you’d like to connect or collaborate, feel free to <a href="/contact">reach out to me</a>.<br /><br />This page is powered by an ever-evolving <a href="https://desaiparth.notion.site/1e1166c4dbed80f5871ec01ee6b182a0?v=1e1166c4dbed80e68890000c5c1875e6&pvs=4" target="_blank" rel="noopener noreferrer">Notion database</a>.`
+  const description = `A curated list of <strong>interesting people</strong> I’ve met or hope to meet. If you’d like to connect or collaborate, feel free to <a href="/contact">reach out to me</a>. This page is powered by an ever-evolving <a href="https://desaiparth.notion.site/1e1166c4dbed80f5871ec01ee6b182a0?v=1e1166c4dbed80e68890000c5c1875e6&pvs=4" target="_blank" rel="noopener noreferrer">Notion database</a>.`
 
   return (
     <>
