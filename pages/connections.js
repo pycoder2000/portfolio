@@ -159,10 +159,6 @@ const ConnectionsGrid = styled('div', {
   margin: '10px 0 0 -20px',
   gridTemplateColumns: 'repeat(4, 1fr)',
 
-  '@bp2': {
-    gridTemplateColumns: 'repeat(2, 1fr)',
-  },
-
   '@media (max-width: 600px)': {
     gridTemplateColumns: 'repeat(2, 1fr)',
     margin: '10px 0 0 0',
