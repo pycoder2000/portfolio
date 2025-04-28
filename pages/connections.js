@@ -21,10 +21,10 @@ export async function getConnections() {
 
     return {
       name: props.Name?.title?.[0]?.plain_text?.trim() || 'Unknown',
-      company: props.Company?.rich_text?.[0]?.plain_text?.trim() || 'Unknown',
-      title: props.Title?.rich_text?.[0]?.plain_text?.trim() || 'Unknown',
-      location: props.Location?.rich_text?.[0]?.plain_text?.trim() || 'Unknown',
-      status: props.Status?.select?.name || 'Unknown',
+      company: props.Company?.select?.name?.trim() || 'Unknown',
+      title: props.Title?.select?.name?.trim() || 'Unknown',
+      location: props.Location?.select?.name?.trim() || 'Unknown',
+      status: props.Status?.select?.name?.trim() || 'Unknown',
       tags: Array.isArray(props.Tags?.multi_select)
         ? props.Tags.multi_select.map(tag => tag.name)
         : [],
