@@ -172,8 +172,10 @@ const ConnectionsGrid = styled('div', {
 
 const SearchInput = styled('input', {
   width: '100%',
+  maxWidth: '500px',
   padding: '12px 16px',
-  margin: '20px 0',
+  margin: '20px auto',
+  display: 'block',
   border: '1px solid $secondary',
   borderRadius: '$borderRadius',
   backgroundColor: '$background',
