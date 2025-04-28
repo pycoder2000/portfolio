@@ -159,23 +159,20 @@ const ConnectionsGrid = styled('div', {
   margin: '10px 0 0 -20px',
   gridTemplateColumns: 'repeat(4, 1fr)',
 
-  '@bp4': {
-    gridTemplateColumns: 'repeat(2, 1fr)',
-  },
-  '@bp3': {
+  '@bp2': {
     gridTemplateColumns: 'repeat(2, 1fr)',
   },
   '@bp1': {
-    gridTemplateColumns: '1fr',
+    gridTemplateColumns: 'repeat(2, 1fr)',
   },
 })
 
 const SearchInput = styled('input', {
   width: '100%',
-  maxWidth: '500px',
+  maxWidth: '100%',
+  boxSizing: 'border-box',
   padding: '12px 16px',
-  margin: '20px auto',
-  display: 'block',
+  margin: '20px 0',
   border: '1px solid $secondary',
   borderRadius: '$borderRadius',
   backgroundColor: '$background',
