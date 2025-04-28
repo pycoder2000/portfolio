@@ -1,11 +1,13 @@
 import { format } from 'date-fns'
 import { AnimatePresence, motion } from 'framer-motion'
 import React from 'react'
-import { FaLinkedin, FaTwitter } from 'react-icons/fa'; // Import React Icons
+import { PiLinkedinLogoLight, PiTwitterLogoLight } from 'react-icons/pi'
 import { styled } from '../../stitches.config'
 
 export default function ConnectionModal({ person, isOpen, onClose }) {
   if (!person) return null
+
+  console.log('person', person)
 
   return (
     <AnimatePresence>
@@ -23,30 +25,42 @@ export default function ConnectionModal({ person, isOpen, onClose }) {
             initial={{ scale: 0.95, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.95, opacity: 0 }}
-            transition={{ duration: 0.2 }}
+            transition={{ type: 'spring', stiffness: 180, damping: 20 }}
             onClick={e => e.stopPropagation()}
           >
             <CloseButton onClick={onClose}>&times;</CloseButton>
             <Name>{person.name}</Name>
             <Title>{person.title}</Title>
             <Company>{person.company}</Company>
-            {person.location && <Location>{person.location}</Location>}
+            {(person.location || person.metOn) && (
+              <LocationMeta>
+                {person.location && <span>{person.location}</span>}
+                {person.location && person.metOn && <Dot>•</Dot>}
+                {person.metOn && (
+                  <span>{format(new Date(person.metOn), 'MMM dd, yyyy')}</span>
+                )}
+              </LocationMeta>
+            )}
             <Meta>
               <Status status={person.status}>
                 {person.status === 'Met' ? 'Met' : 'Want to Meet'}
               </Status>
-              <Dot>•</Dot>
-              <MetOn>
-                {person.metOn
-                  ? format(new Date(person.metOn), 'MMM dd, yyyy')
-                  : '—'}
-              </MetOn>
             </Meta>
-            <Tags>
-              {person.tags?.map(tag => (
-                <Tag key={tag}>{tag}</Tag>
-              ))}
-            </Tags>
+            {person.tags?.length > 0 && (
+              <Tags>
+                {person.tags.map((tag, idx) => (
+                  <Tag
+                    as={motion.span}
+                    key={tag}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: idx * 0.05 }}
+                  >
+                    {tag}
+                  </Tag>
+                ))}
+              </Tags>
+            )}
             <Links>
               {person.linkedin && (
                 <LinkIcon
@@ -55,7 +69,7 @@ export default function ConnectionModal({ person, isOpen, onClose }) {
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"
                 >
-                  <FaLinkedin size={20} />
+                  <PiLinkedinLogoLight/>
                 </LinkIcon>
               )}
               {person.twitter && (
@@ -65,7 +79,7 @@ export default function ConnectionModal({ person, isOpen, onClose }) {
                   rel="noopener noreferrer"
                   aria-label="Twitter"
                 >
-                  <FaTwitter size={20} />
+                  <PiTwitterLogoLight />
                 </LinkIcon>
               )}
             </Links>
@@ -88,12 +102,13 @@ const Overlay = styled('div', {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
+  backdropFilter: 'blur(6px)',
 })
 
 const ModalContent = styled('div', {
   background: 'rgba(24,24,28,0.98)',
   borderRadius: '20px',
-  boxShadow: '0 8px 48px 0 rgba(31,38,135,0.22)',
+  boxShadow: '0 8px 48px rgba(0,0,0,0.2)',
   padding: '40px 32px 32px 32px',
   minWidth: 320,
   maxWidth: 400,
@@ -115,7 +130,11 @@ const CloseButton = styled('button', {
   cursor: 'pointer',
   zIndex: 2,
   transition: 'color 0.2s',
-  '&:hover': { color: '$primary' },
+  '&:hover': {
+    color: '$primary',
+    transform: 'rotate(5deg)',
+    transition: 'all 0.3s ease',
+  },
 })
 
 const Name = styled('h2', {
@@ -212,8 +231,13 @@ const Links = styled('div', {
 const LinkIcon = styled('a', {
   color: '$secondary',
   transition: 'color 0.2s',
-  '&:hover': { color: '$cyan' },
+  '&:hover': {
+    color: '$cyan',
+    transform: 'scale(1.1)',
+    transition: 'all 0.3s ease',
+  },
   display: 'flex',
+  borderBottom: 'none',
   alignItems: 'center',
 })
 
@@ -223,4 +247,15 @@ const Notes = styled('div', {
   color: '$secondary',
   textAlign: 'center',
   opacity: 0.85,
+})
+
+const LocationMeta = styled('div', {
+  fontSize: '14px',
+  color: '$secondary',
+  marginBottom: '10px',
+  textAlign: 'center',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  gap: '6px',
 })
