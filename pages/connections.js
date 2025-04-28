@@ -24,7 +24,7 @@ export async function getConnections() {
     status: page.properties.Status?.select?.name || 'Unknown',
     tags: page.properties.Tags?.multi_select.map(tag => tag.name) || [],
     metOn: page.properties['Met On']?.date?.start || null,
-    linkedin: page.properties.Linkedin?.url || null,
+    linkedin: page.properties['LinkedIn']?.url || null,
     twitter: page.properties.Twitter?.url || null,
     notes: page.properties.Notes?.rich_text[0]?.plain_text || null,
   }))

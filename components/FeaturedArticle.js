@@ -105,6 +105,8 @@ const AnimContainer = styled(motion.div, {
   position: 'relative',
   width: '100%',
   padding: '20px',
+  borderRadius: '12px',
+  boxSizing: 'border-box',
 })
 
 const AnimHovered = styled(motion.div, {
