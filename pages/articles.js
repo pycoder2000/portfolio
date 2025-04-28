@@ -75,7 +75,7 @@ function Articles(props) {
             title={post.title}
             date={post.date}
             key={index}
-            animationIndex={index} // pass index for animation
+            animationIndex={index}
           />
         )
       }

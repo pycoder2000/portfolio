@@ -158,6 +158,16 @@ const ConnectionsGrid = styled('div', {
   display: 'grid',
   margin: '10px 0 0 -20px',
   gridTemplateColumns: 'repeat(4, 1fr)',
+
+  '@bp4': {
+    gridTemplateColumns: 'repeat(2, 1fr)',
+  },
+  '@bp3': {
+    gridTemplateColumns: 'repeat(2, 1fr)',
+  },
+  '@bp1': {
+    gridTemplateColumns: '1fr',
+  },
 })
 
 const SearchInput = styled('input', {

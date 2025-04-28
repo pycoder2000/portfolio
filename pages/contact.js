@@ -69,7 +69,6 @@ function Contact(props) {
         <h2>Send an email</h2>
         <Form onSubmit={onSendEmail}>
           {[
-            // Array of form fields for easier mapping
             {
               label: 'Name',
               id: 'name',
