@@ -188,7 +188,6 @@ const SearchInput = styled('input', {
   },
 })
 
-
 const NoResults = styled('div', {
   color: '$secondary',
   fontSize: '18px',
