@@ -16,18 +16,25 @@ export async function getConnections() {
     database_id: databaseId,
   })
 
-  return response.results.map(page => ({
-    name: page.properties.Name?.title[0]?.plain_text || 'Unknown',
-    company: page.properties.Company?.rich_text[0]?.plain_text || 'Unknown',
-    title: page.properties.Title?.rich_text[0]?.plain_text || 'Unknown',
-    location: page.properties.Location?.rich_text[0]?.plain_text || 'Unknown',
-    status: page.properties.Status?.select?.name || 'Unknown',
-    tags: page.properties.Tags?.multi_select.map(tag => tag.name) || [],
-    metOn: page.properties['Met On']?.date?.start || null,
-    linkedin: page.properties['LinkedIn']?.url || null,
-    twitter: page.properties.Twitter?.url || null,
-    notes: page.properties.Notes?.rich_text[0]?.plain_text || null,
-  }))
+  return response.results.map(page => {
+    const props = page.properties
+
+    return {
+      name: props.Name?.title?.[0]?.plain_text?.trim() || 'Unknown',
+      company: props.Company?.rich_text?.[0]?.plain_text?.trim() || 'Unknown',
+      title: props.Title?.rich_text?.[0]?.plain_text?.trim() || 'Unknown',
+      location: props.Location?.rich_text?.[0]?.plain_text?.trim() || 'Unknown',
+      status: props.Status?.select?.name || 'Unknown',
+      tags: Array.isArray(props.Tags?.multi_select)
+        ? props.Tags.multi_select.map(tag => tag.name)
+        : [],
+      metOn: props['Met On']?.date?.start || null,
+      linkedin: props['LinkedIn']?.url || null,
+      twitter: props.Twitter?.url || null,
+      notes: props.Notes?.rich_text?.[0]?.plain_text?.trim() || null,
+      url: page.url || null,
+    }
+  })
 }
 
 export function getMeta() {
