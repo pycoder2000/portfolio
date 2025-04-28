@@ -42,10 +42,10 @@ export const {
     },
   },
   media: {
-    bp1: '(max-width: 600px)',
-    bp2: '(max-width: 900px)',
-    bp3: '(max-width: 1200px)',
-    bp4: '(min-width: 1201px)',
+    bp1: '(min-width: 425px)',
+    bp2: '(min-width: 760px)',
+    bp3: '(max-width: 780px)',
+    bp4: '(max-width: 1024px)',
   },
 })
 

@@ -162,8 +162,10 @@ const ConnectionsGrid = styled('div', {
   '@bp2': {
     gridTemplateColumns: 'repeat(2, 1fr)',
   },
-  '@bp1': {
+
+  '@media (max-width: 600px)': {
     gridTemplateColumns: 'repeat(2, 1fr)',
+    margin: '10px 0 0 0',
   },
 })
 
@@ -184,6 +186,10 @@ const SearchInput = styled('input', {
   '&:focus': {
     outline: 'none',
     borderColor: '$cyan',
+  },
+  '@media (max-width: 600px)': {
+    fontSize: '15px',
+    padding: '10px 8px',
   },
 })
 
