@@ -74,6 +74,14 @@ function Connections({
 }) {
   const [selectedPerson, setSelectedPerson] = useState(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [searchQuery, setSearchQuery] = useState('')
+
+  const filteredConnections = connections.filter(
+    person =>
+      person.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      person.company.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      person.title.toLowerCase().includes(searchQuery.toLowerCase())
+  )
 
   const handleCardClick = person => {
     setSelectedPerson(person)
@@ -102,25 +110,35 @@ function Connections({
         <p dangerouslySetInnerHTML={{ __html: description }} />
 
         <h2>Connections</h2>
+        <SearchInput
+          type="text"
+          placeholder="Search connections..."
+          value={searchQuery}
+          onChange={e => setSearchQuery(e.target.value)}
+        />
         <ConnectionsGrid>
-          {connections.map((person, idx) => (
-            <motion.div
-              key={person.name + idx}
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                delay: idx * 0.08,
-                duration: 0.5,
-                type: 'spring',
-                stiffness: 60,
-              }}
-            >
-              <ConnectionCard
-                person={person}
-                onClick={() => handleCardClick(person)}
-              />
-            </motion.div>
-          ))}
+          {filteredConnections.length > 0 ? (
+            filteredConnections.map((person, idx) => (
+              <motion.div
+                key={person.name + idx}
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  delay: idx * 0.08,
+                  duration: 0.5,
+                  type: 'spring',
+                  stiffness: 60,
+                }}
+              >
+                <ConnectionCard
+                  person={person}
+                  onClick={() => handleCardClick(person)}
+                />
+              </motion.div>
+            ))
+          ) : (
+            <NoResults>No results found.</NoResults>
+          )}
         </ConnectionsGrid>
       </AnimateSharedLayout>
       <ConnectionModal
@@ -140,4 +158,29 @@ const ConnectionsGrid = styled('div', {
   display: 'grid',
   margin: '10px 0 0 -20px',
   gridTemplateColumns: 'repeat(4, 1fr)',
+})
+
+const SearchInput = styled('input', {
+  width: '100%',
+  padding: '12px 16px',
+  margin: '20px 0',
+  border: '1px solid $secondary',
+  borderRadius: '$borderRadius',
+  backgroundColor: '$background',
+  color: '$primary',
+  fontSize: '16px',
+  '&::placeholder': {
+    color: '$secondary',
+  },
+  '&:focus': {
+    outline: 'none',
+    borderColor: '$cyan',
+  },
+})
+
+const NoResults = styled('div', {
+  color: '$secondary',
+  fontSize: '18px',
+  textAlign: 'center',
+  marginTop: '40px',
 })
