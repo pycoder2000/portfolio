@@ -8,11 +8,11 @@ import { styled } from '../../stitches.config'
 const Lottie = dynamic(() => import('lottie-react'), { ssr: false })
 
 export default function ConnectionModal({ person, isOpen, onClose }) {
-  if (!person) return null
-
-  const tweetsRef = useRef()
-  const linkedRef = useRef()
+  const linkedinRef = useRef(null)
+  const tweetsRef = useRef(null)
   const iconSize = { width: 24, height: 24 }
+
+  if (!person) return null
 
   return (
     <AnimatePresence>
@@ -73,11 +73,11 @@ export default function ConnectionModal({ person, isOpen, onClose }) {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"
-                  onMouseEnter={() => linkedRef.current?.play()}
-                  onMouseLeave={() => linkedRef.current?.stop()}
+                  onMouseEnter={() => linkedinRef.current?.play()}
+                  onMouseLeave={() => linkedinRef.current?.stop()}
                 >
                   <Lottie
-                    lottieRef={linkedRef}
+                    lottieRef={linkedinRef}
                     style={iconSize}
                     animationData={linkedinIcon}
                     loop={true}
