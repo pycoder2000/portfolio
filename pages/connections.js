@@ -60,7 +60,7 @@ export async function getStaticProps() {
       secondaryColor: meta.secondaryColor,
       connections,
     },
-    revalidate: 60 * 60 * 24,
+    revalidate: 60 * 60,
   }
 }
 
