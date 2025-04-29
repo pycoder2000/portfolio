@@ -1,13 +1,18 @@
 import { format } from 'date-fns'
 import { AnimatePresence, motion } from 'framer-motion'
-import React from 'react'
-import { PiLinkedinLogoLight, PiTwitterLogoLight } from 'react-icons/pi'
+import dynamic from 'next/dynamic'
+import React, { useRef } from 'react'
+import linkedinIcon from '../../public/static/icons/linkedin.json'
+import tweetsIcon from '../../public/static/icons/tweets.json'
 import { styled } from '../../stitches.config'
+const Lottie = dynamic(() => import('lottie-react'), { ssr: false })
 
 export default function ConnectionModal({ person, isOpen, onClose }) {
   if (!person) return null
 
-  console.log('person', person)
+  const tweetsRef = useRef()
+  const linkedRef = useRef()
+  const iconSize = { width: 24, height: 24 }
 
   return (
     <AnimatePresence>
@@ -68,8 +73,16 @@ export default function ConnectionModal({ person, isOpen, onClose }) {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"
+                  onMouseEnter={() => linkedRef.current?.play()}
+                  onMouseLeave={() => linkedRef.current?.stop()}
                 >
-                  <PiLinkedinLogoLight/>
+                  <Lottie
+                    lottieRef={linkedRef}
+                    style={iconSize}
+                    animationData={linkedinIcon}
+                    loop={true}
+                    autoplay={false}
+                  />
                 </LinkIcon>
               )}
               {person.twitter && (
@@ -78,8 +91,16 @@ export default function ConnectionModal({ person, isOpen, onClose }) {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Twitter"
+                  onMouseEnter={() => tweetsRef.current?.play()}
+                  onMouseLeave={() => tweetsRef.current?.stop()}
                 >
-                  <PiTwitterLogoLight />
+                  <Lottie
+                    lottieRef={tweetsRef}
+                    style={iconSize}
+                    animationData={tweetsIcon}
+                    loop={true}
+                    autoplay={false}
+                  />
                 </LinkIcon>
               )}
             </Links>
@@ -233,7 +254,7 @@ const LinkIcon = styled('a', {
   transition: 'color 0.2s',
   '&:hover': {
     color: '$cyan',
-    transform: 'scale(1.1)',
+    transform: 'scale(1.3)',
     transition: 'all 0.3s ease',
   },
   display: 'flex',
