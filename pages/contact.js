@@ -66,7 +66,7 @@ function Contact(props) {
 
       <Box>
         <p dangerouslySetInnerHTML={{ __html: description }} />
-        <h2>Send an email</h2>
+        <h2>Send me an email</h2>
         <Form onSubmit={onSendEmail}>
           {[
             {
