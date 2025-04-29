@@ -15,7 +15,6 @@ const items = [
       'Hive',
       'Spark',
       'Python',
-      'Netflix Metaflow',
       'Trino',
       'AWS',
     ],
