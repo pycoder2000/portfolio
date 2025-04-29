@@ -21,7 +21,7 @@ const items = [
     ],
     highlights: [],
     description: [
-      'Incoming <b>Data Engineering Intern at Netflix</b>, working on scalable data pipelines and product analytics within the Studio Data Science & Engineering team.',
+      'Incoming <b>Data Engineering Intern at Netflix</b>, working on scalable data pipelines within the Data Platform and Consolidated Logging team.',
       'Focus areas: <i>building robust batch/streaming pipelines</i>, optimizing data transformations, and supporting experimentation platforms at scale.',
     ],
   },
