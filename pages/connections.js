@@ -112,7 +112,7 @@ function Connections({
         <h2>Connections</h2>
         <SearchInput
           type="text"
-          placeholder="Search connections..."
+          placeholder="Search by company, title, or position..."
           value={searchQuery}
           onChange={e => setSearchQuery(e.target.value)}
         />
