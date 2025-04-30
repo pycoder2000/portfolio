@@ -59,14 +59,14 @@ const NavBarContainer = styled('nav', {
   background: '#101111',
   borderRadius: '16px',
   zIndex: 50,
-  padding: '8px 0',
+  padding: '8px 8px',
   '@bp2': { display: 'none' },
 })
 
 const NavBarInner = styled('div', {
   display: 'flex',
   justifyContent: 'space-between',
-  gap: '4px',
+  gap: '2px',
   alignItems: 'center',
 })
 
@@ -81,7 +81,7 @@ const NavItem = styled('a', {
   transition: 'background 0.2s ease-in-out',
   variants: {
     active: {
-      true: { backgroundColor: '#18191b' },
+      true: { backgroundColor: '#2a2b2d' },
       false: { backgroundColor: 'transparent' },
     },
   },
