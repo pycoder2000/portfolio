@@ -1,3 +1,4 @@
+// components/MobileBottomNavbar.js
 import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -25,52 +26,59 @@ const navItems = [
   { path: '/contact', icon: emailIcon, label: 'Contact' },
 ]
 
-export default function MobileNavbar() {
+export default function MobileBottomNavbar() {
   const router = useRouter()
 
   return (
     <NavBarContainer>
-      {navItems.map(item => (
-        <Link href={item.path} passHref key={item.path}>
-          <NavItem active={router.pathname === item.path}>
-            <Lottie
-              animationData={item.icon}
-              style={{ width: 28, height: 28 }}
-              loop={false}
-              autoplay={router.pathname === item.path}
-            />
-          </NavItem>
-        </Link>
-      ))}
+      <NavBarInner>
+        {navItems.map(item => (
+          <Link href={item.path} passHref key={item.path}>
+            <NavItem active={router.pathname === item.path}>
+              <Lottie
+                animationData={item.icon}
+                style={{ width: 22, height: 22 }}
+                loop={false}
+                autoplay={router.pathname === item.path}
+              />
+            </NavItem>
+          </Link>
+        ))}
+      </NavBarInner>
     </NavBarContainer>
   )
 }
 
 const NavBarContainer = styled('nav', {
   position: 'fixed',
-  bottom: 0,
-  left: 0,
-  width: '100%',
+  bottom: '20px',
+  left: '50%',
+  transform: 'translateX(-50%)',
+  width: '92%',
+  maxWidth: '500px',
+  background: '#101111',
+  borderRadius: '16px',
+  zIndex: 50,
+  padding: '8px 0',
+  '@bp2': { display: 'none' },
+})
+
+const NavBarInner = styled('div', {
   display: 'flex',
   justifyContent: 'space-around',
   alignItems: 'center',
-  padding: '10px 0',
-  background: '#000',
-  borderTop: '1px solid #222',
-  zIndex: 50,
-  borderRadius: '16px 16px 0 0',
-  '@bp2': { display: 'none' },
 })
 
 const NavItem = styled('a', {
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  padding: '4px',
-  borderRadius: '12px',
+  padding: '6px',
+  borderRadius: '10px',
+  transition: 'background 0.2s ease-in-out',
   variants: {
     active: {
-      true: { backgroundColor: '#111' },
+      true: { backgroundColor: '#18191b' },
       false: { backgroundColor: 'transparent' },
     },
   },

@@ -16,6 +16,8 @@ export default function Navbar() {
     'Tweets',
     'Connections',
     'Contact',
+    // 'Podcasts',
+    // 'Investing',
   ]
   const [hovered, setHovered] = useState('')
   const { query } = useKBar()
@@ -139,7 +141,12 @@ const Nav = styled('nav', {
   flex: 1,
   order: 2,
   flexBasis: '100%',
-  '@bp2': { order: 0, flexBasis: 'initial' },
+  display: 'none',
+  '@bp2': {
+    display: 'block',
+    order: 0,
+    flexBasis: 'initial',
+  },
   '@bp3': { overflowX: 'scroll', overflowY: 'hidden' },
 })
 
