@@ -34,7 +34,7 @@ export default function MobileNavbar() {
   const [timeoutId, setTimeoutId] = useState(null)
 
   useEffect(() => {
-    controls.set({ opacity: 1, y: 0 }) // fade-in on page load
+    controls.set({ opacity: 1, y: 0 })
   }, [])
 
   useEffect(() => {
@@ -48,7 +48,7 @@ export default function MobileNavbar() {
         if (timeoutId) clearTimeout(timeoutId)
         const newTimeout = setTimeout(() => {
           controls.start({ y: 100, opacity: 0 })
-        }, 4000) // auto-hide after 4 seconds
+        }, 4000)
         setTimeoutId(newTimeout)
       }
 
@@ -87,8 +87,9 @@ export default function MobileNavbar() {
 const NavBarContainer = styled('nav', {
   position: 'fixed',
   bottom: '20px',
-  left: '50%',
-  transform: 'translateX(-50%)',
+  left: 0,
+  right: 0,
+  margin: '0 auto',
   width: '92%',
   maxWidth: '500px',
   background: '#101111',
@@ -97,6 +98,7 @@ const NavBarContainer = styled('nav', {
   padding: '8px 16px',
   '@bp2': { display: 'none' },
 })
+
 
 const NavBarInner = styled('div', {
   display: 'flex',
