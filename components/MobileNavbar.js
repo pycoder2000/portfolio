@@ -95,7 +95,7 @@ const NavBarContainer = styled('nav', {
   background: '#101111',
   borderRadius: '16px',
   zIndex: 50,
-  padding: '8px 16px',
+  padding: '8px 8px',
   '@bp2': { display: 'none' },
 })
 
