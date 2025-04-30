@@ -1,7 +1,7 @@
-import { styled } from '../stitches.config'
-import { useState } from 'react'
 import { motion } from 'framer-motion'
+import { useState } from 'react'
 import readingTime from 'reading-time'
+import { styled } from '../stitches.config'
 
 export default function FeaturedArticle(props) {
   const stats = readingTime(props.content)
@@ -69,6 +69,11 @@ const ImageContainer = styled('div', {
   backgroundRepeat: 'no-repeat',
   backgroundPosition: 'center center',
   filter: 'grayscale(1)',
+
+  '@media (max-width: 600px)': {
+    width: '100%',
+    margin: '0 auto',
+  },
 })
 
 const Content = styled('div', {

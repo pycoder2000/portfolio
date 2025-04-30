@@ -138,6 +138,10 @@ const globalStyles = globalCss({
   'a:hover, a:focus': {
     opacity: '0.8',
   },
+  'a, button': {
+    outline: 'none',
+    WebkitTapHighlightColor: 'transparent',
+  },
   '@font-face': [
     {
       fontFamily: 'Neuzeit Grotesk Bold',
