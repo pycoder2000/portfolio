@@ -1,7 +1,8 @@
-// components/MobileNavbar.js
+import { motion, useAnimation } from 'framer-motion'
 import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { useEffect, useState } from 'react'
 import { styled } from '../stitches.config'
 
 import aboutIcon from '../public/static/icons/about.json'
@@ -28,9 +29,43 @@ const navItems = [
 
 export default function MobileNavbar() {
   const router = useRouter()
+  const controls = useAnimation()
+  const [lastScrollY, setLastScrollY] = useState(0)
+  const [timeoutId, setTimeoutId] = useState(null)
+
+  useEffect(() => {
+    controls.set({ opacity: 1, y: 0 }) // fade-in on page load
+  }, [])
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY
+
+      if (currentScrollY > lastScrollY && currentScrollY > 50) {
+        controls.start({ y: 100, opacity: 0 })
+      } else {
+        controls.start({ y: 0, opacity: 1 })
+        if (timeoutId) clearTimeout(timeoutId)
+        const newTimeout = setTimeout(() => {
+          controls.start({ y: 100, opacity: 0 })
+        }, 4000) // auto-hide after 4 seconds
+        setTimeoutId(newTimeout)
+      }
+
+      setLastScrollY(currentScrollY)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [lastScrollY, controls, timeoutId])
 
   return (
-    <NavBarContainer>
+    <NavBarContainer
+      as={motion.nav}
+      initial={{ opacity: 0, y: 40 }}
+      animate={controls}
+      transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+    >
       <NavBarInner>
         {navItems.map(item => (
           <Link href={item.path} passHref key={item.path}>
@@ -59,15 +94,15 @@ const NavBarContainer = styled('nav', {
   background: '#101111',
   borderRadius: '16px',
   zIndex: 50,
-  padding: '8px 8px',
+  padding: '8px 16px',
   '@bp2': { display: 'none' },
 })
 
 const NavBarInner = styled('div', {
   display: 'flex',
   justifyContent: 'space-between',
-  gap: '2px',
   alignItems: 'center',
+  gap: '2px',
 })
 
 const NavItem = styled('a', {
