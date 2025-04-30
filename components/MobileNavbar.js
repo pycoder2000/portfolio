@@ -1,4 +1,4 @@
-// components/MobileBottomNavbar.js
+// components/MobileNavbar.js
 import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -26,7 +26,7 @@ const navItems = [
   { path: '/contact', icon: emailIcon, label: 'Contact' },
 ]
 
-export default function MobileBottomNavbar() {
+export default function MobileNavbar() {
   const router = useRouter()
 
   return (
