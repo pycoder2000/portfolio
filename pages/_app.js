@@ -3,6 +3,7 @@ import AnimatedCursor from 'react-animated-cursor'
 import { isMobile } from 'react-device-detect'
 import 'remixicon/fonts/remixicon.css'
 import CommandBar from '../components/CommandBar'
+import MobileNavbar from '../components/MobileNavbar'
 import * as gtag from '../lib/gtag'
 import '../public/static/css/prism.css'
 
@@ -38,6 +39,8 @@ export default function MyApp({ Component, pageProps }) {
       <Layout>
         <Component {...pageProps} />
       </Layout>
+
+      {isMobile && <MobileNavbar />}
     </CommandBar>
   )
 }
