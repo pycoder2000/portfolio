@@ -65,7 +65,8 @@ const NavBarContainer = styled('nav', {
 
 const NavBarInner = styled('div', {
   display: 'flex',
-  justifyContent: 'space-around',
+  justifyContent: 'space-between',
+  gap: '4px',
   alignItems: 'center',
 })
 
@@ -75,6 +76,8 @@ const NavItem = styled('a', {
   alignItems: 'center',
   padding: '6px',
   borderRadius: '10px',
+  border: 'none',
+  textDecoration: 'none',
   transition: 'background 0.2s ease-in-out',
   variants: {
     active: {
