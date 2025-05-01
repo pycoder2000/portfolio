@@ -1,5 +1,19 @@
 const items = [
   {
+    year: '2024',
+    projects: [
+      {
+        title: 'Daily Word Pro',
+        description:
+          'Minimal MacOS vocabulary menu bar app',
+        url: 'https://github.com/pycoder2000/DailyWordPro',
+        active: true,
+        icon: 'DailyWordPro',
+        stats: '<2 MB File Size',
+      },
+    ],
+  },
+  {
     year: '2023',
     projects: [
       {
@@ -8,7 +22,7 @@ const items = [
         url: 'https://musing.vercel.app/',
         active: false,
         icon: 'musing',
-        stats: '300+ stars',
+        stats: '300+ Stars',
       },
       {
         title: 'GRE Prep Tool',
@@ -16,7 +30,7 @@ const items = [
         url: 'https://github.com/pycoder2000/GRE-Prep-Tool',
         active: true,
         icon: 'gre-prep',
-        stats: '7 vocab lists',
+        stats: '7 Vocab Lists',
       },
     ],
   },

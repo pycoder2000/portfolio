@@ -40,7 +40,7 @@ function ProjectItem({ project, pIndex }) {
 
 function Projects(props) {
   const renderFeatured = () => {
-    const featured = ['GRE Prep Tool', 'Stocker', 'Musing', 'Instant MD']
+    const featured = ['GRE Prep Tool', 'Daily Word Pro', 'Musing', 'Instant MD']
 
     return items
       .map(item => {
