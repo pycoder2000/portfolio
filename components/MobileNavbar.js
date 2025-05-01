@@ -48,7 +48,7 @@ export default function MobileNavbar() {
         if (timeoutId) clearTimeout(timeoutId)
         const newTimeout = setTimeout(() => {
           controls.start({ y: 100, opacity: 0 })
-        }, 4000)
+        }, 30000)
         setTimeoutId(newTimeout)
       }
 
