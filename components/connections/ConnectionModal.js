@@ -104,7 +104,7 @@ export default function ConnectionModal({ person, isOpen, onClose }) {
                 </LinkIcon>
               )}
             </Links>
-            {person.notes && <Notes>{person.notes}</Notes>}
+            {/* {person.notes && <Notes>{person.notes}</Notes>} */}
           </ModalContent>
         </Overlay>
       )}
