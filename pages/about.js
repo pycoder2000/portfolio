@@ -18,8 +18,12 @@ const Lottie = dynamic(() => import('lottie-react'), { ssr: false })
 export async function getStaticProps() {
   const meta = {
     title: 'About // Parth Desai',
-    description:
-      "Parth Desai is a results-driven Data Engineer with 2+ YoE passionate about architecting scalable big data solutions across AWS, GCP, and Kubernetes. With expertise in SQL, Python, and distributed frameworks like Spark and Kafka, he specializes in high-performance ETL pipelines and real-time data processing. Parth led the migration of the AppsFlyer data pipeline to a DataLocker-based architecture, reducing latency by 95% and saving $1.1M in operational costs. He has successfully undertaken digital transformation projects and led multiple migrations from Dev to Prod. Parth is committed to delivering production-ready, impactful code that drives business value.",
+    description: `
+      Parth Desai is a results-driven Data Engineer with 2+ years of experience building scalable ETL and real-time pipelines.
+      He specializes in Spark and Kafka and led the AppsFlyer migration that reduced latency by 95% and saved $1.1M.
+      This summer he worked on Kafka cost attribution and ownership pipelines at Netflix, delivering production-ready data solutions.
+      Parth focuses on reliable, maintainable systems that drive measurable business impact.
+    `,
     tagline: 'Build. Code. Deliver.',
     image: '/static/images/about-bw.jpg',
     primaryColor: 'pink',
@@ -70,8 +74,8 @@ function About(props) {
                 connecting
               </a>
             </strong>{' '}
-            with fellow nerds over the weekend in {' '}<strong>San Francisco</strong>. When I'm not working, you'll
-            find me{' '}
+            with fellow nerds over the weekend in <strong>San Francisco</strong>
+            . When I'm not working, you'll find me{' '}
             <strong>
               <a href="https://x.com/_ParthDesai_" target="_blank">
                 tweeting
@@ -92,7 +96,7 @@ function About(props) {
                 color="#E50914"
                 show={true}
               >
-                This summer, you'll find me at Netflix.
+                Currently, you'll find me at Netflix.
               </RoughNotation>
             </strong>
           </Paragraph>
