@@ -22,14 +22,11 @@ const items = [
       'Dataflow',
     ],
     highlights: [
-      "Architected and productionized an end-to-end ETL pipeline to attribute $17M annualized infrastructure cost for Netflix's Kafka-as-a-Service (KaaS), providing topic-level cost visibility for ~500K topics and attributing >98% of cluster costs",
-      'Developed a weighted cost model in Spark that allocates cluster costs by disk storage, network throughput, vCores, and partition count',
-      'Deployed a pipeline to enrich Kafka inventory with ownership from the Netflix Data Catalog, achieving >97% ownership match rate',
-      'Engineered a SQL Query Generator that parsed ~200 foundational schemas to auto-generate business-relevant SQL, saving the team ~40 hours/week',
-      'Implemented data quality audits and monitoring, contributing to a 70% reduction in on-call failures',
+      'Attributed $17M annualized infrastructure Kafka cost, providing cost visibility for ~500K topics',
+      'Enriched ownership achieving >97% ownership match rate',
     ],
     description: [
-      'Architected and productionized an end-to-end ETL pipeline that ingested telemetry across storage, network, and compute, normalizing signals and attributing $17M annualized infrastructure costs to topics (~500K topics) with >98% cost coverage.',
+      "Architected and productionized an end-to-end ETL pipeline to attribute $17M annualized infrastructure cost for Netflix's Kafka-as-a-Service (KaaS), providing topic-level cost visibility for ~500K topics and attributing >98% of cluster costs",
       'Built a weighted Spark-based cost allocation model that apportioned cluster costs using proportional consumption signals (disk, network, vCores, partition count) and validated outputs against billing datasets.',
       'Integrated ownership enrichment by joining Kafka inventory with the Netflix Data Catalog to deliver >97% ownership match rate, enabling chargeback and governance workflows.',
       "Implemented a repository-parsing SQL Query Generator that interpreted ~200 foundational schemas to autonomously produce business-relevant SQL queries, cutting analysts' manual query time by ~40 hours/week.",
