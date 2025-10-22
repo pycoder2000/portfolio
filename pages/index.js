@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import Head from 'next/head'
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import { PostContainer, PostContent, PostMain } from '../components/Post'
@@ -46,7 +46,7 @@ function RollingText({ companies, ispaused }) {
   return (
     <Container>
       {prevIndex !== null && (
-        <AnimatedSpan
+        <AnimatedCompanyText
           key={prevIndex}
           animationType="exit"
           css={{
@@ -57,16 +57,16 @@ function RollingText({ companies, ispaused }) {
           }}
         >
           {companies[prevIndex].name}
-        </AnimatedSpan>
+        </AnimatedCompanyText>
       )}
 
-      <AnimatedSpan
+      <AnimatedCompanyText
         key={currentIndex}
         animationType="enter"
         css={{ color: companies[currentIndex].color }}
       >
         {companies[currentIndex].name}
-      </AnimatedSpan>
+      </AnimatedCompanyText>
     </Container>
   )
 }
@@ -79,7 +79,7 @@ const Container = styled('span', {
 })
 
 const scrollIn = keyframes({
-  '0%': { opacity: 0, transform: 'translateY(20px)' },
+  '0%': { opacity: 0, transform: 'translateY(18px)' },
   '100%': { opacity: 1, transform: 'translateY(0)' },
 })
 
@@ -133,15 +133,14 @@ export default function Index(props) {
       <Home>
         <PostContent>
           <PostContainer>
-            <h1
+            <MotionTitle
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
             >
               {title}
-            </h1>
-            <p
-              as={motion.p}
+            </MotionTitle>
+            <MotionLead
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.3 }}
@@ -161,9 +160,13 @@ export default function Index(props) {
                 </AnimatedCompany>
               </strong>
               <br />
-              {description}
-            </p>
-            <ShortcutHome />
+              <span style={{ display: 'block', marginTop: 5 }}>
+                {description}
+              </span>
+            </MotionLead>
+            <div style={{ marginTop: 12 }}>
+              <ShortcutHome />
+            </div>
           </PostContainer>
         </PostContent>
       </Home>
@@ -185,4 +188,26 @@ const AnimatedCompany = styled(AnimatedSpan, {
     '0%': { transform: 'translateY(0)' },
     '100%': { transform: 'translateY(-10px)' },
   },
+})
+
+const Title = styled('h1', {
+  fontSize: '40px',
+  lineHeight: '1.05',
+  margin: '0 0 12px 0',
+  '@bp2': { fontSize: '74px' },
+})
+
+const Lead = styled('p', {
+  fontSize: '11px',
+  lineHeight: '1.4',
+  margin: 0,
+  '@bp2': { fontSize: '18px' },
+})
+
+const MotionTitle = motion(Title)
+const MotionLead = motion(Lead)
+
+const AnimatedCompanyText = styled(AnimatedSpan, {
+  fontSize: '18px',
+  '@bp2': { fontSize: '18px' },
 })
