@@ -2,6 +2,7 @@ import Head from 'next/head'
 import React from 'react'
 import { Box } from '../components/Box'
 import Toast from '../components/Toast'
+import Turnstile from '../components/Turnstile'
 import Base from '../layouts/Base'
 import stripHtml from '../lib/strip-html'
 import { styled } from '../stitches.config'
@@ -24,9 +25,21 @@ function Contact(props) {
   const description = `<strong>I love chatting</strong> with software engineers, tech founders, students, and geeks. I promise that I'll try to reply to your email in a timely manner.`
   const [isEmailSent, setIsEmailSent] = React.useState(undefined)
   const [showToast, setShowToast] = React.useState(false)
+  const [turnstileToken, setTurnstileToken] = React.useState(null)
+  const [isSubmitting, setIsSubmitting] = React.useState(false)
+  const turnstileRef = React.useRef(null)
 
   const onSendEmail = async e => {
     e.preventDefault()
+
+    // Check if Turnstile is required and token is present
+    if (process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY && !turnstileToken) {
+      setIsEmailSent(false)
+      setShowToast(true)
+      return
+    }
+
+    setIsSubmitting(true)
 
     try {
       const isProd = process.env.NODE_ENV === 'production'
@@ -34,23 +47,52 @@ function Contact(props) {
         ? 'https://www.parthdesai.site'
         : 'http://localhost:3000'
 
-      await fetch(`${base}/api/email`, {
+      // Get honeypot field value (should be empty)
+      const honeypotValue = e.target.website?.value || ''
+
+      const response = await fetch(`${base}/api/email`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          name: e.target.name.value,
-          email: e.target.email.value,
-          message: e.target.message.value,
+          name: e.target.name.value.trim(),
+          email: e.target.email.value.trim(),
+          message: e.target.message.value.trim(),
+          website: honeypotValue, // Honeypot field
+          turnstileToken: turnstileToken, // Turnstile token
         }),
       })
 
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}))
+        throw new Error(errorData.message || 'Failed to send email')
+      }
+
+      const result = await response.json()
       setIsEmailSent(true)
       setShowToast(true)
+      setTurnstileToken(null) // Reset token
+      // Reset form on success
+      e.target.reset()
+
+      // Reset Turnstile widget
+      if (turnstileRef.current) {
+        turnstileRef.current.reset()
+      }
     } catch (e) {
       console.error(e)
       setIsEmailSent(false)
       setShowToast(true)
+    } finally {
+      setIsSubmitting(false)
     }
+  }
+
+  const handleTurnstileVerify = token => {
+    setTurnstileToken(token)
+  }
+
+  const handleTurnstileError = () => {
+    setTurnstileToken(null)
   }
 
   return (
@@ -117,6 +159,21 @@ function Contact(props) {
               </FormGroup>
             </motion.div>
           ))}
+          {/* Honeypot field - hidden from users but visible to bots */}
+          <HoneypotField
+            id="website"
+            name="website"
+            type="text"
+            tabIndex="-1"
+            autoComplete="off"
+            aria-hidden="true"
+          />
+          {/* Cloudflare Turnstile */}
+          <Turnstile
+            ref={turnstileRef}
+            onVerify={handleTurnstileVerify}
+            onError={handleTurnstileError}
+          />
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -128,15 +185,25 @@ function Contact(props) {
             }}
           >
             <FormGroup>
-              <Button type="submit">Send</Button>
+              <Button type="submit" disabled={isSubmitting}>
+                {isSubmitting ? 'Sending...' : 'Send'}
+              </Button>
             </FormGroup>
           </motion.div>
         </Form>
 
         <Toast
-          title={isEmailSent ? 'Email sent :D' : 'Error :('}
+          title={
+            isEmailSent === undefined
+              ? ''
+              : isEmailSent
+              ? 'Email sent :D'
+              : 'Error :('
+          }
           description={
-            isEmailSent
+            isEmailSent === undefined
+              ? ''
+              : isEmailSent
               ? 'Thanks for taking the time to write it.'
               : 'Something wrong happened. Try again later.'
           }
@@ -195,7 +262,7 @@ const Button = styled('button', {
   padding: '10px',
   marginTop: '5px',
   transition: 'all 0.2s ease-in-out',
-  '&:hover': {
+  '&:hover:not(:disabled)': {
     background: 'transparent',
     borderColor: '$cyan',
     color: '$cyan',
@@ -206,6 +273,20 @@ const Button = styled('button', {
     color: '$cyan',
     outline: 'none',
   },
+  '&:disabled': {
+    opacity: 0.6,
+    cursor: 'not-allowed',
+  },
+})
+
+const HoneypotField = styled('input', {
+  position: 'absolute',
+  left: '-9999px',
+  width: '1px',
+  height: '1px',
+  opacity: 0,
+  pointerEvents: 'none',
+  tabIndex: -1,
 })
 
 Contact.Layout = Base
